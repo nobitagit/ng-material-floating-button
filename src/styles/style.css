@@ -1,0 +1,59 @@
+html, body {
+  height: 100%;
+  min-height: 100%; }
+
+.mfo-component, .mfo-component--tl, .mfo-component--tr, .mfo-component--bl, .mfo-component--br {
+  bottom: 0;
+  padding: 23px;
+  padding-left: 15px;
+  pointer-events: none;
+  position: fixed;
+  white-space: nowrap;
+  z-index: 21;
+  will-change: top,left; }
+
+.mfo-component--tl {
+  left: 0;
+  top: 0; }
+
+.mfo-component--tr {
+  right: 0;
+  top: 0; }
+
+.mfo-component--bl {
+  left: 0;
+  bottom: 0; }
+
+.mfo-component--br {
+  right: 0;
+  bottom: 0; }
+
+.mfo-component__main:hover {
+  background: rgba(0, 0, 0, 0.1); }
+
+.mfo-component__button {
+  background-color: #db4437;
+  height: 56px;
+  position: relative;
+  width: 56px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  box-sizing: content-box;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  pointer-events: auto;
+  position: relative;
+  -webkit-user-drag: none;
+  -webkit-transform: scale(1) rotate(360deg);
+  transform: scale(1) rotate(360deg);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
+  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1);
+  font-weight: bold;
+  color: #f1f1f1; }
+
+.mfo-component__main-icon {
+  position: absolute; }
+
+/*# sourceMappingURL=style.css.map */
