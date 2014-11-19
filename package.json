@@ -1,0 +1,20 @@
+{
+  "name": "material-button",
+  "version": "0.0.1",
+  "description": "'html component for button à la google inbox'",
+  "main": "index.html",
+  "scripts": {
+    "test": "grunt jasmine"
+  },
+  "keywords": [
+    "component",
+    "material",
+    "design",
+    "css"
+  ],
+  "author": "Nobita",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
