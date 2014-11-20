@@ -22,7 +22,9 @@
  * #LABELS
  * Wrappers.............Wrapping and constraining elements.
  *
- * COMPONENTS
+ * #DEVELOPMENT
+ * In development........These styles are in development and not yet finalised
+ * Debug styles..........helper styles for development.
  */
 
 /*------------------------------------*\
@@ -228,9 +230,13 @@ html, body{
 } 
 
 
-// testing styles ---------------
-// these styles need to be refactored before going to the definitive declarations above
-
+/*------------------------------------*\
+    #DEVELOPMENT | In development
+\*------------------------------------*/
+/**
+ * These are the labels associated to each button.
+ * They are exposed only when hovering the realted button.
+ */
 article{
   position: absolute;
   height: 100%;

@@ -1,6 +1,6 @@
 {
   "name": "material-button",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "'html component for button à la google inbox'",
   "main": "index.html",
   "scripts": {
