@@ -35,16 +35,47 @@
       </div>
     </div>
 
-    <div class="mfo-component--bl">
+    <div class="mfo-component--bl" id="hoverer2">
+
+      <article id="hoverer"> </article>
+
       <div class="mfo-component__wrap">
         <button href="" class="mfo-component__button">
           <i class="mfo-component__main-icon--resting ion-plus-round"></i>
           <i class="mfo-component__main-icon--active ion-edit"></i>
-        </button>    
+        </button>   
+        <ul class="mfo-component__list">
+          <li>
+            <button href="" class="mfo-component__button">
+              <i class="mfo-component__main-icon ion-plus-round"></i>
+              <i class="mfo-component__main-icon--active ion-edit"></i>
+            </button>             
+          </li>
+          <li>
+            <button href="" class="mfo-component__button">
+              <i class="mfo-component__main-icon ion-plus-round"></i>
+              <i class="mfo-component__main-icon--active ion-edit"></i>
+            </button>             
+          </li>
+        </ul>
       </div>
     </div>
 
     <div class="mfo-component--br">
+      <div class="mfo-component__buttons">
+        <div class="mfo-component__step">
+          <button href="" class="mfo-component__button">
+            <i class="mfo-component__main-icon ion-plus-round"></i>
+            <i class="mfo-component__main-icon--active ion-edit"></i>
+          </button>  
+        </div>
+        <div class="mfo-component__step">
+          <button href="" class="mfo-component__button">
+            <i class="mfo-component__main-icon ion-plus-round"></i>
+            <i class="mfo-component__main-icon--active ion-edit"></i>
+          </button>  
+        </div>        
+      </div>
       <div class="mfo-component__wrap">
         <button href="" class="mfo-component__button">
           <i class="mfo-component__main-icon ion-plus-round"></i>
@@ -52,5 +83,14 @@
         </button>    
       </div>
     </div>    
+
+    <script>
+
+    var hvr = document.getElementById('hoverer');
+    hvr.addEventListener('mouseover', function() {
+      console.log('msg')
+    });
+
+    </script>
   </body>
 </html>

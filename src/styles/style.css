@@ -4,9 +4,7 @@ html, body {
 
 .mfo-component, .mfo-component--tl, .mfo-component--tr, .mfo-component--bl, .mfo-component--br {
   bottom: 0;
-  padding: 23px;
-  padding-left: 15px;
-  pointer-events: none;
+  padding: 25px;
   position: fixed;
   white-space: nowrap;
   z-index: 21;
@@ -32,7 +30,7 @@ html, body {
   background: rgba(0, 0, 0, 0.1); }
 
 .mfo-component__button {
-  background-color: #db4437;
+  background-color: #CF432A;
   height: 56px;
   position: relative;
   width: 56px;
@@ -55,5 +53,36 @@ html, body {
 
 .mfo-component__main-icon {
   position: absolute; }
+
+.mfo-component__list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .mfo-component__list li {
+    display: block;
+    position: absolute;
+    top: 25px; }
+
+.mfo-component .mfo-component__list li, .mfo-component--tl .mfo-component__list li, .mfo-component--tr .mfo-component__list li, .mfo-component--bl .mfo-component__list li, .mfo-component--br .mfo-component__list li {
+  opacity: 0;
+  transition: all 1s; }
+.mfo-component:hover .mfo-component__list li, .mfo-component--tl:hover .mfo-component__list li, .mfo-component--tr:hover .mfo-component__list li, .mfo-component--bl:hover .mfo-component__list li, .mfo-component--br:hover .mfo-component__list li {
+  opacity: 1; }
+  .mfo-component:hover .mfo-component__list li:nth-child(1), .mfo-component--tl:hover .mfo-component__list li:nth-child(1), .mfo-component--tr:hover .mfo-component__list li:nth-child(1), .mfo-component--bl:hover .mfo-component__list li:nth-child(1), .mfo-component--br:hover .mfo-component__list li:nth-child(1) {
+    -webkit-transform: translateY(-70px); }
+  .mfo-component:hover .mfo-component__list li:nth-child(2), .mfo-component--tl:hover .mfo-component__list li:nth-child(2), .mfo-component--tr:hover .mfo-component__list li:nth-child(2), .mfo-component--bl:hover .mfo-component__list li:nth-child(2), .mfo-component--br:hover .mfo-component__list li:nth-child(2) {
+    -webkit-transform: translateY(-140px); }
+
+article {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: all 1s;
+  top: 0; }
+
+.mfo-component:hover article, .mfo-component--tl:hover article, .mfo-component--tr:hover article, .mfo-component--bl:hover article, .mfo-component--br:hover article {
+  top: -140px;
+  height: 140px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,9 @@
+$main-color: #CF432A;
+
 $delay-staggering-inflate: 0.1s;
+
+// the distance of the main button from the corner of the screen
+$border-margin: 25px;
 
 html, body{
   height: 100%;
@@ -6,9 +11,8 @@ html, body{
 }
 .mfo-component{
   bottom: 0;
-  padding: 23px;
-  padding-left: 15px;
-  pointer-events: none;
+  padding: $border-margin;
+  //pointer-events: none;
   position: fixed;
   white-space: nowrap;
   z-index: 21;
@@ -34,7 +38,7 @@ html, body{
   background: rgba(0, 0, 0, 0.1);
 }     
 .mfo-component__button{
-  background-color: #db4437;
+  background-color: $main-color;
   height: 56px;
   position: relative;
   width: 56px;
@@ -58,3 +62,54 @@ html, body{
 .mfo-component__main-icon{
   position: absolute;
 }
+
+.mfo-component__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li{
+    display: block;
+    position: absolute;
+    top: $border-margin;
+  }
+}
+
+
+
+// testing styles ---------------
+// these styles need to be refactored before going to the definitive declarations above
+.mfo-component{
+  .mfo-component__list li{
+    opacity: 0;
+    transition: all 1s;
+  }
+  &:hover{
+    .mfo-component__list{
+      li{
+        opacity: 1;
+        &:nth-child(1){
+          -webkit-transform: translateY(-70px);
+        }
+        &:nth-child(2){
+          -webkit-transform: translateY(-140px);
+        }    
+      }
+    }
+  }
+} 
+
+article{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: all 1s;
+  top: 0;
+}
+.mfo-component:hover article{
+  top: -140px;
+  height: 140px;
+}
+
+
+
