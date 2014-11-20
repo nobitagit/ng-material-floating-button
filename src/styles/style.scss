@@ -1,30 +1,133 @@
+/**
+ * CONTENTS
+ *
+ * #Introduction........Naming conventions used throughout the code.
+ *
+ * #SETTINGS
+ * Variables............Globally-available variables and config.
+ *
+ * #TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * #GENERIC
+ * Demo styles..........Styles for demo only (consider removing these).
+ *
+ * #BASE
+ * Raw styles.............the very basic component wrapper.
+ * Modifiers..............the basic styles dependant on component placement.
+ *
+ * #BUTTONS
+ * Wrappers.............Wrapping and constraining elements.
+
+ * #LABELS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ */
+
+/*------------------------------------*\
+    #Introduction 
+\*------------------------------------*/
+/**
+ * The code AND the comments use naming conventions to refer to each part of 
+ * the UI put in place by this component. If you see that somewhere they are
+ * not followed please consider a Pull Request. The naming conventions are:
+ *
+ * "Component" : the widget itself as a whole. This is the last time it will be
+ *               called anything different than "component". So, stay away from 
+ *               "widget", "button" or anything else when referring to the 
+ *               Component in general.
+ * 
+ * "Main Button" : The button that is always in view. Hovering or clicking on it
+ *                 will reveal the child buttons.
+ *
+ * "Child buttons" : If you've read the previous point you know what they are.
+ *                   Did you read the previous point? :)
+ *  
+ *
+
+/*------------------------------------*\
+    #SETTINGS | Variables
+\*------------------------------------*/
+
+/* COLORS ----------------------------*/
+
+// the main/primary color
 $main-color: #CF432A;
 // aka the white text
 $bright-text: rgba(255, 255, 255, 0.8);
 
+/* SPEEDS ----------------------------*/
+
+// the speed of the inflation of each button after hovering on the main button
 $delay-staggering-inflate: 0.1s;
-
-// the distance of the main button from the corner of the screen
-$border-margin: 25px;
-
+// when hovering on the main button the child buttons slide into view
 $slide-speed: .5s;
 
+/* SIZES -----------------------------*/
+
+// the distance of the main button from the closest corners of the screen
+$border-distance: 25px;
+
+/* OTHER VARIABLES -------------------*/
+
+// how many child buttons does the component have
 $number-of-child-buttons: 4;
+
+
+
+/*------------------------------------*\
+    #GENERIC | demo styles
+\*------------------------------------*/
 
 html, body{
   height: 100%;
   min-height: 100%;
   font-family: arial;  
 }
+
+
+/*------------------------------------*\
+    #BASE | Raw styles
+\*------------------------------------*/
+/**
+ * The very core styling of the button.
+ * These styles are shared by every instance of the button.
+ * Styles palced here should NOT care about placement in the screen,
+ * options chosen by the user or state of the button.
+ */
 .mfo-component{
+  box-sizing: border-box; // A better box-sizing 
   bottom: 0;
-  padding: $border-margin;
+  margin: $border-distance;
   //pointer-events: none;
   position: fixed;
   white-space: nowrap;
   z-index: 30;
   will-change: top,left;
 }
+
+// make sure that everything inside this component 
+// inherits the same box-sizing
+.mfo-component{
+  *, *:before, *:after {
+    box-sizing: inherit;
+  } 
+}
+
+
+/*------------------------------------*\
+    #BASE | Modifiers
+\*------------------------------------*/
+/**
+ * These styles depends on the placement of the button.
+ * Styles can be:
+ * 1. Top-left:  modified by the " --tl " suffix.
+ * 2. Top-right: modified by the " --tr " suffix.
+ * 3. Bottom-left:  modified by the " --bl " suffix.
+ * 4. Bottom-right: modified by the " --br " suffix.
+ */
+
 .mfo-component--tl{
   @extend .mfo-component;
   left: 0; top: 0;
@@ -41,9 +144,12 @@ html, body{
   @extend .mfo-component;  
   right: 0; bottom: 0;
 } 
-.mfo-component__main:hover{
-  background: rgba(0, 0, 0, 0.1);
-}     
+
+
+/*------------------------------------*\
+    #BUTTONS | Base
+\*------------------------------------*/  
+
 .mfo-component__button{
   background-color: $main-color;
   height: 56px;
@@ -66,6 +172,23 @@ html, body{
   font-weight: bold; 
   color: #f1f1f1;       
 }
+
+// this is the unordered list for the list items that contain the child buttons
+.mfo-component__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li{
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+}
+
+/*------------------------------------*\
+    #BUTTONS | Modifiers
+\*------------------------------------*/  
+
 .mfo-component__button--parent{
   @extend .mfo-component__button;
   z-index: 20;
@@ -78,17 +201,31 @@ html, body{
   position: absolute;
 }
 
-.mfo-component__list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li{
-    display: block;
-    position: absolute;
-    top: $border-margin;
-  }
-}
 
+/*------------------------------------*\
+    #LABELS
+\*------------------------------------*/
+
+/**
+ * These are the labels associated to each button.
+ * They are exposed only when hovering the realted button.
+ */
+
+.mfo-component__label{
+  background: rgba(0,0,0, .4);
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: $bright-text;
+  font-size: 13px;
+}
+.mfo-component__button + .mfo-component__label{
+  opacity: 0;
+  transition: all .5s; // the label disappears at this speed
+}
+.mfo-component__button:hover + .mfo-component__label{
+  opacity: 1;
+  transition: all .3s;  // the label appears at this speed
+} 
 
 
 // testing styles ---------------
@@ -105,26 +242,10 @@ article{
 }
 .mfo-component:hover article{
   top: -140px;
-  height: 140px;
+  height: 70px * $number-of-child-buttons;
   width: 100%;  
 }
 
-.mfo-component__label{
-  background: rgba(0,0,0, .4);
-  padding: 4px 10px;
-  border-radius: 3px;
-  color: $bright-text;
-  font-size: 13px;
-}
-
-.mfo-component__button + .mfo-component__label{
-  opacity: 0;
-  transition: all .5s; // this is the speed the label disappears  
-}
-.mfo-component__button:hover + .mfo-component__label{
-  opacity: 1;
-  transition: all .3s;  // this is the speed the label appears 
-} 
 
 
 

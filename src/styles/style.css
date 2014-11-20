@@ -1,16 +1,97 @@
+/**
+ * CONTENTS
+ *
+ * #Introduction........Naming conventions used throughout the code.
+ *
+ * #SETTINGS
+ * Variables............Globally-available variables and config.
+ *
+ * #TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * #GENERIC
+ * Demo styles..........Styles for demo only (consider removing these).
+ *
+ * #BASE
+ * Raw styles.............the very basic component wrapper.
+ * Modifiers..............the basic styles dependant on component placement.
+ *
+ * #BUTTONS
+ * Wrappers.............Wrapping and constraining elements.
+
+ * #LABELS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ */
+/*------------------------------------*\
+    #Introduction 
+\*------------------------------------*/
+/**
+ * The code AND the comments use naming conventions to refer to each part of 
+ * the UI put in place by this component. If you see that somewhere they are
+ * not followed please consider a Pull Request. The naming conventions are:
+ *
+ * "Component" : the widget itself as a whole. This is the last time it will be
+ *               called anything different than "component". So, stay away from 
+ *               "widget", "button" or anything else when referring to the 
+ *               Component in general.
+ * 
+ * "Main Button" : The button that is always in view. Hovering or clicking on it
+ *                 will reveal the child buttons.
+ *
+ * "Child buttons" : If you've read the previous point you know what they are.
+ *                   Did you read the previous point? :)
+ *  
+ *
+
+/*------------------------------------*\
+    #SETTINGS | Variables
+\*------------------------------------*/
+/* COLORS ----------------------------*/
+/* SPEEDS ----------------------------*/
+/* SIZES -----------------------------*/
+/* OTHER VARIABLES -------------------*/
+/*------------------------------------*\
+    #GENERIC | demo styles
+\*------------------------------------*/
 html, body {
   height: 100%;
   min-height: 100%;
   font-family: arial; }
 
+/*------------------------------------*\
+    #BASE | Raw styles
+\*------------------------------------*/
+/**
+ * The very core styling of the button.
+ * These styles are shared by every instance of the button.
+ * Styles palced here should NOT care about placement in the screen,
+ * options chosen by the user or state of the button.
+ */
 .mfo-component, .mfo-component--tl, .mfo-component--tr, .mfo-component--bl, .mfo-component--br {
+  box-sizing: border-box;
   bottom: 0;
-  padding: 25px;
+  margin: 25px;
   position: fixed;
   white-space: nowrap;
   z-index: 30;
   will-change: top,left; }
 
+.mfo-component *, .mfo-component--tl *, .mfo-component--tr *, .mfo-component--bl *, .mfo-component--br *, .mfo-component *:before, .mfo-component--tl *:before, .mfo-component--tr *:before, .mfo-component--bl *:before, .mfo-component--br *:before, .mfo-component *:after, .mfo-component--tl *:after, .mfo-component--tr *:after, .mfo-component--bl *:after, .mfo-component--br *:after {
+  box-sizing: inherit; }
+
+/*------------------------------------*\
+    #BASE | Modifiers
+\*------------------------------------*/
+/**
+ * These styles depends on the placement of the button.
+ * Styles can be:
+ * 1. Top-left:  modified by the " --tl " suffix.
+ * 2. Top-right: modified by the " --tr " suffix.
+ * 3. Bottom-left:  modified by the " --bl " suffix.
+ * 4. Bottom-right: modified by the " --br " suffix.
+ */
 .mfo-component--tl {
   left: 0;
   top: 0; }
@@ -27,9 +108,9 @@ html, body {
   right: 0;
   bottom: 0; }
 
-.mfo-component__main:hover {
-  background: rgba(0, 0, 0, 0.1); }
-
+/*------------------------------------*\
+    #BUTTONS | Base
+\*------------------------------------*/
 .mfo-component__button, .mfo-component__button--parent, .mfo-component__button--child {
   background-color: #CF432A;
   height: 56px;
@@ -52,12 +133,6 @@ html, body {
   font-weight: bold;
   color: #f1f1f1; }
 
-.mfo-component__button--parent {
-  z-index: 20; }
-
-.mfo-component__main-icon {
-  position: absolute; }
-
 .mfo-component__list {
   list-style: none;
   margin: 0;
@@ -65,22 +140,24 @@ html, body {
   .mfo-component__list li {
     display: block;
     position: absolute;
-    top: 25px; }
+    top: 0; }
 
-article {
-  position: absolute;
-  height: 100%;
-  width: 56px;
-  background: black;
-  transition: all 1s;
-  top: 0;
-  opacity: 0.1; }
+/*------------------------------------*\
+    #BUTTONS | Modifiers
+\*------------------------------------*/
+.mfo-component__button--parent {
+  z-index: 20; }
 
-.mfo-component:hover article, .mfo-component--tl:hover article, .mfo-component--tr:hover article, .mfo-component--bl:hover article, .mfo-component--br:hover article {
-  top: -140px;
-  height: 140px;
-  width: 100%; }
+.mfo-component__main-icon {
+  position: absolute; }
 
+/*------------------------------------*\
+    #LABELS
+\*------------------------------------*/
+/**
+ * These are the labels associated to each button.
+ * They are exposed only when hovering the realted button.
+ */
 .mfo-component__label {
   background: rgba(0, 0, 0, 0.4);
   padding: 4px 10px;
@@ -95,6 +172,20 @@ article {
 .mfo-component__button:hover + .mfo-component__label, .mfo-component__button--parent:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
   opacity: 1;
   transition: all .3s; }
+
+article {
+  position: absolute;
+  height: 100%;
+  width: 56px;
+  background: black;
+  transition: all 1s;
+  top: 0;
+  opacity: 0.1; }
+
+.mfo-component:hover article, .mfo-component--tl:hover article, .mfo-component--tr:hover article, .mfo-component--bl:hover article, .mfo-component--br:hover article {
+  top: -140px;
+  height: 280px;
+  width: 100%; }
 
 .mfo-component .mfo-component__list li, .mfo-component--tl .mfo-component__list li, .mfo-component--tr .mfo-component__list li, .mfo-component--bl .mfo-component__list li, .mfo-component--br .mfo-component__list li {
   opacity: 0;
