@@ -15,16 +15,21 @@
  * #BASE
  * Raw styles.............the very basic component wrapper.
  * Modifiers..............the basic styles dependant on component placement.
+ * Debuggers..............the basic styles dependant on component placement.
  *
  * #BUTTONS
- * Wrappers.............Wrapping and constraining elements.
-
+ * Base..................Wrapping and constraining every button.
+ * Modifiers.............Styles that depends on state and settings.
+ * Debuggers.............Styles for development.
+ *
  * #LABELS
- * Wrappers.............Wrapping and constraining elements.
+ * Base..................Wrapping and constraining every label.
+ * Modifiers.............styles that depends on state and settings.
+ * Debuggers.............Styles for development.
  *
  * #DEVELOPMENT
  * In development........These styles are in development and not yet finalised
- * Debug styles..........helper styles for development.
+ * Debuggers..........helper styles and flags for development.
  */
 
 /*------------------------------------*\
@@ -40,13 +45,13 @@
  *               "widget", "button" or anything else when referring to the 
  *               Component in general.
  * 
- * "Main Button" : The button that is always in view. Hovering or clicking on it
+ * "Main Button" : the button that is always in view. Hovering or clicking on it
  *                 will reveal the child buttons.
  *
- * "Child buttons" : If you've read the previous point you know what they are.
+ * "Child buttons" : if you've read the previous point you know what they are.
  *                   Did you read the previous point? :)
  *  
- *
+ * "Label(s)" : the tooltip that fades in when hovering over a button.
 
 /*------------------------------------*\
     #SETTINGS | Variables
@@ -65,6 +70,10 @@ $bright-text: rgba(255, 255, 255, 0.8);
 $delay-staggering-inflate: 0.1s;
 // when hovering on the main button the child buttons slide into view
 $slide-speed: .5s;
+// the labels disappear at this speed on mouse out
+$label-hover-off: .5s;
+// the labels appear at this speed on mouse over
+$label-hover-on: .3s;
 
 /* SIZES -----------------------------*/
 
@@ -92,12 +101,14 @@ html, body{
 /*------------------------------------*\
     #BASE | Raw styles
 \*------------------------------------*/
+
 /**
  * The very core styling of the button.
  * These styles are shared by every instance of the button.
  * Styles palced here should NOT care about placement in the screen,
  * options chosen by the user or state of the button.
  */
+
 .mfo-component{
   box-sizing: border-box; // A better box-sizing 
   bottom: 0;
@@ -160,7 +171,6 @@ html, body{
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
-  box-sizing: content-box;
   cursor: pointer;
   outline: none;
   padding: 0;
@@ -175,12 +185,16 @@ html, body{
   color: #f1f1f1;       
 }
 
-// this is the unordered list for the list items that contain the child buttons
+/**
+ * This is the unordered list for the list items that contain 
+ * the child buttons.
+ *
+ */ 
 .mfo-component__list{
   list-style: none;
   margin: 0;
   padding: 0;
-  li{
+  &>li{
     display: block;
     position: absolute;
     top: 0;
@@ -199,6 +213,9 @@ html, body{
   @extend .mfo-component__button;
 }
 
+/**
+ * This is the basic styles for all the icons inside the main button
+ */ 
 .mfo-component__main-icon{
   position: absolute;
 }
@@ -222,11 +239,11 @@ html, body{
 }
 .mfo-component__button + .mfo-component__label{
   opacity: 0;
-  transition: all .5s; // the label disappears at this speed
+  transition: all $label-hover-off; // the label disappears at this speed
 }
 .mfo-component__button:hover + .mfo-component__label{
   opacity: 1;
-  transition: all .3s;  // the label appears at this speed
+  transition: all $label-hover-on;  // the label appears at this speed
 } 
 
 
@@ -234,10 +251,19 @@ html, body{
     #DEVELOPMENT | In development
 \*------------------------------------*/
 /**
- * These are the labels associated to each button.
- * They are exposed only when hovering the realted button.
+ * This part is where unfinished code should stay.
+ * When a feature is ready(sh) move these styles to their proper place.
  */
-article{
+
+
+/**
+ * This div is never shown but it's vital for slide-in buttons
+ * It takes the height of the whole Component when it is in use
+ * and ensures that the menu is easily scrolled without flickering.
+ * You can see its usage by toggling the slide-in dev flag 
+ * (see #DEVELOPMENT | Debuggers)
+ */
+.mfo-component__hover-helper{
   position: absolute;
   height: 100%;
   width: 56px;
@@ -246,14 +272,30 @@ article{
   top: 0;
   opacity: 0.1;
 }
-.mfo-component:hover article{
-  top: -140px;
+.mfo-component:hover .mfo-component__hover-helper{
+  top: -70px * $number-of-child-buttons;
   height: 70px * $number-of-child-buttons;
   width: 100%;  
 }
 
 
 
+/*------------------------------------*\
+    #DEVELOPMENT | Debuggers
+\*------------------------------------*/
+
+/**
+ * These are mainly helpers for development. They do not have to end up
+ * in production but it's handy to keep them when developing.
+ */
+
+
+/**
+ * Apply this class to the html tag when developing the slide-in button
+ */
+html.slide-in{
+  border-top: 5px solid teal;
+}
 
 .mfo-component{
   .mfo-component__list li{

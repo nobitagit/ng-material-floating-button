@@ -15,16 +15,21 @@
  * #BASE
  * Raw styles.............the very basic component wrapper.
  * Modifiers..............the basic styles dependant on component placement.
+ * Debuggers..............the basic styles dependant on component placement.
  *
  * #BUTTONS
- * Wrappers.............Wrapping and constraining elements.
-
+ * Base..................Wrapping and constraining every button.
+ * Modifiers.............Styles that depends on state and settings.
+ * Debuggers.............Styles for development.
+ *
  * #LABELS
- * Wrappers.............Wrapping and constraining elements.
+ * Base..................Wrapping and constraining every label.
+ * Modifiers.............styles that depends on state and settings.
+ * Debuggers.............Styles for development.
  *
  * #DEVELOPMENT
  * In development........These styles are in development and not yet finalised
- * Debug styles..........helper styles for development.
+ * Debuggers..........helper styles and flags for development.
  */
 /*------------------------------------*\
     #Introduction 
@@ -39,13 +44,13 @@
  *               "widget", "button" or anything else when referring to the 
  *               Component in general.
  * 
- * "Main Button" : The button that is always in view. Hovering or clicking on it
+ * "Main Button" : the button that is always in view. Hovering or clicking on it
  *                 will reveal the child buttons.
  *
- * "Child buttons" : If you've read the previous point you know what they are.
+ * "Child buttons" : if you've read the previous point you know what they are.
  *                   Did you read the previous point? :)
  *  
- *
+ * "Label(s)" : the tooltip that fades in when hovering over a button.
 
 /*------------------------------------*\
     #SETTINGS | Variables
@@ -121,7 +126,6 @@ html, body {
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
-  box-sizing: content-box;
   cursor: pointer;
   outline: none;
   padding: 0;
@@ -135,11 +139,16 @@ html, body {
   font-weight: bold;
   color: #f1f1f1; }
 
+/**
+ * This is the unordered list for the list items that contain 
+ * the child buttons.
+ *
+ */
 .mfo-component__list {
   list-style: none;
   margin: 0;
   padding: 0; }
-  .mfo-component__list li {
+  .mfo-component__list > li {
     display: block;
     position: absolute;
     top: 0; }
@@ -150,6 +159,9 @@ html, body {
 .mfo-component__button--parent {
   z-index: 20; }
 
+/**
+ * This is the basic styles for all the icons inside the main button
+ */
 .mfo-component__main-icon {
   position: absolute; }
 
@@ -169,20 +181,27 @@ html, body {
 
 .mfo-component__button + .mfo-component__label, .mfo-component__button--parent + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
   opacity: 0;
-  transition: all .5s; }
+  transition: all 0.5s; }
 
 .mfo-component__button:hover + .mfo-component__label, .mfo-component__button--parent:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
   opacity: 1;
-  transition: all .3s; }
+  transition: all 0.3s; }
 
 /*------------------------------------*\
     #DEVELOPMENT | In development
 \*------------------------------------*/
 /**
- * These are the labels associated to each button.
- * They are exposed only when hovering the realted button.
+ * This part is where unfinished code should stay.
+ * When a feature is ready(sh) move these styles to their proper place.
  */
-article {
+/**
+ * This div is never shown but it's vital for slide-in buttons
+ * It takes the height of the whole Component when it is in use
+ * and ensures that the menu is easily scrolled without flickering.
+ * You can see its usage by toggling the slide-in dev flag 
+ * (see #DEVELOPMENT | Debuggers)
+ */
+.mfo-component__hover-helper {
   position: absolute;
   height: 100%;
   width: 56px;
@@ -191,10 +210,23 @@ article {
   top: 0;
   opacity: 0.1; }
 
-.mfo-component:hover article, .mfo-component--tl:hover article, .mfo-component--tr:hover article, .mfo-component--bl:hover article, .mfo-component--br:hover article {
-  top: -140px;
+.mfo-component:hover .mfo-component__hover-helper, .mfo-component--tl:hover .mfo-component__hover-helper, .mfo-component--tr:hover .mfo-component__hover-helper, .mfo-component--bl:hover .mfo-component__hover-helper, .mfo-component--br:hover .mfo-component__hover-helper {
+  top: -280px;
   height: 280px;
   width: 100%; }
+
+/*------------------------------------*\
+    #DEVELOPMENT | Debuggers
+\*------------------------------------*/
+/**
+ * These are mainly helpers for development. They do not have to end up
+ * in production but it's handy to keep them when developing.
+ */
+/**
+ * Apply this class to the html tag when developing the slide-in button
+ */
+html.slide-in {
+  border-top: 5px solid teal; }
 
 .mfo-component .mfo-component__list li, .mfo-component--tl .mfo-component__list li, .mfo-component--tr .mfo-component__list li, .mfo-component--bl .mfo-component__list li, .mfo-component--br .mfo-component__list li {
   opacity: 0;
