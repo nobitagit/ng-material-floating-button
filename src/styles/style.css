@@ -1,13 +1,14 @@
 html, body {
   height: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+  font-family: arial; }
 
 .mfo-component, .mfo-component--tl, .mfo-component--tr, .mfo-component--bl, .mfo-component--br {
   bottom: 0;
   padding: 25px;
   position: fixed;
   white-space: nowrap;
-  z-index: 21;
+  z-index: 30;
   will-change: top,left; }
 
 .mfo-component--tl {
@@ -29,7 +30,7 @@ html, body {
 .mfo-component__main:hover {
   background: rgba(0, 0, 0, 0.1); }
 
-.mfo-component__button {
+.mfo-component__button, .mfo-component__button--parent, .mfo-component__button--child {
   background-color: #CF432A;
   height: 56px;
   position: relative;
@@ -51,6 +52,9 @@ html, body {
   font-weight: bold;
   color: #f1f1f1; }
 
+.mfo-component__button--parent {
+  z-index: 20; }
+
 .mfo-component__main-icon {
   position: absolute; }
 
@@ -65,7 +69,7 @@ html, body {
 
 .mfo-component .mfo-component__list li, .mfo-component--tl .mfo-component__list li, .mfo-component--tr .mfo-component__list li, .mfo-component--bl .mfo-component__list li, .mfo-component--br .mfo-component__list li {
   opacity: 0;
-  transition: all 1s; }
+  transition: all 0.5s; }
 .mfo-component:hover .mfo-component__list li, .mfo-component--tl:hover .mfo-component__list li, .mfo-component--tr:hover .mfo-component__list li, .mfo-component--bl:hover .mfo-component__list li, .mfo-component--br:hover .mfo-component__list li {
   opacity: 1; }
   .mfo-component:hover .mfo-component__list li:nth-child(1), .mfo-component--tl:hover .mfo-component__list li:nth-child(1), .mfo-component--tr:hover .mfo-component__list li:nth-child(1), .mfo-component--bl:hover .mfo-component__list li:nth-child(1), .mfo-component--br:hover .mfo-component__list li:nth-child(1) {
@@ -75,14 +79,31 @@ html, body {
 
 article {
   position: absolute;
-  width: 100%;
   height: 100%;
+  width: 56px;
   background: black;
   transition: all 1s;
-  top: 0; }
+  top: 0;
+  opacity: 0.1; }
 
 .mfo-component:hover article, .mfo-component--tl:hover article, .mfo-component--tr:hover article, .mfo-component--bl:hover article, .mfo-component--br:hover article {
   top: -140px;
-  height: 140px; }
+  height: 140px;
+  width: 100%; }
+
+.mfo-component__label {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px; }
+
+.mfo-component__button + .mfo-component__label, .mfo-component__button--parent + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
+  opacity: 0;
+  transition: all .5s; }
+
+.mfo-component__button:hover + .mfo-component__label, .mfo-component__button--parent:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
+  opacity: 1;
+  transition: all .3s; }
 
 /*# sourceMappingURL=style.css.map */
