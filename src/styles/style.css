@@ -67,6 +67,16 @@ html, body {
   min-height: 100%;
   font-family: arial; }
 
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.cf:after {
+  clear: both; }
+
 /*------------------------------------*\
     #BASE | Raw styles
 \*------------------------------------*/
@@ -166,7 +176,7 @@ html, body {
   position: absolute; }
 
 /*------------------------------------*\
-    #LABELS
+    #LABELS | base
 \*------------------------------------*/
 /**
  * These are the labels associated to each button.
@@ -186,6 +196,13 @@ html, body {
 .mfo-component__button:hover + .mfo-component__label, .mfo-component__button--parent:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
   opacity: 1;
   transition: all 0.3s; }
+
+/*------------------------------------*\
+    #LABELS | Modifiers
+\*------------------------------------*/
+.mfo-component--br .mfo-component__label {
+  position: absolute;
+  right: 70px; }
 
 /*------------------------------------*\
     #DEVELOPMENT | In development
