@@ -9,6 +9,8 @@ $border-margin: 25px;
 
 $slide-speed: .5s;
 
+$number-of-child-buttons: 4;
+
 html, body{
   height: 100%;
   min-height: 100%;
@@ -91,25 +93,6 @@ html, body{
 
 // testing styles ---------------
 // these styles need to be refactored before going to the definitive declarations above
-.mfo-component{
-  .mfo-component__list li{
-    opacity: 0;
-    transition: all $slide-speed;
-  }
-  &:hover{
-    .mfo-component__list{
-      li{
-        opacity: 1;
-        &:nth-child(1){
-          -webkit-transform: translateY(-70px);
-        }
-        &:nth-child(2){
-          -webkit-transform: translateY(-140px);
-        }    
-      }
-    }
-  }
-} 
 
 article{
   position: absolute;
@@ -143,5 +126,24 @@ article{
   transition: all .3s;  // this is the speed the label appears 
 } 
 
+
+
+.mfo-component{
+  .mfo-component__list li{
+    opacity: 0;
+    transition: all $slide-speed;
+  }
+  &:hover{
+    .mfo-component__list{
+      li{
+        opacity: 1;         
+      }
+      @for $i from 1 through $number-of-child-buttons {
+        $distance: -70px * $i;
+        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); }          
+      }                
+    }
+  }
+}
 
 

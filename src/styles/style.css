@@ -67,16 +67,6 @@ html, body {
     position: absolute;
     top: 25px; }
 
-.mfo-component .mfo-component__list li, .mfo-component--tl .mfo-component__list li, .mfo-component--tr .mfo-component__list li, .mfo-component--bl .mfo-component__list li, .mfo-component--br .mfo-component__list li {
-  opacity: 0;
-  transition: all 0.5s; }
-.mfo-component:hover .mfo-component__list li, .mfo-component--tl:hover .mfo-component__list li, .mfo-component--tr:hover .mfo-component__list li, .mfo-component--bl:hover .mfo-component__list li, .mfo-component--br:hover .mfo-component__list li {
-  opacity: 1; }
-  .mfo-component:hover .mfo-component__list li:nth-child(1), .mfo-component--tl:hover .mfo-component__list li:nth-child(1), .mfo-component--tr:hover .mfo-component__list li:nth-child(1), .mfo-component--bl:hover .mfo-component__list li:nth-child(1), .mfo-component--br:hover .mfo-component__list li:nth-child(1) {
-    -webkit-transform: translateY(-70px); }
-  .mfo-component:hover .mfo-component__list li:nth-child(2), .mfo-component--tl:hover .mfo-component__list li:nth-child(2), .mfo-component--tr:hover .mfo-component__list li:nth-child(2), .mfo-component--bl:hover .mfo-component__list li:nth-child(2), .mfo-component--br:hover .mfo-component__list li:nth-child(2) {
-    -webkit-transform: translateY(-140px); }
-
 article {
   position: absolute;
   height: 100%;
@@ -105,5 +95,19 @@ article {
 .mfo-component__button:hover + .mfo-component__label, .mfo-component__button--parent:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
   opacity: 1;
   transition: all .3s; }
+
+.mfo-component .mfo-component__list li, .mfo-component--tl .mfo-component__list li, .mfo-component--tr .mfo-component__list li, .mfo-component--bl .mfo-component__list li, .mfo-component--br .mfo-component__list li {
+  opacity: 0;
+  transition: all 0.5s; }
+.mfo-component:hover .mfo-component__list li, .mfo-component--tl:hover .mfo-component__list li, .mfo-component--tr:hover .mfo-component__list li, .mfo-component--bl:hover .mfo-component__list li, .mfo-component--br:hover .mfo-component__list li {
+  opacity: 1; }
+.mfo-component:hover .mfo-component__list li:nth-child(1), .mfo-component--tl:hover .mfo-component__list li:nth-child(1), .mfo-component--tr:hover .mfo-component__list li:nth-child(1), .mfo-component--bl:hover .mfo-component__list li:nth-child(1), .mfo-component--br:hover .mfo-component__list li:nth-child(1) {
+  -webkit-transform: translateY(-70px); }
+.mfo-component:hover .mfo-component__list li:nth-child(2), .mfo-component--tl:hover .mfo-component__list li:nth-child(2), .mfo-component--tr:hover .mfo-component__list li:nth-child(2), .mfo-component--bl:hover .mfo-component__list li:nth-child(2), .mfo-component--br:hover .mfo-component__list li:nth-child(2) {
+  -webkit-transform: translateY(-140px); }
+.mfo-component:hover .mfo-component__list li:nth-child(3), .mfo-component--tl:hover .mfo-component__list li:nth-child(3), .mfo-component--tr:hover .mfo-component__list li:nth-child(3), .mfo-component--bl:hover .mfo-component__list li:nth-child(3), .mfo-component--br:hover .mfo-component__list li:nth-child(3) {
+  -webkit-transform: translateY(-210px); }
+.mfo-component:hover .mfo-component__list li:nth-child(4), .mfo-component--tl:hover .mfo-component__list li:nth-child(4), .mfo-component--tr:hover .mfo-component__list li:nth-child(4), .mfo-component--bl:hover .mfo-component__list li:nth-child(4), .mfo-component--br:hover .mfo-component__list li:nth-child(4) {
+  -webkit-transform: translateY(-280px); }
 
 /*# sourceMappingURL=style.css.map */
