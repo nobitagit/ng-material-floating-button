@@ -76,7 +76,10 @@ $label-hover-off: .5s;
 $label-hover-on: .3s;
 
 /* SIZES -----------------------------*/
-
+// main button diameter
+$main_button_size: 56px;
+// main button diameter
+$child_button_size: 56px;
 // the distance of the main button from the closest corners of the screen
 $border-distance: 25px;
 // font-size for labels
@@ -178,9 +181,7 @@ html, body{
 
 .mfo-component__button{
   background-color: $main-color;
-  height: 56px;
   position: relative;
-  width: 56px;
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
@@ -218,12 +219,16 @@ html, body{
     #BUTTONS | Modifiers
 \*------------------------------------*/  
 
-.mfo-component__button--parent{
+.mfo-component__button--main{
   @extend .mfo-component__button;
+  height: $main_button_size;
+  width: $main_button_size;  
   z-index: 20;
 }
 .mfo-component__button--child{
   @extend .mfo-component__button;
+  height: $child_button_size;
+  width: $child_button_size;  
 }
 
 /**
@@ -256,6 +261,7 @@ html, body{
   border-radius: 3px;
   color: $bright-text;
   font-size: $labels-font-size;
+  pointer-events: none;
 }
 .mfo-component__button + .mfo-component__label{
   opacity: 0;
@@ -273,6 +279,13 @@ html, body{
   .mfo-component__label{
     position: absolute;
     right: 70px;
+    // to align the label to the center of the vertical axis we take these sizes:
+    // 1. the total button size
+    // 2. the top/bottom padding of the label itself
+    // 3. the font-size
+    // the result is the available space left out. We divide it by 2 to get the
+    // distance from the top we need to center it.
+    top: ($main_button_size - ($labels-padding-vertical * 2) - $labels-font-size ) / 2;
   }
 }
 
@@ -326,28 +339,9 @@ html.slide-in{
   border-top: 5px solid teal;
 }
 
-// for --br
-// .mfo-component__list {
-// list-style: none;
-// margin: 0;
-// padding: 0;
-// justify-content: flex-end;
-// display: flex;
-// width: 0px;
-// height: 25px;
-// position: absolute;
-// background: red;
-// top: 0;
-// }
-
-// .mfo-component__button + .mfo-component__label, .mfo-component__button--parent + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
-// /* opacity: 0; */
-// transition: all 0.5s;
-// position: absolute;
-// right: 70px;
-// }
-
-
+*{
+  border: 1px solid red;
+}
 .mfo-component{
   .mfo-component__list li{
     opacity: 0;

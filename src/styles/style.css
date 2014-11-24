@@ -128,11 +128,9 @@ html, body {
 /*------------------------------------*\
     #BUTTONS | Base
 \*------------------------------------*/
-.mfo-component__button, .mfo-component__button--parent, .mfo-component__button--child {
+.mfo-component__button, .mfo-component__button--main, .mfo-component__button--child {
   background-color: #CF432A;
-  height: 56px;
   position: relative;
-  width: 56px;
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
@@ -166,8 +164,14 @@ html, body {
 /*------------------------------------*\
     #BUTTONS | Modifiers
 \*------------------------------------*/
-.mfo-component__button--parent {
+.mfo-component__button--main {
+  height: 56px;
+  width: 56px;
   z-index: 20; }
+
+.mfo-component__button--child {
+  height: 56px;
+  width: 56px; }
 
 /**
  * This is the basic styles for all the icons inside the main button
@@ -187,13 +191,14 @@ html, body {
   padding: 4px 10px;
   border-radius: 3px;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 13px; }
+  font-size: 13px;
+  pointer-events: none; }
 
-.mfo-component__button + .mfo-component__label, .mfo-component__button--parent + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
+.mfo-component__button + .mfo-component__label, .mfo-component__button--main + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
   opacity: 0;
   transition: all 0.5s; }
 
-.mfo-component__button:hover + .mfo-component__label, .mfo-component__button--parent:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
+.mfo-component__button:hover + .mfo-component__label, .mfo-component__button--main:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
   opacity: 1;
   transition: all 0.3s; }
 
@@ -202,7 +207,8 @@ html, body {
 \*------------------------------------*/
 .mfo-component--br .mfo-component__label {
   position: absolute;
-  right: 70px; }
+  right: 70px;
+  top: 17.5px; }
 
 /*------------------------------------*\
     #DEVELOPMENT | In development
@@ -244,6 +250,9 @@ html, body {
  */
 html.slide-in {
   border-top: 5px solid teal; }
+
+* {
+  border: 1px solid red; }
 
 .mfo-component .mfo-component__list li, .mfo-component--tl .mfo-component__list li, .mfo-component--tr .mfo-component__list li, .mfo-component--bl .mfo-component__list li, .mfo-component--br .mfo-component__list li {
   opacity: 0;
