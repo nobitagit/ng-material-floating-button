@@ -20,6 +20,7 @@
  * #BUTTONS
  * Base..................Wrapping and constraining every button.
  * Modifiers.............Styles that depends on state and settings.
+ * Animations............Main animations of the component. 
  * Debuggers.............Styles for development.
  *
  * #LABELS
@@ -191,10 +192,6 @@ html, body{
   pointer-events: auto;
   position: relative;
   -webkit-user-drag: none;
-  -webkit-transform: scale(1) rotate(360deg);
-  transform: scale(1) rotate(360deg);
-  -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1);
-  transition: transform 150ms cubic-bezier(.4,0,1,1);
   font-weight: bold; 
   color: #f1f1f1;       
 }
@@ -215,6 +212,30 @@ html, body{
   }
 }
 
+/**
+ * This is the basic styles for all the icons inside the main button
+ */ 
+.mfo-component__main-icon{
+  position: absolute;
+  font-size: 18px;
+  left: 50%;
+  top: 50%;
+  margin-left: -9px;
+  margin-top: -9px;
+  -webkit-transform: scale(1) rotate(360deg);
+  transform: scale(1) rotate(360deg);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1), opacity 150ms;
+  transition: transform 150ms cubic-bezier(.4,0,1,1), opacity 150ms;  
+}
+.mfo-component:hover,
+.mfo-component__hover-helper:hover + .mfo-component__wrap{
+  .mfo-component__main-icon {
+    -webkit-transform: scale(1) rotate(0deg);    
+    transform: scale(1) rotate(0deg);    
+  }
+}
+
+
 /*------------------------------------*\
     #BUTTONS | Modifiers
 \*------------------------------------*/  
@@ -230,29 +251,76 @@ html, body{
   height: $child_button_size;
   width: $child_button_size;  
 }
-
-/**
- * This is the basic styles for all the icons inside the main button
- */ 
-.mfo-component__main-icon{
-  position: absolute;
+// the icons for the main button
+.mfo-component__main-icon--active,
+.mfo-component__main-icon--resting{
+  @extend .mfo-component__main-icon;  
+}
+.mfo-component__main-icon--active{
+  opacity: 0;
+}
+.mfo-component:hover,
+.mfo-component__hover-helper:hover + .mfo-component__wrap{
+  .mfo-component__main-icon{
+    -webkit-transform: scale(1) rotate(0deg);    
+    transform: scale(1) rotate(0deg);    
+  }
+  .mfo-component__main-icon--resting{
+    opacity: 0;
+  }
+  .mfo-component__main-icon--active{
+    opacity: 1;
+  }
 }
 
-// .mfo-component--br{
-//   .mfo-component__list {
-//   width: 0px;
-//   position: absolute;
-//   top: 0;
-//   }
-// }
+/*------------------------------------*\
+    #BUTTONS | Animations
+\*------------------------------------*/ 
 
+.mfo-component--tl,
+.mfo-component--tr{
+  .mfo-component__list li{
+    opacity: 0;
+    transition: all $slide-speed;
+  }
+  &:hover{
+    .mfo-component__list{
+      li{
+        opacity: 1;         
+      }
+      @for $i from 1 through $number-of-child-buttons {
+        $distance: 70px * $i;
+        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); }          
+      }                
+    }
+  }
+}
+
+.mfo-component--bl,
+.mfo-component--br{
+  .mfo-component__list li{
+    opacity: 0;
+    transition: all $slide-speed;
+  }
+  &:hover{
+    .mfo-component__list{
+      li{
+        opacity: 1;         
+      }
+      @for $i from 1 through $number-of-child-buttons {
+        $distance: -70px * $i;
+        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); }          
+      }                
+    }
+  }
+}
 /*------------------------------------*\
     #LABELS | base
 \*------------------------------------*/
 
 /**
  * These are the labels associated to each button.
- * They are exposed only when hovering the realted button.
+ * They are exposed only when hovering the related button.
  */
 
 .mfo-component__label{
@@ -340,24 +408,7 @@ html.slide-in{
 }
 
 *{
-  border: 1px solid red;
-}
-.mfo-component{
-  .mfo-component__list li{
-    opacity: 0;
-    transition: all $slide-speed;
-  }
-  &:hover{
-    .mfo-component__list{
-      li{
-        opacity: 1;         
-      }
-      @for $i from 1 through $number-of-child-buttons {
-        $distance: -70px * $i;
-        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); }          
-      }                
-    }
-  }
+  //border: 1px solid red;
 }
 
 
