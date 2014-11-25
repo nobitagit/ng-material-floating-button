@@ -61,7 +61,7 @@
 /* COLORS ----------------------------*/
 
 // the main/primary color
-$main-color: #CF432A;
+$main-color: #E40A5D;
 // aka the white text
 $bright-text: rgba(255, 255, 255, 0.8);
 
@@ -103,7 +103,6 @@ $number-of-child-buttons: 4;
 html, body{
   height: 100%;
   min-height: 100%;
-  font-family: arial;  
 }
 
 .cf:before,
@@ -223,8 +222,8 @@ html, body{
   margin-top: -9px;
   -webkit-transform: scale(1) rotate(360deg);
   transform: scale(1) rotate(360deg);
-  -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1), opacity 150ms;
-  transition: transform 150ms cubic-bezier(.4,0,1,1), opacity 150ms;  
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1); //, opacity 150ms;
+  transition: transform 150ms cubic-bezier(.4,0,1,1); //, opacity 150ms;  
 }
 .mfo-component:hover,
 .mfo-component__hover-helper:hover + .mfo-component__wrap{
@@ -295,7 +294,9 @@ html, body{
       }
       @for $i from 1 through $number-of-child-buttons {
         $distance: 70px * $i;
-        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); }          
+        li:nth-child( #{$i} ) { 
+          -webkit-transform: translateY( $distance ); 
+                  transform: translateY( $distance ); }          
       }                
     }
   }
@@ -305,7 +306,7 @@ html, body{
 .mfo-component--br{
   .mfo-component__list li{
     opacity: 0;
-    transition: all $slide-speed;
+    transition: transform $slide-speed;
   }
   &:hover{
     .mfo-component__list{
@@ -314,7 +315,8 @@ html, body{
       }
       @for $i from 1 through $number-of-child-buttons {
         $distance: -70px * $i;
-        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); }          
+        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); 
+                                        transform: translateY( $distance ); }          
       }                
     }
   }
@@ -389,13 +391,10 @@ html, body{
   position: absolute;
   height: 100%;
   width: 56px;
-  background: black;
   transition: all 1s;
   top: 0;
-  opacity: 0.1;
 }
 .mfo-component:hover .mfo-component__hover-helper{
-  //top: -70px * $number-of-child-buttons;
   height: 70px * $number-of-child-buttons;
   width: 100%;  
 }
@@ -428,6 +427,10 @@ html, body{
  */
 html.slide-in{
   border-top: 5px solid teal;
+  .mfo-component__hover-helper{
+    background: black;
+    opacity: 0.1;
+  }  
 }
 
 *{

@@ -65,8 +65,7 @@
 \*------------------------------------*/
 html, body {
   height: 100%;
-  min-height: 100%;
-  font-family: arial; }
+  min-height: 100%; }
 
 .cf:before,
 .cf:after {
@@ -129,7 +128,7 @@ html, body {
     #BUTTONS | Base
 \*------------------------------------*/
 .mfo-component__button, .mfo-component__button--main, .mfo-component__button--child {
-  background-color: #CF432A;
+  background-color: #E40A5D;
   position: relative;
   border: none;
   border-radius: 50%;
@@ -170,8 +169,8 @@ html, body {
   margin-top: -9px;
   -webkit-transform: scale(1) rotate(360deg);
   transform: scale(1) rotate(360deg);
-  -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1), opacity 150ms;
-  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1), opacity 150ms; }
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
+  transition: transform 150ms cubic-bezier(0.4, 0, 1, 1); }
 
 .mfo-component:hover .mfo-component__main-icon, .mfo-component--tl:hover .mfo-component__main-icon, .mfo-component--tr:hover .mfo-component__main-icon, .mfo-component--bl:hover .mfo-component__main-icon, .mfo-component--br:hover .mfo-component__main-icon, .mfo-component:hover .mfo-component__main-icon--active, .mfo-component--tl:hover .mfo-component__main-icon--active, .mfo-component--tr:hover .mfo-component__main-icon--active, .mfo-component--bl:hover .mfo-component__main-icon--active, .mfo-component--br:hover .mfo-component__main-icon--active,
 .mfo-component:hover .mfo-component__main-icon--resting,
@@ -236,36 +235,44 @@ html, body {
   opacity: 1; }
 .mfo-component--tl:hover .mfo-component__list li:nth-child(1),
 .mfo-component--tr:hover .mfo-component__list li:nth-child(1) {
-  -webkit-transform: translateY(70px); }
+  -webkit-transform: translateY(70px);
+  transform: translateY(70px); }
 .mfo-component--tl:hover .mfo-component__list li:nth-child(2),
 .mfo-component--tr:hover .mfo-component__list li:nth-child(2) {
-  -webkit-transform: translateY(140px); }
+  -webkit-transform: translateY(140px);
+  transform: translateY(140px); }
 .mfo-component--tl:hover .mfo-component__list li:nth-child(3),
 .mfo-component--tr:hover .mfo-component__list li:nth-child(3) {
-  -webkit-transform: translateY(210px); }
+  -webkit-transform: translateY(210px);
+  transform: translateY(210px); }
 .mfo-component--tl:hover .mfo-component__list li:nth-child(4),
 .mfo-component--tr:hover .mfo-component__list li:nth-child(4) {
-  -webkit-transform: translateY(280px); }
+  -webkit-transform: translateY(280px);
+  transform: translateY(280px); }
 
 .mfo-component--bl .mfo-component__list li,
 .mfo-component--br .mfo-component__list li {
   opacity: 0;
-  transition: all 0.5s; }
+  transition: transform 0.5s; }
 .mfo-component--bl:hover .mfo-component__list li,
 .mfo-component--br:hover .mfo-component__list li {
   opacity: 1; }
 .mfo-component--bl:hover .mfo-component__list li:nth-child(1),
 .mfo-component--br:hover .mfo-component__list li:nth-child(1) {
-  -webkit-transform: translateY(-70px); }
+  -webkit-transform: translateY(-70px);
+  transform: translateY(-70px); }
 .mfo-component--bl:hover .mfo-component__list li:nth-child(2),
 .mfo-component--br:hover .mfo-component__list li:nth-child(2) {
-  -webkit-transform: translateY(-140px); }
+  -webkit-transform: translateY(-140px);
+  transform: translateY(-140px); }
 .mfo-component--bl:hover .mfo-component__list li:nth-child(3),
 .mfo-component--br:hover .mfo-component__list li:nth-child(3) {
-  -webkit-transform: translateY(-210px); }
+  -webkit-transform: translateY(-210px);
+  transform: translateY(-210px); }
 .mfo-component--bl:hover .mfo-component__list li:nth-child(4),
 .mfo-component--br:hover .mfo-component__list li:nth-child(4) {
-  -webkit-transform: translateY(-280px); }
+  -webkit-transform: translateY(-280px);
+  transform: translateY(-280px); }
 
 /*------------------------------------*\
     #LABELS | base
@@ -321,10 +328,8 @@ html, body {
   position: absolute;
   height: 100%;
   width: 56px;
-  background: black;
   transition: all 1s;
-  top: 0;
-  opacity: 0.1; }
+  top: 0; }
 
 .mfo-component:hover .mfo-component__hover-helper, .mfo-component--tl:hover .mfo-component__hover-helper, .mfo-component--tr:hover .mfo-component__hover-helper, .mfo-component--bl:hover .mfo-component__hover-helper, .mfo-component--br:hover .mfo-component__hover-helper {
   height: 280px;
@@ -350,5 +355,8 @@ html, body {
  */
 html.slide-in {
   border-top: 5px solid teal; }
+  html.slide-in .mfo-component__hover-helper {
+    background: black;
+    opacity: 0.1; }
 
 /*# sourceMappingURL=style.css.map */
