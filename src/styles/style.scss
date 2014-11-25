@@ -128,7 +128,6 @@ html, body{
 
 .mfo-component{
   box-sizing: border-box; // A better box-sizing 
-  bottom: 0;
   margin: $border-distance;
   //pointer-events: none;
   position: fixed;
@@ -277,6 +276,12 @@ html, body{
     #BUTTONS | Animations
 \*------------------------------------*/ 
 
+/**
+ * SLIDE IN + FADE
+ * When hovering the main button, the child buttons slide out from beneath
+ * the main button while transitioning from transparent to opaque.
+ *
+ */
 .mfo-component--tl,
 .mfo-component--tr{
   .mfo-component__list li{
@@ -343,7 +348,7 @@ html, body{
 /*------------------------------------*\
     #LABELS | Modifiers
 \*------------------------------------*/
-.mfo-component--br{
+.mfo-component--br, .mfo-component--tr{
   .mfo-component__label{
     position: absolute;
     right: 70px;
@@ -383,10 +388,21 @@ html, body{
   opacity: 0.1;
 }
 .mfo-component:hover .mfo-component__hover-helper{
-  top: -70px * $number-of-child-buttons;
+  //top: -70px * $number-of-child-buttons;
   height: 70px * $number-of-child-buttons;
   width: 100%;  
 }
+
+.mfo-component--tl:hover .mfo-component__hover-helper,
+.mfo-component--tr:hover .mfo-component__hover-helper{
+  top: 0;
+}
+
+.mfo-component--bl:hover .mfo-component__hover-helper,
+.mfo-component--br:hover .mfo-component__hover-helper{
+  top: -70px * $number-of-child-buttons;
+}
+
 
 
 

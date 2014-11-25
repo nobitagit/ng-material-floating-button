@@ -89,7 +89,6 @@ html, body {
  */
 .mfo-component, .mfo-component--tl, .mfo-component--tr, .mfo-component--bl, .mfo-component--br {
   box-sizing: border-box;
-  bottom: 0;
   margin: 25px;
   position: fixed;
   white-space: nowrap;
@@ -222,6 +221,12 @@ html, body {
 /*------------------------------------*\
     #BUTTONS | Animations
 \*------------------------------------*/
+/**
+ * SLIDE IN + FADE
+ * When hovering the main button, the child buttons slide out from beneath
+ * the main button while transitioning from transparent to opaque.
+ *
+ */
 .mfo-component--tl .mfo-component__list li,
 .mfo-component--tr .mfo-component__list li {
   opacity: 0;
@@ -288,7 +293,7 @@ html, body {
 /*------------------------------------*\
     #LABELS | Modifiers
 \*------------------------------------*/
-.mfo-component--br .mfo-component__label {
+.mfo-component--br .mfo-component__label, .mfo-component--tr .mfo-component__label {
   position: absolute;
   right: 70px;
   top: 17.5px; }
@@ -317,9 +322,16 @@ html, body {
   opacity: 0.1; }
 
 .mfo-component:hover .mfo-component__hover-helper, .mfo-component--tl:hover .mfo-component__hover-helper, .mfo-component--tr:hover .mfo-component__hover-helper, .mfo-component--bl:hover .mfo-component__hover-helper, .mfo-component--br:hover .mfo-component__hover-helper {
-  top: -280px;
   height: 280px;
   width: 100%; }
+
+.mfo-component--tl:hover .mfo-component__hover-helper,
+.mfo-component--tr:hover .mfo-component__hover-helper {
+  top: 0; }
+
+.mfo-component--bl:hover .mfo-component__hover-helper,
+.mfo-component--br:hover .mfo-component__hover-helper {
+  top: -280px; }
 
 /*------------------------------------*\
     #DEVELOPMENT | Debuggers
