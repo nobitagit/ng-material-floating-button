@@ -361,6 +361,13 @@ html, body{
     top: ($main_button_size - ($labels-padding-vertical * 2) - $labels-font-size ) / 2;
   }
 }
+.mfo-component--tl, .mfo-component--bl{
+  .mfo-component__label{
+    position: absolute;
+    left: 70px;
+    top: ($main_button_size - ($labels-padding-vertical * 2) - $labels-font-size ) / 2;
+  }
+}
 
 /*------------------------------------*\
     #DEVELOPMENT | In development

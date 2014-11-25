@@ -298,6 +298,11 @@ html, body {
   right: 70px;
   top: 17.5px; }
 
+.mfo-component--tl .mfo-component__label, .mfo-component--bl .mfo-component__label {
+  position: absolute;
+  left: 70px;
+  top: 17.5px; }
+
 /*------------------------------------*\
     #DEVELOPMENT | In development
 \*------------------------------------*/
