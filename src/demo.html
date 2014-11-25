@@ -17,12 +17,55 @@
     h1{
       margin: 0.2em 0; 
       color: rgba(40, 33, 33, .7);
+      color: rgba(124, 98, 152, 1);
       font-weight: 400;
     }
     header{
       background: #00C8BE;
       padding: 0.3em 1em;
+      position: relative;
+      z-index: 20;
     }
+    .viewCode header{
+      box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+    .showcode{
+      background: rgb(232, 216, 49);
+      color: rgba(124, 98, 152, 1);
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      position: absolute;
+      right: 1em;
+      bottom: 0;
+      margin-bottom: -15px;
+      border-radius: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+      transition: all .3s;
+    }
+    .viewCode .showcode{
+      transform: rotateX(-180deg);
+      box-shadow: 0px -2px 5px 0 rgba(0, 0, 0, 0.26);      
+    } 
+    .icon-nocode, .icon-yepcode{
+      transition: opacity .3s;
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      line-height: 40px;      
+    }    
+    .icon-nocode{
+      opacity: 0;
+    }
+    .viewCode .icon-nocode{
+      opacity: 1;
+    }
+    .viewCode .icon-yepcode{
+      opacity: 0;
+    }     
     .panel{
       width: 90%;
       margin: 110px auto 0;
@@ -38,10 +81,32 @@
       padding: 1em;
       font-weight: 200;
       line-height: 1.5em;
+      position: relative;
     }
     footer{
       padding: 0.3em 1em 1em;
     }
+    .code{
+      position: absolute;
+      top: 0;
+      top: 0;
+      left: 0;
+      right: 0;      
+      height: 100%;
+      overflow: scroll;
+      background: rgba(124, 98, 152, 0.94);
+      color: rgba(245, 247, 247, 0.92);    
+      padding: 0em 1em; 
+      transition: all .4s;
+      transform: translateY(-100%);
+    }
+    .code p:first-child{
+      margin-top: 2em;
+    }
+    .viewCode .code{
+      transform: translateY(0);
+      box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.36);      
+    }   
     .actions{
       font-weight: 300;
       text-transform: uppercase;
@@ -54,6 +119,11 @@
       background: #F5F5F5;      
       box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
     }
+
+    code, pre {
+      color: #9f499b;
+      font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New",monospace;
+    }    
     .mfo-component--tl{
       animation: fromTop 1s 1;
       -webkit-animation: fromTop 1s 1;
@@ -311,15 +381,31 @@
 
     </div>   
 
-    <section class="panel">
+    <section id="panel" class="panel">
       <header>
         <h1>
-          Material buttons
-        </h1>        
+          Material Floating Buttons
+        </h1>
+        <span id="showcode" class="showcode">
+          <i class="ion-eye icon-yepcode"></i>
+          <i class="ion-eye-disabled icon-nocode"></i>          
+        </span>
       </header>
       <article>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, quidem nisi aspernatur.
-      </article>
+
+        <div class="code">
+          <p>
+            This is the html structure required for Material Floating Buttons
+          </p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, quidem nisi aspernatur.
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim veritatis expedita tempore similique odit accusantium commodi aspernatur eaque tempora recusandae maiores quos labore amet est, provident quis. Laudantium sunt sapiente nesciunt numquam ducimus magni eos, perferendis maxime, officiis voluptate vel, repellendus dolorum mollitia voluptates modi.
+          <br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, nobis vel quaerat. Fugit impedit autem maiores delectus ipsum, ipsam illo blanditiis voluptates qui vel fugiat ex nisi assumenda hic distinctio nesciunt tempore? Eligendi, aspernatur?
+        </div>
+
+      </article>    
       <footer>
         <button class="actions">
           <i class="ion-social-github"></i> View on Github
@@ -330,5 +416,16 @@
       </footer>
     </section>
  
+  <script>
+
+    var panel = document.getElementById('panel'),
+        showcode = document.getElementById('showcode');
+
+    showcode.addEventListener('click', _toggleCode);
+
+    function _toggleCode() {
+      panel.classList.toggle('viewCode');
+    }
+  </script>
   </body>
 </html>
