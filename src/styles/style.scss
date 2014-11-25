@@ -306,7 +306,7 @@ html, body{
 .mfo-component--br{
   .mfo-component__list li{
     opacity: 0;
-    transition: transform $slide-speed;
+    transition: all $slide-speed;
   }
   &:hover{
     .mfo-component__list{
@@ -316,7 +316,7 @@ html, body{
       @for $i from 1 through $number-of-child-buttons {
         $distance: -70px * $i;
         li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); 
-                                        transform: translateY( $distance ); }          
+                                       transform: translateY( $distance ); }          
       }                
     }
   }

@@ -1,6 +1,6 @@
 {
   "name": "material-button",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "html component for button à la Path and Google Inbox",
   "main": "index.html",
   "scripts": {

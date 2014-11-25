@@ -253,7 +253,7 @@ html, body {
 .mfo-component--bl .mfo-component__list li,
 .mfo-component--br .mfo-component__list li {
   opacity: 0;
-  transition: transform 0.5s; }
+  transition: all 0.5s; }
 .mfo-component--bl:hover .mfo-component__list li,
 .mfo-component--br:hover .mfo-component__list li {
   opacity: 1; }
