@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html class="">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
+    <style>
+    html{
+      background: #EDE401;
+      background: #00C8BE;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 100;
+    }
+    h1{
+      position: fixed;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      font-size: 3em;
+      color: #EDE401;
+      text-shadow: 1px 1px #BBB50C, -1px -1px #BBB50C;      
+    }
+    .mfo-component--tl{
+      animation: fromTop 1s 1;
+      -webkit-animation: fromTop 1s 1;
+    }
+    .mfo-component--tr{
+      animation: fromTop 1.3s 1;
+      -webkit-animation: fromTop 1.3s 1;
+    } 
+    .mfo-component--br{
+      animation: fromBottom 1.6s 1;
+      -webkit-animation: fromBottom 1.6s 1;
+    }
+    .mfo-component--bl{
+      animation: fromBottom 1.9s 1;
+      -webkit-animation: fromBottom 1.9s 1;
+    }        
+    @keyframes fromBottom {
+      0% {
+        transform: translateY(250px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes fromTop {
+      0% {
+        transform: translateY(-250px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @-webkit-keyframes fromBottom {
+      0% {
+        transform: translateY(250px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }    
+    @-webkit-keyframes fromTop {
+      0% {
+        transform: translateY(-250px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }       
+    </style>
+    <!--[if lt IE 9]>
+       <script src="js/libs/html5shiv.js"></script>
+      <!-- <script src="js/libs/respond.min.js"></script> -->
+    <![endif]-->
+    <title>DEMO: Material fan-out button</title>
+  </head>
+  <body>
+
+    <div class="mfo-component--tl">
+
+      <span class="mfo-component__hover-helper"></span>
+
+      <div class="mfo-component__wrap">
+        <button href="" class="mfo-component__button--main">
+          <i class="mfo-component__main-icon--resting ion-plus-round"></i>
+          <i class="mfo-component__main-icon--active ion-edit"></i>
+        </button>     
+        <label class="mfo-component__label" for="">Edit</label>
+        <ul class="mfo-component__list">
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-paper-airplane"></i>
+            </button>   
+            <label class="mfo-component__label" for="">
+              label with a very long name
+            </label>          
+          </li>
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-paperclip"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-calendar"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-key"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>                    
+        </ul>        
+      </div>
+
+    </div>
+
+    <div class="mfo-component--tr">
+
+      <span class="mfo-component__hover-helper"> </span>
+
+      <div class="mfo-component__wrap">
+        <button href="" class="mfo-component__button--main">
+          <i class="mfo-component__main-icon--resting ion-plus-round"></i>
+          <i class="mfo-component__main-icon--active ion-edit"></i>
+        </button>  
+        <label class="mfo-component__label" for="">Edit</label>
+        <ul class="mfo-component__list">
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>   
+            <label class="mfo-component__label" for="">
+              label with a very long name
+            </label>          
+          </li>
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>                    
+        </ul>        
+      </div>
+    </div>
+
+    <div class="mfo-component--bl" data-mfo="options">
+
+      <span class="mfo-component__hover-helper"> </span>
+
+      <div class="mfo-component__wrap">
+        <button href="" class="mfo-component__button--main">
+          <i class="mfo-component__main-icon--resting ion-plus-round"></i>
+          <i class="mfo-component__main-icon--active ion-edit"></i>
+        </button>   
+        <label class="mfo-component__label" for="">
+          label
+        </label>        
+        <ul class="mfo-component__list">
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>   
+            <label class="mfo-component__label" for="">
+              label with a very long name
+            </label>          
+          </li>
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__child-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>                    
+        </ul>
+      </div>
+    </div>
+
+    <div class="mfo-component--br">
+      <span class="mfo-component__hover-helper"> </span>
+      <div class="mfo-component__wrap">
+        <button href="" class="mfo-component__button--main">
+          <i class="mfo-component__main-icon--resting ion-plus-round"></i>
+          <i class="mfo-component__main-icon--active ion-edit"></i>
+        </button>   
+        <label class="mfo-component__label" for="">
+          label
+        </label>        
+        <ul class="mfo-component__list">
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__main-icon ion-plus-round"></i>
+            </button>   
+            <label class="mfo-component__label" for="">
+              label with a very long name
+            </label>          
+          </li>
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__main-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__main-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>
+
+          <li>
+            <button href="" class="mfo-component__button--child">
+              <i class="mfo-component__main-icon ion-plus-round"></i>
+            </button>
+            <label class="mfo-component__label" for="">
+              label
+            </label>                      
+          </li>                    
+        </ul>
+      </div>
+
+    </div>   
+
+    <h1>
+      material button
+    </h1> 
+  </body>
+</html>
