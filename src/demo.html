@@ -7,16 +7,17 @@
     <link href="styles/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
     <style>
     html{
       background: #E9EBEC;
       font-family: 'Raleway', sans-serif;
-      font-weight: 100;
+      font-weight: 200;
     }
     h1{
       margin: 0.2em 0; 
       color: rgba(40, 33, 33, .7);
+      font-weight: 400;
     }
     header{
       background: #00C8BE;
@@ -37,6 +38,21 @@
       padding: 1em;
       font-weight: 200;
       line-height: 1.5em;
+    }
+    footer{
+      padding: 0.3em 1em 1em;
+    }
+    .actions{
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      padding: 1em;
+      border: none;
+      background: none;
+    }
+    .actions:hover{
+      background: #F5F5F5;      
+      box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
     }
     .mfo-component--tl{
       animation: fromTop 1s 1;
@@ -304,6 +320,14 @@
       <article>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, quidem nisi aspernatur.
       </article>
+      <footer>
+        <button class="actions">
+          <i class="ion-social-github"></i> View on Github
+        </button>
+        <button class="actions">
+          <i class="ion-social-twitter"></i> Share on Twitter
+        </button>        
+      </footer>
     </section>
  
   </body>
