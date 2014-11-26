@@ -3,6 +3,11 @@ html{
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
 }
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 h1{
   margin: 0.2em 0; 
   color: rgba(40, 33, 33, .7);
@@ -57,7 +62,6 @@ header{
 }     
 .panel{
   width: 90%;
-  margin: 110px auto 0;
   position: relative;
   max-width: 650px;
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
