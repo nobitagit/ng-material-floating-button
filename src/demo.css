@@ -103,8 +103,10 @@ footer{
   padding: 1em;
   border: none;
   background: none;
+  transition: color .2s;
 }
 .actions:hover{
+  color: rgb(30, 30, 171);
   background: #F5F5F5;      
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
