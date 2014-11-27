@@ -284,52 +284,8 @@ html, body{
     #BUTTONS | Animations
 \*------------------------------------*/ 
 
-/**
- * SLIDE IN + FADE
- * When hovering the main button, the child buttons slide out from beneath
- * the main button while transitioning from transparent to opaque.
- *
- */
-.mfo-component--tl,
-.mfo-component--tr{
-  .mfo-component__list li{
-    opacity: 0;
-    transition: all $slide-speed;
-  }
-  &:hover{
-    .mfo-component__list{
-      li{
-        opacity: 1;         
-      }
-      @for $i from 1 through $number-of-child-buttons {
-        $distance: 70px * $i;
-        li:nth-child( #{$i} ) { 
-          -webkit-transform: translateY( $distance ); 
-                  transform: translateY( $distance ); }          
-      }                
-    }
-  }
-}
+@import "slidein";
 
-.mfo-component--bl,
-.mfo-component--br{
-  .mfo-component__list li{
-    opacity: 0;
-    transition: all $slide-speed;
-  }
-  &:hover{
-    .mfo-component__list{
-      li{
-        opacity: 1;         
-      }
-      @for $i from 1 through $number-of-child-buttons {
-        $distance: -70px * $i;
-        li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); 
-                                       transform: translateY( $distance ); }          
-      }                
-    }
-  }
-}
 /*------------------------------------*\
     #LABELS | base
 \*------------------------------------*/

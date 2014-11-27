@@ -222,51 +222,51 @@ html, body {
  * the main button while transitioning from transparent to opaque.
  *
  */
-.mfo-component--tl .mfo-component__list li,
-.mfo-component--tr .mfo-component__list li {
+.mfo-component--tl.mfb-slidein .mfo-component__list li,
+.mfo-component--tr.mfb-slidein .mfo-component__list li {
   opacity: 0;
   transition: all 0.5s; }
-.mfo-component--tl:hover .mfo-component__list li,
-.mfo-component--tr:hover .mfo-component__list li {
+.mfo-component--tl.mfb-slidein:hover .mfo-component__list li,
+.mfo-component--tr.mfb-slidein:hover .mfo-component__list li {
   opacity: 1; }
-.mfo-component--tl:hover .mfo-component__list li:nth-child(1),
-.mfo-component--tr:hover .mfo-component__list li:nth-child(1) {
+.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(1),
+.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(1) {
   -webkit-transform: translateY(70px);
   transform: translateY(70px); }
-.mfo-component--tl:hover .mfo-component__list li:nth-child(2),
-.mfo-component--tr:hover .mfo-component__list li:nth-child(2) {
+.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(2),
+.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(2) {
   -webkit-transform: translateY(140px);
   transform: translateY(140px); }
-.mfo-component--tl:hover .mfo-component__list li:nth-child(3),
-.mfo-component--tr:hover .mfo-component__list li:nth-child(3) {
+.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(3),
+.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(3) {
   -webkit-transform: translateY(210px);
   transform: translateY(210px); }
-.mfo-component--tl:hover .mfo-component__list li:nth-child(4),
-.mfo-component--tr:hover .mfo-component__list li:nth-child(4) {
+.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(4),
+.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(4) {
   -webkit-transform: translateY(280px);
   transform: translateY(280px); }
 
-.mfo-component--bl .mfo-component__list li,
-.mfo-component--br .mfo-component__list li {
+.mfo-component--bl.mfb-slidein .mfo-component__list li,
+.mfo-component--br.mfb-slidein .mfo-component__list li {
   opacity: 0;
   transition: all 0.5s; }
-.mfo-component--bl:hover .mfo-component__list li,
-.mfo-component--br:hover .mfo-component__list li {
+.mfo-component--bl.mfb-slidein:hover .mfo-component__list li,
+.mfo-component--br.mfb-slidein:hover .mfo-component__list li {
   opacity: 1; }
-.mfo-component--bl:hover .mfo-component__list li:nth-child(1),
-.mfo-component--br:hover .mfo-component__list li:nth-child(1) {
+.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(1),
+.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(1) {
   -webkit-transform: translateY(-70px);
   transform: translateY(-70px); }
-.mfo-component--bl:hover .mfo-component__list li:nth-child(2),
-.mfo-component--br:hover .mfo-component__list li:nth-child(2) {
+.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(2),
+.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(2) {
   -webkit-transform: translateY(-140px);
   transform: translateY(-140px); }
-.mfo-component--bl:hover .mfo-component__list li:nth-child(3),
-.mfo-component--br:hover .mfo-component__list li:nth-child(3) {
+.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(3),
+.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(3) {
   -webkit-transform: translateY(-210px);
   transform: translateY(-210px); }
-.mfo-component--bl:hover .mfo-component__list li:nth-child(4),
-.mfo-component--br:hover .mfo-component__list li:nth-child(4) {
+.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(4),
+.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(4) {
   -webkit-transform: translateY(-280px);
   transform: translateY(-280px); }
 
