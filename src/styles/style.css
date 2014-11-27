@@ -181,10 +181,7 @@ html, body {
 .mfo-component--tl:hover .mfo-component__main-icon--resting,
 .mfo-component--tr:hover .mfo-component__main-icon--resting,
 .mfo-component--bl:hover .mfo-component__main-icon--resting,
-.mfo-component--br:hover .mfo-component__main-icon--resting,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon--active,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon--resting {
+.mfo-component--br:hover .mfo-component__main-icon--resting {
   -webkit-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg); }
 
@@ -208,17 +205,12 @@ html, body {
 .mfo-component--tl:hover .mfo-component__main-icon--resting,
 .mfo-component--tr:hover .mfo-component__main-icon--resting,
 .mfo-component--bl:hover .mfo-component__main-icon--resting,
-.mfo-component--br:hover .mfo-component__main-icon--resting,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon--active,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon--resting {
+.mfo-component--br:hover .mfo-component__main-icon--resting {
   -webkit-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg); }
-.mfo-component:hover .mfo-component__main-icon--resting, .mfo-component--tl:hover .mfo-component__main-icon--resting, .mfo-component--tr:hover .mfo-component__main-icon--resting, .mfo-component--bl:hover .mfo-component__main-icon--resting, .mfo-component--br:hover .mfo-component__main-icon--resting,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon--resting {
+.mfo-component:hover .mfo-component__main-icon--resting, .mfo-component--tl:hover .mfo-component__main-icon--resting, .mfo-component--tr:hover .mfo-component__main-icon--resting, .mfo-component--bl:hover .mfo-component__main-icon--resting, .mfo-component--br:hover .mfo-component__main-icon--resting {
   opacity: 0; }
-.mfo-component:hover .mfo-component__main-icon--active, .mfo-component--tl:hover .mfo-component__main-icon--active, .mfo-component--tr:hover .mfo-component__main-icon--active, .mfo-component--bl:hover .mfo-component__main-icon--active, .mfo-component--br:hover .mfo-component__main-icon--active,
-.mfo-component__hover-helper:hover + .mfo-component__wrap .mfo-component__main-icon--active {
+.mfo-component:hover .mfo-component__main-icon--active, .mfo-component--tl:hover .mfo-component__main-icon--active, .mfo-component--tr:hover .mfo-component__main-icon--active, .mfo-component--bl:hover .mfo-component__main-icon--active, .mfo-component--br:hover .mfo-component__main-icon--active {
   opacity: 1; }
 
 /*------------------------------------*\
@@ -327,25 +319,6 @@ html, body {
  * You can see its usage by toggling the slide-in dev flag 
  * (see #DEVELOPMENT | Debuggers)
  */
-.mfo-component__hover-helper {
-  position: absolute;
-  height: 100%;
-  width: 56px;
-  transition: all 1s;
-  top: 0; }
-
-.mfo-component:hover .mfo-component__hover-helper, .mfo-component--tl:hover .mfo-component__hover-helper, .mfo-component--tr:hover .mfo-component__hover-helper, .mfo-component--bl:hover .mfo-component__hover-helper, .mfo-component--br:hover .mfo-component__hover-helper {
-  height: 280px;
-  width: 100%; }
-
-.mfo-component--tl:hover .mfo-component__hover-helper,
-.mfo-component--tr:hover .mfo-component__hover-helper {
-  top: 0; }
-
-.mfo-component--bl:hover .mfo-component__hover-helper,
-.mfo-component--br:hover .mfo-component__hover-helper {
-  top: -280px; }
-
 /*------------------------------------*\
     #DEVELOPMENT | Debuggers
 \*------------------------------------*/
@@ -358,9 +331,6 @@ html, body {
  */
 html.slide-in {
   border-top: 5px solid teal; }
-  html.slide-in .mfo-component__hover-helper {
-    background: black;
-    opacity: 0.1; }
 
 html.debug * {
   border: 1px solid red; }
