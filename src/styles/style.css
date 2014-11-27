@@ -91,8 +91,7 @@ html, body {
   margin: 25px;
   position: fixed;
   white-space: nowrap;
-  z-index: 30;
-  will-change: top,left; }
+  z-index: 30; }
 
 .mfo-component *, .mfo-component--tl *, .mfo-component--tr *, .mfo-component--bl *, .mfo-component--br *, .mfo-component *:before, .mfo-component--tl *:before, .mfo-component--tr *:before, .mfo-component--bl *:before, .mfo-component--br *:before, .mfo-component *:after, .mfo-component--tl *:after, .mfo-component--tr *:after, .mfo-component--bl *:after, .mfo-component--br *:after {
   box-sizing: inherit; }
@@ -136,7 +135,6 @@ html, body {
   cursor: pointer;
   outline: none;
   padding: 0;
-  pointer-events: auto;
   position: relative;
   -webkit-user-drag: none;
   font-weight: bold;
@@ -154,7 +152,9 @@ html, body {
   .mfo-component__list > li {
     display: block;
     position: absolute;
-    top: 0; }
+    top: 0;
+    padding: 10px 0;
+    margin: -10px 0; }
 
 /**
  * This is the basic styles for all the icons inside the main button
@@ -171,6 +171,10 @@ html, body {
   transform: scale(1) rotate(360deg);
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1); }
+
+.mfo-component__wrap {
+  padding: 25px;
+  margin: -25px; }
 
 .mfo-component:hover .mfo-component__main-icon, .mfo-component--tl:hover .mfo-component__main-icon, .mfo-component--tr:hover .mfo-component__main-icon, .mfo-component--bl:hover .mfo-component__main-icon, .mfo-component--br:hover .mfo-component__main-icon, .mfo-component:hover .mfo-component__main-icon--active, .mfo-component--tl:hover .mfo-component__main-icon--active, .mfo-component--tr:hover .mfo-component__main-icon--active, .mfo-component--bl:hover .mfo-component__main-icon--active, .mfo-component--br:hover .mfo-component__main-icon--active,
 .mfo-component:hover .mfo-component__main-icon--resting,
@@ -287,7 +291,10 @@ html, body {
   border-radius: 3px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 13px;
-  pointer-events: none; }
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -10.5px; }
 
 .mfo-component__button + .mfo-component__label, .mfo-component__button--main + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
   opacity: 0;
@@ -301,14 +308,10 @@ html, body {
     #LABELS | Modifiers
 \*------------------------------------*/
 .mfo-component--br .mfo-component__label, .mfo-component--tr .mfo-component__label {
-  position: absolute;
-  right: 70px;
-  top: 17.5px; }
+  right: 70px; }
 
 .mfo-component--tl .mfo-component__label, .mfo-component--bl .mfo-component__label {
-  position: absolute;
-  left: 70px;
-  top: 17.5px; }
+  left: 70px; }
 
 /*------------------------------------*\
     #DEVELOPMENT | In development
@@ -358,5 +361,8 @@ html.slide-in {
   html.slide-in .mfo-component__hover-helper {
     background: black;
     opacity: 0.1; }
+
+html.debug * {
+  border: 1px solid red; }
 
 /*# sourceMappingURL=style.css.map */

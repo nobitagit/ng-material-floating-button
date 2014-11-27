@@ -206,6 +206,9 @@ html, body{
     display: block;
     position: absolute;
     top: 0;
+
+    padding: 10px 0;
+    margin: -10px 0;    
   }
 }
 
@@ -223,6 +226,15 @@ html, body{
   transform: scale(1) rotate(360deg);
   -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1);
   transition: transform 150ms cubic-bezier(.4,0,1,1);  
+}
+
+.mfo-component__wrap{
+  // this double declaration adds some padding to the main button
+  // to expand the area that triggers the hover state. The equal, negative
+  // margin evens out the distance form the borders so that the button
+  // does not shift out of position.
+  padding: $border-distance;
+  margin: -$border-distance;
 }
 .mfo-component:hover,
 .mfo-component__hover-helper:hover + .mfo-component__wrap{
@@ -336,6 +348,9 @@ html, body{
   color: $bright-text;
   font-size: $labels-font-size;
   pointer-events: none;
+  position: absolute;
+  top: 50%;
+  margin-top: - ($labels-padding-vertical + $labels-font-size / 2);    
 }
 .mfo-component__button + .mfo-component__label{
   opacity: 0;
@@ -351,23 +366,13 @@ html, body{
 \*------------------------------------*/
 .mfo-component--br, .mfo-component--tr{
   .mfo-component__label{
-    position: absolute;
-    right: 70px;
-    // to align the label to the center of the vertical axis we take these sizes:
-    // 1. the total button size
-    // 2. the top/bottom padding of the label itself
-    // 3. the font-size
-    // the result is the available space left out. We divide it by 2 to get the
-    // distance from the top we need to center it.
-    top: ($main_button_size - ($labels-padding-vertical * 2) - $labels-font-size ) / 2;
-  }
+    right: 70px; 
+  } 
 }
 .mfo-component--tl, .mfo-component--bl{
   .mfo-component__label{
-    position: absolute;
-    left: 70px;
-    top: ($main_button_size - ($labels-padding-vertical * 2) - $labels-font-size ) / 2;
-  }
+    left: 70px; 
+  } 
 }
 
 /*------------------------------------*\
