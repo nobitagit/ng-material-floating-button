@@ -270,47 +270,11 @@ html, body {
   -webkit-transform: translateY(-280px);
   transform: translateY(-280px); }
 
-/*------------------------------------*\
-    #LABELS | base
-\*------------------------------------*/
 /**
- * These are the labels associated to each button.
- * They are exposed only when hovering the related button.
- */
-.mfo-component__label {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 4px 10px;
-  border-radius: 3px;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
-  pointer-events: none;
-  position: absolute;
-  top: 50%;
-  margin-top: -10.5px; }
-
-.mfo-component__button + .mfo-component__label, .mfo-component__button--main + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
-  opacity: 0;
-  transition: all 0.5s; }
-
-.mfo-component__button:hover + .mfo-component__label, .mfo-component__button--main:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
-  opacity: 1;
-  transition: all 0.3s; }
-
-/*------------------------------------*\
-    #LABELS | Modifiers
-\*------------------------------------*/
-.mfo-component--br .mfo-component__label, .mfo-component--tr .mfo-component__label {
-  right: 70px; }
-
-.mfo-component--tl .mfo-component__label, .mfo-component--bl .mfo-component__label {
-  left: 70px; }
-
-/*------------------------------------*\
-    #DEVELOPMENT | In development
-\*------------------------------------*/
-/**
- * This part is where unfinished code should stay.
- * When a feature is ready(sh) move these styles to their proper place.
+ * ZOOM-IN
+ * When hovering the main button, the child buttons grow
+ * from zero to normal size.
+ *
  */
 .mfo-component--tl.mfb-zoomin .mfo-component__list li,
 .mfo-component--tr.mfb-zoomin .mfo-component__list li {
@@ -392,6 +356,11 @@ html, body {
   transform: translateY(-280px) scale(1);
   transition-delay: 0.2s; }
 
+/**
+ * FOUNTAIN
+ * When hovering the main button the child buttons
+ * jump into view from outside the viewport
+ */
 .mfo-component--tl.mfb-fountain .mfo-component__list li,
 .mfo-component--tr.mfb-fountain .mfo-component__list li {
   transform: scale(0); }
@@ -472,6 +441,48 @@ html, body {
   transform: translateY(-280px) scale(1);
   transition-delay: 0.2s; }
 
+/*------------------------------------*\
+    #LABELS | base
+\*------------------------------------*/
+/**
+ * These are the labels associated to each button.
+ * They are exposed only when hovering the related button.
+ */
+.mfo-component__label {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 10px;
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -10.5px; }
+
+.mfo-component__button + .mfo-component__label, .mfo-component__button--main + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
+  opacity: 0;
+  transition: all 0.5s; }
+
+.mfo-component__button:hover + .mfo-component__label, .mfo-component__button--main:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
+  opacity: 1;
+  transition: all 0.3s; }
+
+/*------------------------------------*\
+    #LABELS | Modifiers
+\*------------------------------------*/
+.mfo-component--br .mfo-component__label, .mfo-component--tr .mfo-component__label {
+  right: 70px; }
+
+.mfo-component--tl .mfo-component__label, .mfo-component--bl .mfo-component__label {
+  left: 70px; }
+
+/*------------------------------------*\
+    #DEVELOPMENT | In development
+\*------------------------------------*/
+/**
+ * This part is where unfinished code should stay.
+ * When a feature is ready(sh) move these styles to their proper place.
+ */
 /*------------------------------------*\
     #DEVELOPMENT | Debuggers
 \*------------------------------------*/

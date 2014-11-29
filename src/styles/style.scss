@@ -285,6 +285,8 @@ html, body{
 \*------------------------------------*/ 
 
 @import "slidein";
+@import "zoomin";
+@import "fountain";
 
 /*------------------------------------*\
     #LABELS | base
@@ -337,130 +339,6 @@ html, body{
  * When a feature is ready(sh) move these styles to their proper place.
  */
 
-.mfo-component--tl.mfb-zoomin,
-.mfo-component--tr.mfb-zoomin{
-  .mfo-component__list{
-    li{
-      transform: scale(0);
-    }
-    @for $i from 1 through $number-of-child-buttons {
-      $distance: 70px * $i;
-      li:nth-child( #{$i} ) { 
-        transform: translateY($distance) scale(0);
-        transition: all $slide-speed;
-        // this is the delay at which the buttons start disappearing
-        transition-delay: ( $number-of-child-buttons - $i ) * 0.05s;        
-      }          
-    }     
-  }
-  &:hover{
-    .mfo-component__list{
-      @for $i from 1 through $number-of-child-buttons {
-        $distance: 70px * $i;
-        li:nth-child( #{$i} ) { 
-          transform: translateY($distance) scale(1); 
-          // this is the delay at which the buttons appear          
-          transition-delay: $i * 0.05s;
-        }          
-      }                
-    }
-  }
-}
-
-.mfo-component--bl.mfb-zoomin,
-.mfo-component--br.mfb-zoomin{
-  .mfo-component__list{
-    li{
-      transform: scale(0);
-    }
-    @for $i from 1 through $number-of-child-buttons {
-      $distance: 70px * $i;
-      li:nth-child( #{$i} ) { 
-        transform: translateY($distance) scale(0);
-        transition: all $slide-speed;
-        // this is the delay at which the buttons start disappearing
-        transition-delay: ( $number-of-child-buttons - $i ) * 0.05s;        
-      }          
-    }     
-  }
-  &:hover{
-    .mfo-component__list{
-      @for $i from 1 through $number-of-child-buttons {
-        $distance: -70px * $i;
-        li:nth-child( #{$i} ) { 
-          transform: translateY($distance) scale(1); 
-          // this is the delay at which the buttons appear          
-          transition-delay: $i * 0.05s;
-        }          
-      }                
-    }
-  }
-}
-
-
-
-
-
-
-.mfo-component--tl.mfb-fountain,
-.mfo-component--tr.mfb-fountain{
-  .mfo-component__list{
-    li{
-      transform: scale(0);
-    }
-    @for $i from 1 through $number-of-child-buttons {
-      $distance: -70px * $i;
-      li:nth-child( #{$i} ) { 
-        transform: translateY($distance) scale(0);
-        transition: all $slide-speed;
-        // this is the delay at which the buttons start disappearing
-        transition-delay: ( $number-of-child-buttons - $i ) * 0.05s;        
-      }          
-    }     
-  }
-  &:hover{
-    .mfo-component__list{
-      @for $i from 1 through $number-of-child-buttons {
-        $distance: 70px * $i;
-        li:nth-child( #{$i} ) { 
-          transform: translateY($distance) scale(1); 
-          // this is the delay at which the buttons appear          
-          transition-delay: $i * 0.05s;
-        }          
-      }                
-    }
-  }
-}
-
-.mfo-component--bl.mfb-fountain,
-.mfo-component--br.mfb-fountain{
-  .mfo-component__list{
-    li{
-      transform: scale(0);
-    }
-    @for $i from 1 through $number-of-child-buttons {
-      $distance: 70px * $i;
-      li:nth-child( #{$i} ) { 
-        transform: translateY($distance) scale(0);
-        transition: all $slide-speed;
-        // this is the delay at which the buttons start disappearing
-        transition-delay: ( $number-of-child-buttons - $i ) * 0.05s;        
-      }          
-    }     
-  }
-  &:hover{
-    .mfo-component__list{
-      @for $i from 1 through $number-of-child-buttons {
-        $distance: -70px * $i;
-        li:nth-child( #{$i} ) { 
-          transform: translateY($distance) scale(1); 
-          // this is the delay at which the buttons appear          
-          transition-delay: $i * 0.05s;
-        }          
-      }                
-    }
-  }
-}
 
 
 /*------------------------------------*\
