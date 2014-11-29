@@ -119,11 +119,18 @@ code, pre {
   background: rgba(255,255,255,0.1);
   color:  rgba(232, 216, 49, 0.9);
   font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New",monospace;
-  display: block;
   padding: 0.5em;
   border-radius: 3px;
   margin: 1em 0;  
-}    
+}   
+code{
+  display: inline;
+  vertical-align: middle;
+  margin: 0;
+}
+pre{
+  display: block;
+} 
 .mfo-component--tl{
   animation: fromTop 1s 1;
   -webkit-animation: fromTop 1s 1;
