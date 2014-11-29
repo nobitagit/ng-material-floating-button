@@ -312,6 +312,166 @@ html, body {
  * This part is where unfinished code should stay.
  * When a feature is ready(sh) move these styles to their proper place.
  */
+.mfo-component--tl.mfb-zoomin .mfo-component__list li,
+.mfo-component--tr.mfb-zoomin .mfo-component__list li {
+  transform: scale(0); }
+.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(1),
+.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(1) {
+  transform: translateY(70px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.15s; }
+.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(2),
+.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(2) {
+  transform: translateY(140px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.1s; }
+.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(3),
+.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(3) {
+  transform: translateY(210px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.05s; }
+.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(4),
+.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(4) {
+  transform: translateY(280px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0s; }
+.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(1),
+.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(1) {
+  transform: translateY(70px) scale(1);
+  transition-delay: 0.05s; }
+.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(2),
+.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(2) {
+  transform: translateY(140px) scale(1);
+  transition-delay: 0.1s; }
+.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(3),
+.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(3) {
+  transform: translateY(210px) scale(1);
+  transition-delay: 0.15s; }
+.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(4),
+.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(4) {
+  transform: translateY(280px) scale(1);
+  transition-delay: 0.2s; }
+
+.mfo-component--bl.mfb-zoomin .mfo-component__list li,
+.mfo-component--br.mfb-zoomin .mfo-component__list li {
+  transform: scale(0); }
+.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(1),
+.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(1) {
+  transform: translateY(70px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.15s; }
+.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(2),
+.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(2) {
+  transform: translateY(140px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.1s; }
+.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(3),
+.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(3) {
+  transform: translateY(210px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.05s; }
+.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(4),
+.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(4) {
+  transform: translateY(280px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0s; }
+.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(1),
+.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(1) {
+  transform: translateY(-70px) scale(1);
+  transition-delay: 0.05s; }
+.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(2),
+.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(2) {
+  transform: translateY(-140px) scale(1);
+  transition-delay: 0.1s; }
+.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(3),
+.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(3) {
+  transform: translateY(-210px) scale(1);
+  transition-delay: 0.15s; }
+.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(4),
+.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(4) {
+  transform: translateY(-280px) scale(1);
+  transition-delay: 0.2s; }
+
+.mfo-component--tl.mfb-fountain .mfo-component__list li,
+.mfo-component--tr.mfb-fountain .mfo-component__list li {
+  transform: scale(0); }
+.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(1),
+.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(1) {
+  transform: translateY(-70px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.15s; }
+.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(2),
+.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(2) {
+  transform: translateY(-140px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.1s; }
+.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(3),
+.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(3) {
+  transform: translateY(-210px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.05s; }
+.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(4),
+.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(4) {
+  transform: translateY(-280px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0s; }
+.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(1),
+.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(1) {
+  transform: translateY(70px) scale(1);
+  transition-delay: 0.05s; }
+.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(2),
+.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(2) {
+  transform: translateY(140px) scale(1);
+  transition-delay: 0.1s; }
+.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(3),
+.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(3) {
+  transform: translateY(210px) scale(1);
+  transition-delay: 0.15s; }
+.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(4),
+.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(4) {
+  transform: translateY(280px) scale(1);
+  transition-delay: 0.2s; }
+
+.mfo-component--bl.mfb-fountain .mfo-component__list li,
+.mfo-component--br.mfb-fountain .mfo-component__list li {
+  transform: scale(0); }
+.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(1),
+.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(1) {
+  transform: translateY(70px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.15s; }
+.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(2),
+.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(2) {
+  transform: translateY(140px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.1s; }
+.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(3),
+.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(3) {
+  transform: translateY(210px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0.05s; }
+.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(4),
+.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(4) {
+  transform: translateY(280px) scale(0);
+  transition: all 0.5s;
+  transition-delay: 0s; }
+.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(1),
+.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(1) {
+  transform: translateY(-70px) scale(1);
+  transition-delay: 0.05s; }
+.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(2),
+.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(2) {
+  transform: translateY(-140px) scale(1);
+  transition-delay: 0.1s; }
+.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(3),
+.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(3) {
+  transform: translateY(-210px) scale(1);
+  transition-delay: 0.15s; }
+.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(4),
+.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(4) {
+  transform: translateY(-280px) scale(1);
+  transition-delay: 0.2s; }
+
 /*------------------------------------*\
     #DEVELOPMENT | Debuggers
 \*------------------------------------*/
