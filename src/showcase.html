@@ -17,7 +17,7 @@
         align-items: center;
         justify-content: center;              
       }
-      h1{
+      h2{
         color: #E40A5D;
         font-size: 60px;        
         position: relative;
@@ -25,12 +25,20 @@
       }
       section{
         text-align: center;
+        width: 100%;
       }
       select{
+        margin-top: 90px;
         background: transparent;
         color: #E40A5D;
         border: 1px solid #E40A5D;
       }
+      header {position: relative; } 
+      header h2 { position: absolute; opacity: 0; transition: opacity 0.4s; 
+                  top: 0; z-index: -2; width: 100%; }
+      header.show-mfb-slidein h2:nth-child(1){ opacity: 1;}
+      header.show-mfb-zoomin h2:nth-child(2){ opacity: 1;}
+      header.show-mfb-fountain h2:nth-child(3){ opacity: 1;}
     </style>
     <!--[if lt IE 9]>
        <script src="js/libs/html5shiv.js"></script>
@@ -41,17 +49,21 @@
   <body>
 
     <section>
-      <h1>Slide in + fade</h1>      
-      <select>
+      <header class="show-mfb-slidein">
+        <h2>Slide in + fade</h2>      
+        <h2>Zoom in</h2>      
+        <h2>Fountain</h2>         
+      </header>     
+      <select id="selections">
          <option selected disabled>Choose an effect here</option>
-         <option>Slide in + fade</option>
-         <option>Zoom in</option>
-         <option>Fountain</option>
+         <option value="mfb-slidein">Slide in + fade</option>
+         <option value="mfb-zoomin">Zoom in</option>
+         <option value="mfb-fountain">Fountain</option>
       </select>      
     </section>
 
 
-    <div class="mfo-component--tl mfb-slidein">
+    <div class="bt mfo-component--tl mfb-slidein">
       <div class="mfo-component__wrap">
         <button href="" class="mfo-component__button--main">
           <i class="mfo-component__main-icon--resting ion-plus-round"></i>
@@ -95,10 +107,9 @@
           </li>                    
         </ul>        
       </div>
-
     </div>
 
-    <div class="mfo-component--tr mfb-slidein">
+    <div class="bt mfo-component--tr mfb-slidein">
       <div class="mfo-component__wrap">
         <button href="" class="mfo-component__button--main">
           <i class="mfo-component__main-icon--resting ion-plus-round"></i>
@@ -144,7 +155,7 @@
       </div>
     </div>
 
-    <div class="mfo-component--bl mfb-slidein">
+    <div class="bt mfo-component--bl mfb-slidein">
       <div class="mfo-component__wrap">
         <button href="" class="mfo-component__button--main">
           <i class="mfo-component__main-icon--resting ion-plus-round"></i>
@@ -192,7 +203,7 @@
       </div>
     </div>
 
-    <div class="mfo-component--br mfb-slidein">
+    <div class="bt mfo-component--br mfb-slidein">
       <div class="mfo-component__wrap">
         <button href="" class="mfo-component__button--main">
           <i class="mfo-component__main-icon--resting ion-plus-round"></i>
@@ -239,6 +250,40 @@
         </ul>
       </div>
 
-    </div>    
+    </div> 
+
+  <script>
+
+  (function(){
+    var select = document.getElementById('selections'),
+        buttons = document.querySelectorAll('.bt'),
+        header = document.getElementsByTagName('header')[0];
+    var previous = 'mfb-slidein',
+        chosen;
+
+    select.addEventListener('change', toggleEffect);
+
+    function toggleEffect (e) {
+
+      chosen = select.options[select.selectedIndex].value;
+
+      header.className = 'show-' + chosen;
+
+      Array.prototype.forEach.call(buttons, function(button){
+        button.classList.remove(previous);
+        button.classList.add(chosen);
+      });
+
+      previous = chosen;      
+    }
+
+
+  })();
+  </script>
+
   </body>
 </html>
+
+
+
+
