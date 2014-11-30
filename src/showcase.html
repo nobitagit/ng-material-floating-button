@@ -7,7 +7,7 @@
     <link href="styles/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200' rel='stylesheet' type='text/css'>    
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300' rel='stylesheet' type='text/css'>    
     <style>
       body{
         background: #262832;
@@ -17,9 +17,9 @@
         align-items: center;
         justify-content: center;              
       }
-      h2{
+      h1{
         color: #E40A5D;
-        font-size: 60px;        
+        font-size: 3em;        
         position: relative;
         margin: 0.2em 0;
       }
@@ -28,17 +28,13 @@
         width: 100%;
       }
       select{
-        margin-top: 90px;
         background: transparent;
         color: #E40A5D;
         border: 1px solid #E40A5D;
+        font-weight: 300;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
       }
-      header {position: relative; } 
-      header h2 { position: absolute; opacity: 0; transition: opacity 0.4s; 
-                  top: 0; z-index: -2; width: 100%; }
-      header.show-mfb-slidein h2:nth-child(1){ opacity: 1;}
-      header.show-mfb-zoomin h2:nth-child(2){ opacity: 1;}
-      header.show-mfb-fountain h2:nth-child(3){ opacity: 1;}
     </style>
     <!--[if lt IE 9]>
        <script src="js/libs/html5shiv.js"></script>
@@ -49,11 +45,7 @@
   <body>
 
     <section>
-      <header class="show-mfb-slidein">
-        <h2>Slide in + fade</h2>      
-        <h2>Zoom in</h2>      
-        <h2>Fountain</h2>         
-      </header>     
+      <h1>Material Floating Button</h1>         
       <select id="selections">
          <option selected disabled>Choose an effect here</option>
          <option value="mfb-slidein">Slide in + fade</option>
@@ -256,8 +248,7 @@
 
   (function(){
     var select = document.getElementById('selections'),
-        buttons = document.querySelectorAll('.bt'),
-        header = document.getElementsByTagName('header')[0];
+        buttons = document.querySelectorAll('.bt');
     var previous = 'mfb-slidein',
         chosen;
 
@@ -266,8 +257,6 @@
     function toggleEffect (e) {
 
       chosen = select.options[select.selectedIndex].value;
-
-      header.className = 'show-' + chosen;
 
       Array.prototype.forEach.call(buttons, function(button){
         button.classList.remove(previous);
