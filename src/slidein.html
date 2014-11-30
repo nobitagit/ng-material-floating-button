@@ -21,6 +21,15 @@
         color: #E40A5D;
         font-size: 60px;        
         position: relative;
+        margin: 0.2em 0;
+      }
+      section{
+        text-align: center;
+      }
+      select{
+        background: transparent;
+        color: #E40A5D;
+        border: 1px solid #E40A5D;
       }
     </style>
     <!--[if lt IE 9]>
@@ -31,7 +40,16 @@
   </head>
   <body>
 
-    <h1>Slide in + fade</h1>
+    <section>
+      <h1>Slide in + fade</h1>      
+      <select>
+         <option selected disabled>Choose an effect here</option>
+         <option>Slide in + fade</option>
+         <option>Zoom in</option>
+         <option>Fountain</option>
+      </select>      
+    </section>
+
 
     <div class="mfo-component--tl mfb-slidein">
       <div class="mfo-component__wrap">
