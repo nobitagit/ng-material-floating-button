@@ -42,7 +42,7 @@
       transform: scale(0);
     }
     @for $i from 1 through $number-of-child-buttons {
-      $distance: 70px * $i;
+      $distance: -70px * $i;
       li:nth-child( #{$i} ) { 
         transform: translateY($distance) scale(0);
         transition: all $slide-speed;

@@ -61,15 +61,12 @@
 /* SIZES -----------------------------*/
 /* OTHER VARIABLES -------------------*/
 /*------------------------------------*\
-    #GENERIC | demo styles
-\*------------------------------------*/
-/*------------------------------------*\
     #BASE | Raw styles
 \*------------------------------------*/
 /**
  * The very core styling of the button.
  * These styles are shared by every instance of the button.
- * Styles palced here should NOT care about placement in the screen,
+ * Styles placed here should NOT care about placement in the screen,
  * options chosen by the user or state of the button.
  */
 .mfb-component, .mfb-component--tl, .mfb-component--tr, .mfb-component--bl, .mfb-component--br {
@@ -307,22 +304,22 @@
   transform: scale(0); }
 .mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(1),
 .mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(1) {
-  transform: translateY(70px) scale(0);
+  transform: translateY(-70px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.15s; }
 .mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(2),
 .mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(2) {
-  transform: translateY(140px) scale(0);
+  transform: translateY(-140px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.1s; }
 .mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(3),
 .mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(3) {
-  transform: translateY(210px) scale(0);
+  transform: translateY(-210px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.05s; }
 .mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(4),
 .mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(4) {
-  transform: translateY(280px) scale(0);
+  transform: translateY(-280px) scale(0);
   transition: all 0.5s;
   transition-delay: 0s; }
 .mfb-component--bl.mfb-zoomin:hover .mfb-component__list li:nth-child(1),

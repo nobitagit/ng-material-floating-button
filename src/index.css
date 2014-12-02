@@ -134,6 +134,9 @@ code{
 }
 pre{
   display: block;
+}
+.striked{
+ text-decoration: line-through;  
 } 
 .mfb-component--tl{
   animation: fromTop 1s 1;
