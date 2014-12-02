@@ -1,3 +1,7 @@
+html, body{
+  height: 100%;
+  min-height: 100%;  
+}
 html{
   background: #E9EBEC;
   font-family: 'Raleway', sans-serif;
@@ -131,19 +135,19 @@ code{
 pre{
   display: block;
 } 
-.mfo-component--tl{
+.mfb-component--tl{
   animation: fromTop 1s 1;
   -webkit-animation: fromTop 1s 1;
 }
-.mfo-component--tr{
+.mfb-component--tr{
   animation: fromTop 1.3s 1;
   -webkit-animation: fromTop 1.3s 1;
 } 
-.mfo-component--br{
+.mfb-component--br{
   animation: fromBottom 1.6s 1;
   -webkit-animation: fromBottom 1.6s 1;
 }
-.mfo-component--bl{
+.mfb-component--bl{
   animation: fromBottom 1.9s 1;
   -webkit-animation: fromBottom 1.9s 1;
 }        

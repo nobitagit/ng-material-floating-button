@@ -4,14 +4,14 @@
  * the main button while transitioning from transparent to opaque.
  *
  */
-.mfo-component--tl.mfb-slidein,
-.mfo-component--tr.mfb-slidein{
-  .mfo-component__list li{
+.mfb-component--tl.mfb-slidein,
+.mfb-component--tr.mfb-slidein{
+  .mfb-component__list li{
     opacity: 0;
     transition: all $slide-speed;
   }
   &:hover{
-    .mfo-component__list{
+    .mfb-component__list{
       li{
         opacity: 1;         
       }
@@ -25,14 +25,14 @@
   }
 }
 
-.mfo-component--bl.mfb-slidein,
-.mfo-component--br.mfb-slidein{
-  .mfo-component__list li{
+.mfb-component--bl.mfb-slidein,
+.mfb-component--br.mfb-slidein{
+  .mfb-component__list li{
     opacity: 0;
     transition: all $slide-speed;
   }
   &:hover{
-    .mfo-component__list{
+    .mfb-component__list{
       li{
         opacity: 1;         
       }

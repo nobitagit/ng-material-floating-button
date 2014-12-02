@@ -63,20 +63,6 @@
 /*------------------------------------*\
     #GENERIC | demo styles
 \*------------------------------------*/
-html, body {
-  height: 100%;
-  min-height: 100%; }
-
-.cf:before,
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-
-.cf:after {
-  clear: both; }
-
 /*------------------------------------*\
     #BASE | Raw styles
 \*------------------------------------*/
@@ -86,14 +72,14 @@ html, body {
  * Styles palced here should NOT care about placement in the screen,
  * options chosen by the user or state of the button.
  */
-.mfo-component, .mfo-component--tl, .mfo-component--tr, .mfo-component--bl, .mfo-component--br {
+.mfb-component, .mfb-component--tl, .mfb-component--tr, .mfb-component--bl, .mfb-component--br {
   box-sizing: border-box;
   margin: 25px;
   position: fixed;
   white-space: nowrap;
   z-index: 30; }
 
-.mfo-component *, .mfo-component--tl *, .mfo-component--tr *, .mfo-component--bl *, .mfo-component--br *, .mfo-component *:before, .mfo-component--tl *:before, .mfo-component--tr *:before, .mfo-component--bl *:before, .mfo-component--br *:before, .mfo-component *:after, .mfo-component--tl *:after, .mfo-component--tr *:after, .mfo-component--bl *:after, .mfo-component--br *:after {
+.mfb-component *, .mfb-component--tl *, .mfb-component--tr *, .mfb-component--bl *, .mfb-component--br *, .mfb-component *:before, .mfb-component--tl *:before, .mfb-component--tr *:before, .mfb-component--bl *:before, .mfb-component--br *:before, .mfb-component *:after, .mfb-component--tl *:after, .mfb-component--tr *:after, .mfb-component--bl *:after, .mfb-component--br *:after {
   box-sizing: inherit; }
 
 /*------------------------------------*\
@@ -107,26 +93,26 @@ html, body {
  * 3. Bottom-left:  modified by the " --bl " suffix.
  * 4. Bottom-right: modified by the " --br " suffix.
  */
-.mfo-component--tl {
+.mfb-component--tl {
   left: 0;
   top: 0; }
 
-.mfo-component--tr {
+.mfb-component--tr {
   right: 0;
   top: 0; }
 
-.mfo-component--bl {
+.mfb-component--bl {
   left: 0;
   bottom: 0; }
 
-.mfo-component--br {
+.mfb-component--br {
   right: 0;
   bottom: 0; }
 
 /*------------------------------------*\
     #BUTTONS | Base
 \*------------------------------------*/
-.mfo-component__button, .mfo-component__button--main, .mfo-component__button--child {
+.mfb-component__button, .mfb-component__button--main, .mfb-component__button--child {
   background-color: #E40A5D;
   position: relative;
   border: none;
@@ -145,11 +131,11 @@ html, body {
  * the child buttons.
  *
  */
-.mfo-component__list {
+.mfb-component__list {
   list-style: none;
   margin: 0;
   padding: 0; }
-  .mfo-component__list > li {
+  .mfb-component__list > li {
     display: block;
     position: absolute;
     top: 0;
@@ -159,8 +145,8 @@ html, body {
 /**
  * This is the basic styles for all the icons inside the main button
  */
-.mfo-component__main-icon, .mfo-component__main-icon--active,
-.mfo-component__main-icon--resting {
+.mfb-component__main-icon, .mfb-component__main-icon--active,
+.mfb-component__main-icon--resting {
   position: absolute;
   font-size: 18px;
   left: 50%;
@@ -172,45 +158,45 @@ html, body {
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1); }
 
-.mfo-component__wrap {
+.mfb-component__wrap {
   padding: 25px;
   margin: -25px; }
 
-.mfo-component:hover .mfo-component__main-icon, .mfo-component--tl:hover .mfo-component__main-icon, .mfo-component--tr:hover .mfo-component__main-icon, .mfo-component--bl:hover .mfo-component__main-icon, .mfo-component--br:hover .mfo-component__main-icon, .mfo-component:hover .mfo-component__main-icon--active, .mfo-component--tl:hover .mfo-component__main-icon--active, .mfo-component--tr:hover .mfo-component__main-icon--active, .mfo-component--bl:hover .mfo-component__main-icon--active, .mfo-component--br:hover .mfo-component__main-icon--active,
-.mfo-component:hover .mfo-component__main-icon--resting,
-.mfo-component--tl:hover .mfo-component__main-icon--resting,
-.mfo-component--tr:hover .mfo-component__main-icon--resting,
-.mfo-component--bl:hover .mfo-component__main-icon--resting,
-.mfo-component--br:hover .mfo-component__main-icon--resting {
+.mfb-component:hover .mfb-component__main-icon, .mfb-component--tl:hover .mfb-component__main-icon, .mfb-component--tr:hover .mfb-component__main-icon, .mfb-component--bl:hover .mfb-component__main-icon, .mfb-component--br:hover .mfb-component__main-icon, .mfb-component:hover .mfb-component__main-icon--active, .mfb-component--tl:hover .mfb-component__main-icon--active, .mfb-component--tr:hover .mfb-component__main-icon--active, .mfb-component--bl:hover .mfb-component__main-icon--active, .mfb-component--br:hover .mfb-component__main-icon--active,
+.mfb-component:hover .mfb-component__main-icon--resting,
+.mfb-component--tl:hover .mfb-component__main-icon--resting,
+.mfb-component--tr:hover .mfb-component__main-icon--resting,
+.mfb-component--bl:hover .mfb-component__main-icon--resting,
+.mfb-component--br:hover .mfb-component__main-icon--resting {
   -webkit-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg); }
 
 /*------------------------------------*\
     #BUTTONS | Modifiers
 \*------------------------------------*/
-.mfo-component__button--main {
+.mfb-component__button--main {
   height: 56px;
   width: 56px;
   z-index: 20; }
 
-.mfo-component__button--child {
+.mfb-component__button--child {
   height: 56px;
   width: 56px; }
 
-.mfo-component__main-icon--active {
+.mfb-component__main-icon--active {
   opacity: 0; }
 
-.mfo-component:hover .mfo-component__main-icon, .mfo-component--tl:hover .mfo-component__main-icon, .mfo-component--tr:hover .mfo-component__main-icon, .mfo-component--bl:hover .mfo-component__main-icon, .mfo-component--br:hover .mfo-component__main-icon, .mfo-component:hover .mfo-component__main-icon--active, .mfo-component--tl:hover .mfo-component__main-icon--active, .mfo-component--tr:hover .mfo-component__main-icon--active, .mfo-component--bl:hover .mfo-component__main-icon--active, .mfo-component--br:hover .mfo-component__main-icon--active,
-.mfo-component:hover .mfo-component__main-icon--resting,
-.mfo-component--tl:hover .mfo-component__main-icon--resting,
-.mfo-component--tr:hover .mfo-component__main-icon--resting,
-.mfo-component--bl:hover .mfo-component__main-icon--resting,
-.mfo-component--br:hover .mfo-component__main-icon--resting {
+.mfb-component:hover .mfb-component__main-icon, .mfb-component--tl:hover .mfb-component__main-icon, .mfb-component--tr:hover .mfb-component__main-icon, .mfb-component--bl:hover .mfb-component__main-icon, .mfb-component--br:hover .mfb-component__main-icon, .mfb-component:hover .mfb-component__main-icon--active, .mfb-component--tl:hover .mfb-component__main-icon--active, .mfb-component--tr:hover .mfb-component__main-icon--active, .mfb-component--bl:hover .mfb-component__main-icon--active, .mfb-component--br:hover .mfb-component__main-icon--active,
+.mfb-component:hover .mfb-component__main-icon--resting,
+.mfb-component--tl:hover .mfb-component__main-icon--resting,
+.mfb-component--tr:hover .mfb-component__main-icon--resting,
+.mfb-component--bl:hover .mfb-component__main-icon--resting,
+.mfb-component--br:hover .mfb-component__main-icon--resting {
   -webkit-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg); }
-.mfo-component:hover .mfo-component__main-icon--resting, .mfo-component--tl:hover .mfo-component__main-icon--resting, .mfo-component--tr:hover .mfo-component__main-icon--resting, .mfo-component--bl:hover .mfo-component__main-icon--resting, .mfo-component--br:hover .mfo-component__main-icon--resting {
+.mfb-component:hover .mfb-component__main-icon--resting, .mfb-component--tl:hover .mfb-component__main-icon--resting, .mfb-component--tr:hover .mfb-component__main-icon--resting, .mfb-component--bl:hover .mfb-component__main-icon--resting, .mfb-component--br:hover .mfb-component__main-icon--resting {
   opacity: 0; }
-.mfo-component:hover .mfo-component__main-icon--active, .mfo-component--tl:hover .mfo-component__main-icon--active, .mfo-component--tr:hover .mfo-component__main-icon--active, .mfo-component--bl:hover .mfo-component__main-icon--active, .mfo-component--br:hover .mfo-component__main-icon--active {
+.mfb-component:hover .mfb-component__main-icon--active, .mfb-component--tl:hover .mfb-component__main-icon--active, .mfb-component--tr:hover .mfb-component__main-icon--active, .mfb-component--bl:hover .mfb-component__main-icon--active, .mfb-component--br:hover .mfb-component__main-icon--active {
   opacity: 1; }
 
 /*------------------------------------*\
@@ -222,51 +208,51 @@ html, body {
  * the main button while transitioning from transparent to opaque.
  *
  */
-.mfo-component--tl.mfb-slidein .mfo-component__list li,
-.mfo-component--tr.mfb-slidein .mfo-component__list li {
+.mfb-component--tl.mfb-slidein .mfb-component__list li,
+.mfb-component--tr.mfb-slidein .mfb-component__list li {
   opacity: 0;
   transition: all 0.5s; }
-.mfo-component--tl.mfb-slidein:hover .mfo-component__list li,
-.mfo-component--tr.mfb-slidein:hover .mfo-component__list li {
+.mfb-component--tl.mfb-slidein:hover .mfb-component__list li,
+.mfb-component--tr.mfb-slidein:hover .mfb-component__list li {
   opacity: 1; }
-.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(1),
-.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(1) {
+.mfb-component--tl.mfb-slidein:hover .mfb-component__list li:nth-child(1),
+.mfb-component--tr.mfb-slidein:hover .mfb-component__list li:nth-child(1) {
   -webkit-transform: translateY(70px);
   transform: translateY(70px); }
-.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(2),
-.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(2) {
+.mfb-component--tl.mfb-slidein:hover .mfb-component__list li:nth-child(2),
+.mfb-component--tr.mfb-slidein:hover .mfb-component__list li:nth-child(2) {
   -webkit-transform: translateY(140px);
   transform: translateY(140px); }
-.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(3),
-.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(3) {
+.mfb-component--tl.mfb-slidein:hover .mfb-component__list li:nth-child(3),
+.mfb-component--tr.mfb-slidein:hover .mfb-component__list li:nth-child(3) {
   -webkit-transform: translateY(210px);
   transform: translateY(210px); }
-.mfo-component--tl.mfb-slidein:hover .mfo-component__list li:nth-child(4),
-.mfo-component--tr.mfb-slidein:hover .mfo-component__list li:nth-child(4) {
+.mfb-component--tl.mfb-slidein:hover .mfb-component__list li:nth-child(4),
+.mfb-component--tr.mfb-slidein:hover .mfb-component__list li:nth-child(4) {
   -webkit-transform: translateY(280px);
   transform: translateY(280px); }
 
-.mfo-component--bl.mfb-slidein .mfo-component__list li,
-.mfo-component--br.mfb-slidein .mfo-component__list li {
+.mfb-component--bl.mfb-slidein .mfb-component__list li,
+.mfb-component--br.mfb-slidein .mfb-component__list li {
   opacity: 0;
   transition: all 0.5s; }
-.mfo-component--bl.mfb-slidein:hover .mfo-component__list li,
-.mfo-component--br.mfb-slidein:hover .mfo-component__list li {
+.mfb-component--bl.mfb-slidein:hover .mfb-component__list li,
+.mfb-component--br.mfb-slidein:hover .mfb-component__list li {
   opacity: 1; }
-.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(1),
-.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(1) {
+.mfb-component--bl.mfb-slidein:hover .mfb-component__list li:nth-child(1),
+.mfb-component--br.mfb-slidein:hover .mfb-component__list li:nth-child(1) {
   -webkit-transform: translateY(-70px);
   transform: translateY(-70px); }
-.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(2),
-.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(2) {
+.mfb-component--bl.mfb-slidein:hover .mfb-component__list li:nth-child(2),
+.mfb-component--br.mfb-slidein:hover .mfb-component__list li:nth-child(2) {
   -webkit-transform: translateY(-140px);
   transform: translateY(-140px); }
-.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(3),
-.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(3) {
+.mfb-component--bl.mfb-slidein:hover .mfb-component__list li:nth-child(3),
+.mfb-component--br.mfb-slidein:hover .mfb-component__list li:nth-child(3) {
   -webkit-transform: translateY(-210px);
   transform: translateY(-210px); }
-.mfo-component--bl.mfb-slidein:hover .mfo-component__list li:nth-child(4),
-.mfo-component--br.mfb-slidein:hover .mfo-component__list li:nth-child(4) {
+.mfb-component--bl.mfb-slidein:hover .mfb-component__list li:nth-child(4),
+.mfb-component--br.mfb-slidein:hover .mfb-component__list li:nth-child(4) {
   -webkit-transform: translateY(-280px);
   transform: translateY(-280px); }
 
@@ -276,83 +262,83 @@ html, body {
  * from zero to normal size.
  *
  */
-.mfo-component--tl.mfb-zoomin .mfo-component__list li,
-.mfo-component--tr.mfb-zoomin .mfo-component__list li {
+.mfb-component--tl.mfb-zoomin .mfb-component__list li,
+.mfb-component--tr.mfb-zoomin .mfb-component__list li {
   transform: scale(0); }
-.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(1),
-.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(1) {
+.mfb-component--tl.mfb-zoomin .mfb-component__list li:nth-child(1),
+.mfb-component--tr.mfb-zoomin .mfb-component__list li:nth-child(1) {
   transform: translateY(70px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.15s; }
-.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(2),
-.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(2) {
+.mfb-component--tl.mfb-zoomin .mfb-component__list li:nth-child(2),
+.mfb-component--tr.mfb-zoomin .mfb-component__list li:nth-child(2) {
   transform: translateY(140px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.1s; }
-.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(3),
-.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(3) {
+.mfb-component--tl.mfb-zoomin .mfb-component__list li:nth-child(3),
+.mfb-component--tr.mfb-zoomin .mfb-component__list li:nth-child(3) {
   transform: translateY(210px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.05s; }
-.mfo-component--tl.mfb-zoomin .mfo-component__list li:nth-child(4),
-.mfo-component--tr.mfb-zoomin .mfo-component__list li:nth-child(4) {
+.mfb-component--tl.mfb-zoomin .mfb-component__list li:nth-child(4),
+.mfb-component--tr.mfb-zoomin .mfb-component__list li:nth-child(4) {
   transform: translateY(280px) scale(0);
   transition: all 0.5s;
   transition-delay: 0s; }
-.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(1),
-.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(1) {
+.mfb-component--tl.mfb-zoomin:hover .mfb-component__list li:nth-child(1),
+.mfb-component--tr.mfb-zoomin:hover .mfb-component__list li:nth-child(1) {
   transform: translateY(70px) scale(1);
   transition-delay: 0.05s; }
-.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(2),
-.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(2) {
+.mfb-component--tl.mfb-zoomin:hover .mfb-component__list li:nth-child(2),
+.mfb-component--tr.mfb-zoomin:hover .mfb-component__list li:nth-child(2) {
   transform: translateY(140px) scale(1);
   transition-delay: 0.1s; }
-.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(3),
-.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(3) {
+.mfb-component--tl.mfb-zoomin:hover .mfb-component__list li:nth-child(3),
+.mfb-component--tr.mfb-zoomin:hover .mfb-component__list li:nth-child(3) {
   transform: translateY(210px) scale(1);
   transition-delay: 0.15s; }
-.mfo-component--tl.mfb-zoomin:hover .mfo-component__list li:nth-child(4),
-.mfo-component--tr.mfb-zoomin:hover .mfo-component__list li:nth-child(4) {
+.mfb-component--tl.mfb-zoomin:hover .mfb-component__list li:nth-child(4),
+.mfb-component--tr.mfb-zoomin:hover .mfb-component__list li:nth-child(4) {
   transform: translateY(280px) scale(1);
   transition-delay: 0.2s; }
 
-.mfo-component--bl.mfb-zoomin .mfo-component__list li,
-.mfo-component--br.mfb-zoomin .mfo-component__list li {
+.mfb-component--bl.mfb-zoomin .mfb-component__list li,
+.mfb-component--br.mfb-zoomin .mfb-component__list li {
   transform: scale(0); }
-.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(1),
-.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(1) {
+.mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(1),
+.mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(1) {
   transform: translateY(70px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.15s; }
-.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(2),
-.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(2) {
+.mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(2),
+.mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(2) {
   transform: translateY(140px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.1s; }
-.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(3),
-.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(3) {
+.mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(3),
+.mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(3) {
   transform: translateY(210px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.05s; }
-.mfo-component--bl.mfb-zoomin .mfo-component__list li:nth-child(4),
-.mfo-component--br.mfb-zoomin .mfo-component__list li:nth-child(4) {
+.mfb-component--bl.mfb-zoomin .mfb-component__list li:nth-child(4),
+.mfb-component--br.mfb-zoomin .mfb-component__list li:nth-child(4) {
   transform: translateY(280px) scale(0);
   transition: all 0.5s;
   transition-delay: 0s; }
-.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(1),
-.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(1) {
+.mfb-component--bl.mfb-zoomin:hover .mfb-component__list li:nth-child(1),
+.mfb-component--br.mfb-zoomin:hover .mfb-component__list li:nth-child(1) {
   transform: translateY(-70px) scale(1);
   transition-delay: 0.05s; }
-.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(2),
-.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(2) {
+.mfb-component--bl.mfb-zoomin:hover .mfb-component__list li:nth-child(2),
+.mfb-component--br.mfb-zoomin:hover .mfb-component__list li:nth-child(2) {
   transform: translateY(-140px) scale(1);
   transition-delay: 0.1s; }
-.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(3),
-.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(3) {
+.mfb-component--bl.mfb-zoomin:hover .mfb-component__list li:nth-child(3),
+.mfb-component--br.mfb-zoomin:hover .mfb-component__list li:nth-child(3) {
   transform: translateY(-210px) scale(1);
   transition-delay: 0.15s; }
-.mfo-component--bl.mfb-zoomin:hover .mfo-component__list li:nth-child(4),
-.mfo-component--br.mfb-zoomin:hover .mfo-component__list li:nth-child(4) {
+.mfb-component--bl.mfb-zoomin:hover .mfb-component__list li:nth-child(4),
+.mfb-component--br.mfb-zoomin:hover .mfb-component__list li:nth-child(4) {
   transform: translateY(-280px) scale(1);
   transition-delay: 0.2s; }
 
@@ -361,83 +347,83 @@ html, body {
  * When hovering the main button the child buttons
  * jump into view from outside the viewport
  */
-.mfo-component--tl.mfb-fountain .mfo-component__list li,
-.mfo-component--tr.mfb-fountain .mfo-component__list li {
+.mfb-component--tl.mfb-fountain .mfb-component__list li,
+.mfb-component--tr.mfb-fountain .mfb-component__list li {
   transform: scale(0); }
-.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(1),
-.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(1) {
+.mfb-component--tl.mfb-fountain .mfb-component__list li:nth-child(1),
+.mfb-component--tr.mfb-fountain .mfb-component__list li:nth-child(1) {
   transform: translateY(-70px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.15s; }
-.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(2),
-.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(2) {
+.mfb-component--tl.mfb-fountain .mfb-component__list li:nth-child(2),
+.mfb-component--tr.mfb-fountain .mfb-component__list li:nth-child(2) {
   transform: translateY(-140px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.1s; }
-.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(3),
-.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(3) {
+.mfb-component--tl.mfb-fountain .mfb-component__list li:nth-child(3),
+.mfb-component--tr.mfb-fountain .mfb-component__list li:nth-child(3) {
   transform: translateY(-210px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.05s; }
-.mfo-component--tl.mfb-fountain .mfo-component__list li:nth-child(4),
-.mfo-component--tr.mfb-fountain .mfo-component__list li:nth-child(4) {
+.mfb-component--tl.mfb-fountain .mfb-component__list li:nth-child(4),
+.mfb-component--tr.mfb-fountain .mfb-component__list li:nth-child(4) {
   transform: translateY(-280px) scale(0);
   transition: all 0.5s;
   transition-delay: 0s; }
-.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(1),
-.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(1) {
+.mfb-component--tl.mfb-fountain:hover .mfb-component__list li:nth-child(1),
+.mfb-component--tr.mfb-fountain:hover .mfb-component__list li:nth-child(1) {
   transform: translateY(70px) scale(1);
   transition-delay: 0.05s; }
-.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(2),
-.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(2) {
+.mfb-component--tl.mfb-fountain:hover .mfb-component__list li:nth-child(2),
+.mfb-component--tr.mfb-fountain:hover .mfb-component__list li:nth-child(2) {
   transform: translateY(140px) scale(1);
   transition-delay: 0.1s; }
-.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(3),
-.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(3) {
+.mfb-component--tl.mfb-fountain:hover .mfb-component__list li:nth-child(3),
+.mfb-component--tr.mfb-fountain:hover .mfb-component__list li:nth-child(3) {
   transform: translateY(210px) scale(1);
   transition-delay: 0.15s; }
-.mfo-component--tl.mfb-fountain:hover .mfo-component__list li:nth-child(4),
-.mfo-component--tr.mfb-fountain:hover .mfo-component__list li:nth-child(4) {
+.mfb-component--tl.mfb-fountain:hover .mfb-component__list li:nth-child(4),
+.mfb-component--tr.mfb-fountain:hover .mfb-component__list li:nth-child(4) {
   transform: translateY(280px) scale(1);
   transition-delay: 0.2s; }
 
-.mfo-component--bl.mfb-fountain .mfo-component__list li,
-.mfo-component--br.mfb-fountain .mfo-component__list li {
+.mfb-component--bl.mfb-fountain .mfb-component__list li,
+.mfb-component--br.mfb-fountain .mfb-component__list li {
   transform: scale(0); }
-.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(1),
-.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(1) {
+.mfb-component--bl.mfb-fountain .mfb-component__list li:nth-child(1),
+.mfb-component--br.mfb-fountain .mfb-component__list li:nth-child(1) {
   transform: translateY(70px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.15s; }
-.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(2),
-.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(2) {
+.mfb-component--bl.mfb-fountain .mfb-component__list li:nth-child(2),
+.mfb-component--br.mfb-fountain .mfb-component__list li:nth-child(2) {
   transform: translateY(140px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.1s; }
-.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(3),
-.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(3) {
+.mfb-component--bl.mfb-fountain .mfb-component__list li:nth-child(3),
+.mfb-component--br.mfb-fountain .mfb-component__list li:nth-child(3) {
   transform: translateY(210px) scale(0);
   transition: all 0.5s;
   transition-delay: 0.05s; }
-.mfo-component--bl.mfb-fountain .mfo-component__list li:nth-child(4),
-.mfo-component--br.mfb-fountain .mfo-component__list li:nth-child(4) {
+.mfb-component--bl.mfb-fountain .mfb-component__list li:nth-child(4),
+.mfb-component--br.mfb-fountain .mfb-component__list li:nth-child(4) {
   transform: translateY(280px) scale(0);
   transition: all 0.5s;
   transition-delay: 0s; }
-.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(1),
-.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(1) {
+.mfb-component--bl.mfb-fountain:hover .mfb-component__list li:nth-child(1),
+.mfb-component--br.mfb-fountain:hover .mfb-component__list li:nth-child(1) {
   transform: translateY(-70px) scale(1);
   transition-delay: 0.05s; }
-.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(2),
-.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(2) {
+.mfb-component--bl.mfb-fountain:hover .mfb-component__list li:nth-child(2),
+.mfb-component--br.mfb-fountain:hover .mfb-component__list li:nth-child(2) {
   transform: translateY(-140px) scale(1);
   transition-delay: 0.1s; }
-.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(3),
-.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(3) {
+.mfb-component--bl.mfb-fountain:hover .mfb-component__list li:nth-child(3),
+.mfb-component--br.mfb-fountain:hover .mfb-component__list li:nth-child(3) {
   transform: translateY(-210px) scale(1);
   transition-delay: 0.15s; }
-.mfo-component--bl.mfb-fountain:hover .mfo-component__list li:nth-child(4),
-.mfo-component--br.mfb-fountain:hover .mfo-component__list li:nth-child(4) {
+.mfb-component--bl.mfb-fountain:hover .mfb-component__list li:nth-child(4),
+.mfb-component--br.mfb-fountain:hover .mfb-component__list li:nth-child(4) {
   transform: translateY(-280px) scale(1);
   transition-delay: 0.2s; }
 
@@ -448,7 +434,7 @@ html, body {
  * These are the labels associated to each button.
  * They are exposed only when hovering the related button.
  */
-.mfo-component__label {
+.mfb-component__label {
   background: rgba(0, 0, 0, 0.4);
   padding: 4px 10px;
   border-radius: 3px;
@@ -459,21 +445,21 @@ html, body {
   top: 50%;
   margin-top: -10.5px; }
 
-.mfo-component__button + .mfo-component__label, .mfo-component__button--main + .mfo-component__label, .mfo-component__button--child + .mfo-component__label {
+.mfb-component__button + .mfb-component__label, .mfb-component__button--main + .mfb-component__label, .mfb-component__button--child + .mfb-component__label {
   opacity: 0;
   transition: all 0.5s; }
 
-.mfo-component__button:hover + .mfo-component__label, .mfo-component__button--main:hover + .mfo-component__label, .mfo-component__button--child:hover + .mfo-component__label {
+.mfb-component__button:hover + .mfb-component__label, .mfb-component__button--main:hover + .mfb-component__label, .mfb-component__button--child:hover + .mfb-component__label {
   opacity: 1;
   transition: all 0.3s; }
 
 /*------------------------------------*\
     #LABELS | Modifiers
 \*------------------------------------*/
-.mfo-component--br .mfo-component__label, .mfo-component--tr .mfo-component__label {
+.mfb-component--br .mfb-component__label, .mfb-component--tr .mfb-component__label {
   right: 70px; }
 
-.mfo-component--tl .mfo-component__label, .mfo-component--bl .mfo-component__label {
+.mfb-component--tl .mfb-component__label, .mfb-component--bl .mfb-component__label {
   left: 70px; }
 
 /*------------------------------------*\
@@ -493,10 +479,10 @@ html, body {
 /**
  * Apply this class to the html tag when developing the slide-in button
  */
-html.slide-in {
+html.mfb-slide-in {
   border-top: 5px solid teal; }
 
-html.debug * {
+html.mfb-debug * {
   border: 1px solid red; }
 
 /*# sourceMappingURL=style.css.map */

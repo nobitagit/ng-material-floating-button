@@ -102,20 +102,20 @@ $number-of-child-buttons: 4;
     #GENERIC | demo styles
 \*------------------------------------*/
 
-html, body{
-  height: 100%;
-  min-height: 100%;
-}
+// html, body{
+//   height: 100%;
+//   min-height: 100%;
+// }
 
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
+// .cf:before,
+// .cf:after {
+//     content: " "; /* 1 */
+//     display: table; /* 2 */
+// }
 
-.cf:after {
-    clear: both;
-}
+// .cf:after {
+//     clear: both;
+// }
 /*------------------------------------*\
     #BASE | Raw styles
 \*------------------------------------*/
@@ -127,7 +127,7 @@ html, body{
  * options chosen by the user or state of the button.
  */
 
-.mfo-component{
+.mfb-component{
   box-sizing: border-box; // A better box-sizing 
   margin: $border-distance;
   position: fixed;
@@ -137,7 +137,7 @@ html, body{
 
 // make sure that everything inside this component 
 // inherits the same box-sizing
-.mfo-component{
+.mfb-component{
   *, *:before, *:after {
     box-sizing: inherit;
   } 
@@ -156,20 +156,20 @@ html, body{
  * 4. Bottom-right: modified by the " --br " suffix.
  */
 
-.mfo-component--tl{
-  @extend .mfo-component;
+.mfb-component--tl{
+  @extend .mfb-component;
   left: 0; top: 0;
 }
-.mfo-component--tr{
-  @extend .mfo-component;  
+.mfb-component--tr{
+  @extend .mfb-component;  
   right: 0; top: 0;
 }
-.mfo-component--bl{
-  @extend .mfo-component;  
+.mfb-component--bl{
+  @extend .mfb-component;  
   left: 0; bottom: 0;
 }
-.mfo-component--br{
-  @extend .mfo-component;  
+.mfb-component--br{
+  @extend .mfb-component;  
   right: 0; bottom: 0;
 } 
 
@@ -178,7 +178,7 @@ html, body{
     #BUTTONS | Base
 \*------------------------------------*/  
 
-.mfo-component__button{
+.mfb-component__button{
   background-color: $main-color;
   position: relative;
   border: none;
@@ -198,7 +198,7 @@ html, body{
  * the child buttons.
  *
  */ 
-.mfo-component__list{
+.mfb-component__list{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -215,7 +215,7 @@ html, body{
 /**
  * This is the basic styles for all the icons inside the main button
  */ 
-.mfo-component__main-icon{
+.mfb-component__main-icon{
   position: absolute;
   font-size: 18px;
   left: 50%;
@@ -228,7 +228,7 @@ html, body{
   transition: transform 150ms cubic-bezier(.4,0,1,1);  
 }
 
-.mfo-component__wrap{
+.mfb-component__wrap{
   // this double declaration adds some padding to the main button
   // to expand the area that triggers the hover state. The equal, negative
   // margin evens out the distance form the borders so that the button
@@ -236,8 +236,8 @@ html, body{
   padding: $border-distance;
   margin: -$border-distance;
 }
-.mfo-component:hover{
-  .mfo-component__main-icon {
+.mfb-component:hover{
+  .mfb-component__main-icon {
     -webkit-transform: scale(1) rotate(0deg);    
     transform: scale(1) rotate(0deg);    
   }
@@ -248,34 +248,34 @@ html, body{
     #BUTTONS | Modifiers
 \*------------------------------------*/  
 
-.mfo-component__button--main{
-  @extend .mfo-component__button;
+.mfb-component__button--main{
+  @extend .mfb-component__button;
   height: $main_button_size;
   width: $main_button_size;  
   z-index: 20;
 }
-.mfo-component__button--child{
-  @extend .mfo-component__button;
+.mfb-component__button--child{
+  @extend .mfb-component__button;
   height: $child_button_size;
   width: $child_button_size;  
 }
 // the icons for the main button
-.mfo-component__main-icon--active,
-.mfo-component__main-icon--resting{
-  @extend .mfo-component__main-icon;  
+.mfb-component__main-icon--active,
+.mfb-component__main-icon--resting{
+  @extend .mfb-component__main-icon;  
 }
-.mfo-component__main-icon--active{
+.mfb-component__main-icon--active{
   opacity: 0;
 }
-.mfo-component:hover{
-  .mfo-component__main-icon{
+.mfb-component:hover{
+  .mfb-component__main-icon{
     -webkit-transform: scale(1) rotate(0deg);    
     transform: scale(1) rotate(0deg);    
   }
-  .mfo-component__main-icon--resting{
+  .mfb-component__main-icon--resting{
     opacity: 0;
   }
-  .mfo-component__main-icon--active{
+  .mfb-component__main-icon--active{
     opacity: 1;
   }
 }
@@ -297,7 +297,7 @@ html, body{
  * They are exposed only when hovering the related button.
  */
 
-.mfo-component__label{
+.mfb-component__label{
   background: rgba(0,0,0, .4);
   padding: $labels-padding-vertical $labels-padding-horizontal;
   border-radius: 3px;
@@ -308,11 +308,11 @@ html, body{
   top: 50%;
   margin-top: - ($labels-padding-vertical + $labels-font-size / 2);    
 }
-.mfo-component__button + .mfo-component__label{
+.mfb-component__button + .mfb-component__label{
   opacity: 0;
   transition: all $label-hover-off; // the label disappears at this speed
 }
-.mfo-component__button:hover + .mfo-component__label{
+.mfb-component__button:hover + .mfb-component__label{
   opacity: 1;
   transition: all $label-hover-on;  // the label appears at this speed
 } 
@@ -320,13 +320,13 @@ html, body{
 /*------------------------------------*\
     #LABELS | Modifiers
 \*------------------------------------*/
-.mfo-component--br, .mfo-component--tr{
-  .mfo-component__label{
+.mfb-component--br, .mfb-component--tr{
+  .mfb-component__label{
     right: 70px; 
   } 
 }
-.mfo-component--tl, .mfo-component--bl{
-  .mfo-component__label{
+.mfb-component--tl, .mfb-component--bl{
+  .mfb-component__label{
     left: 70px; 
   } 
 }
@@ -354,11 +354,11 @@ html, body{
 /**
  * Apply this class to the html tag when developing the slide-in button
  */
-html.slide-in{
+html.mfb-slide-in{
   border-top: 5px solid teal; 
 }
 
-html.debug *{
+html.mfb-debug *{
   border: 1px solid red;
 }
 

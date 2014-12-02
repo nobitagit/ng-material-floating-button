@@ -5,9 +5,9 @@
  *
  */
 
-.mfo-component--tl.mfb-zoomin,
-.mfo-component--tr.mfb-zoomin{
-  .mfo-component__list{
+.mfb-component--tl.mfb-zoomin,
+.mfb-component--tr.mfb-zoomin{
+  .mfb-component__list{
     li{
       transform: scale(0);
     }
@@ -22,7 +22,7 @@
     }     
   }
   &:hover{
-    .mfo-component__list{
+    .mfb-component__list{
       @for $i from 1 through $number-of-child-buttons {
         $distance: 70px * $i;
         li:nth-child( #{$i} ) { 
@@ -35,9 +35,9 @@
   }
 }
 
-.mfo-component--bl.mfb-zoomin,
-.mfo-component--br.mfb-zoomin{
-  .mfo-component__list{
+.mfb-component--bl.mfb-zoomin,
+.mfb-component--br.mfb-zoomin{
+  .mfb-component__list{
     li{
       transform: scale(0);
     }
@@ -52,7 +52,7 @@
     }     
   }
   &:hover{
-    .mfo-component__list{
+    .mfb-component__list{
       @for $i from 1 through $number-of-child-buttons {
         $distance: -70px * $i;
         li:nth-child( #{$i} ) { 

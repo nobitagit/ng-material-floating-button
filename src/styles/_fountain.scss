@@ -4,9 +4,9 @@
  * jump into view from outside the viewport
  */
 
-.mfo-component--tl.mfb-fountain,
-.mfo-component--tr.mfb-fountain{
-  .mfo-component__list{
+.mfb-component--tl.mfb-fountain,
+.mfb-component--tr.mfb-fountain{
+  .mfb-component__list{
     li{
       transform: scale(0);
     }
@@ -21,7 +21,7 @@
     }     
   }
   &:hover{
-    .mfo-component__list{
+    .mfb-component__list{
       @for $i from 1 through $number-of-child-buttons {
         $distance: 70px * $i;
         li:nth-child( #{$i} ) { 
@@ -34,9 +34,9 @@
   }
 }
 
-.mfo-component--bl.mfb-fountain,
-.mfo-component--br.mfb-fountain{
-  .mfo-component__list{
+.mfb-component--bl.mfb-fountain,
+.mfb-component--br.mfb-fountain{
+  .mfb-component__list{
     li{
       transform: scale(0);
     }
@@ -51,7 +51,7 @@
     }     
   }
   &:hover{
-    .mfo-component__list{
+    .mfb-component__list{
       @for $i from 1 through $number-of-child-buttons {
         $distance: -70px * $i;
         li:nth-child( #{$i} ) { 
