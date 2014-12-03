@@ -17,7 +17,11 @@ module.exports = function(grunt) {
       }
     },
 
-    livePages: ['index.html', 'index.css', 'showcase.html', 'styles/*.css'],
+    clean: {
+      check: ['.grunt/grunt-gh-pages/gh-pages/check']
+    },
+
+    livePages: ['index.html', 'index.css', 'showcase.html', 'styles/*.css', '**/*.map'],
     'gh-pages': {
       options: {
         base: 'src',
@@ -37,9 +41,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-clean');  
 
+  // Publish this to live site
   grunt.registerTask('live', ['gh-pages:live']);
-  grunt.registerTask('livecheck', ['gh-pages:check']);
+  // Live site dry run: test locally before pushing.
+  // In .grunt look for the folder 'check' and see if everything's ok
+  grunt.registerTask('livecheck', ['clean:check','gh-pages:check']);
+
   grunt.registerTask('watch-css', ['watch:css']);
   grunt.registerTask('default', []);
 };
