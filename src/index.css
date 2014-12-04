@@ -118,6 +118,7 @@ footer a, footer a:active, footer a:visited{
   border: none;
   background: none;
   transition: color .2s;
+  cursor: pointer;
 }
 .actions:hover{
   color: rgb(30, 30, 171);
