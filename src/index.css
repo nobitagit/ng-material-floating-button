@@ -103,6 +103,9 @@ footer a, footer a:active, footer a:visited{
 .code p:first-child{
   margin-top: 2em;
 }
+.code a{
+  color: rgba(232, 216, 49, 0.9);
+}
 .viewCode .code{
   transform: translateY(0);
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.36);      

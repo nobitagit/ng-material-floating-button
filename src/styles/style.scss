@@ -113,6 +113,10 @@ $number-of-child-buttons: 4;
   position: fixed;
   white-space: nowrap;
   z-index: 30;
+  // this padding is needed really only if the element is an <ul>
+  // otherwise it can probably be ditched.
+  padding-left: 0;
+  list-style: none;
 }
 
 // make sure that everything inside this component 
@@ -160,6 +164,7 @@ $number-of-child-buttons: 4;
 
 .mfb-component__button{
   background-color: $main-color;
+  display: inline-block;
   position: relative;
   border: none;
   border-radius: 50%;
@@ -195,17 +200,12 @@ $number-of-child-buttons: 4;
 /**
  * This is the basic styles for all the icons inside the main button
  */ 
-.mfb-component__main-icon{
+.mfb-component__icon{
   position: absolute;
   font-size: 18px;
-  left: 50%;
-  top: 50%;
-  margin-left: -9px;
-  margin-top: -9px;
-  -webkit-transform: scale(1) rotate(360deg);
-  transform: scale(1) rotate(360deg);
-  -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1);
-  transition: transform 150ms cubic-bezier(.4,0,1,1);  
+  text-align: center;
+  line-height: 56px;
+  width: 100%;   
 }
 
 .mfb-component__wrap{
@@ -217,7 +217,7 @@ $number-of-child-buttons: 4;
   margin: -$border-distance;
 }
 .mfb-component:hover{
-  .mfb-component__main-icon {
+  .mfb-component__icon {
     -webkit-transform: scale(1) rotate(0deg);    
     transform: scale(1) rotate(0deg);    
   }
@@ -242,7 +242,16 @@ $number-of-child-buttons: 4;
 // the icons for the main button
 .mfb-component__main-icon--active,
 .mfb-component__main-icon--resting{
-  @extend .mfb-component__main-icon;  
+  @extend .mfb-component__icon;  
+  -webkit-transform: scale(1) rotate(360deg);
+  transform: scale(1) rotate(360deg);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1);
+  transition: transform 150ms cubic-bezier(.4,0,1,1);   
+}
+// the icons for the main button
+.mfb-component__child-icon,
+.mfb-component__child-icon{
+  @extend .mfb-component__icon;  
 }
 .mfb-component__main-icon--active{
   opacity: 0;
@@ -273,11 +282,16 @@ $number-of-child-buttons: 4;
 \*------------------------------------*/
 
 /**
- * These are the labels associated to each button.
- * They are exposed only when hovering the related button.
+ * These are the labels associated to each button,
+ * exposed only when hovering the related button.
+ * They are called labels but are in fact data-attributes of
+ * each button (an anchor tag).
  */
 
-.mfb-component__label{
+[data-mfb-label]:after {
+  content: attr(data-mfb-label);
+  opacity: 0;
+  transition: all $label-hover-off;  
   background: rgba(0,0,0, .4);
   padding: $labels-padding-vertical $labels-padding-horizontal;
   border-radius: 3px;
@@ -286,29 +300,28 @@ $number-of-child-buttons: 4;
   pointer-events: none;
   position: absolute;
   top: 50%;
-  margin-top: - ($labels-padding-vertical + $labels-font-size / 2);    
+  margin-top: - ($labels-padding-vertical + $labels-font-size / 2);  
+  transition: all $label-hover-off; // the label disappears at this speed     
 }
-.mfb-component__button + .mfb-component__label{
-  opacity: 0;
-  transition: all $label-hover-off; // the label disappears at this speed
-}
-.mfb-component__button:hover + .mfb-component__label{
+[data-mfb-label]:hover:after {
+  content: attr(data-mfb-label);
   opacity: 1;
-  transition: all $label-hover-on;  // the label appears at this speed
-} 
-
+  transition: all $label-hover-on; // the label appears at this speed
+}
 /*------------------------------------*\
     #LABELS | Modifiers
 \*------------------------------------*/
 .mfb-component--br, .mfb-component--tr{
-  .mfb-component__label{
+  [data-mfb-label]:after {
+    content: attr(data-mfb-label);  
     right: 70px; 
-  } 
+  }
 }
 .mfb-component--tl, .mfb-component--bl{
-  .mfb-component__label{
+  [data-mfb-label]:after {
+    content: attr(data-mfb-label);  
     left: 70px; 
-  } 
+  }
 }
 
 /*------------------------------------*\
