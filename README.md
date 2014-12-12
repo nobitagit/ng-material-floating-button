@@ -8,4 +8,10 @@ Made to be semantic, fast and easy to customize.
 
 See a demo [here](http://nobitagit.github.io/material-floating-button/).
 
-Docs coming soon, in the meantime please refer to the [showcase](http://nobitagit.github.io/material-floating-button/) for code and animations overview
+Docs coming soon, in the meantime please refer to the [showcase](http://nobitagit.github.io/material-floating-button/showcase.html) for code and animations overview.
+
+
+Demo icons courtesy of [Ionicons](ionicons.com)
+
+##How to use##
+Download the whole repo directly here on Github or clone it, then (optionally) run `npm install` to have access to the configured Grunt tasks.
