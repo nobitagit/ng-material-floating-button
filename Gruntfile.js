@@ -7,6 +7,10 @@ module.exports = function(grunt) {
       css: {
         files: '**/*.scss',
         tasks: ['sass:base']
+      },
+      js: {
+        files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+        tasks: ['jshint:all']
       }
     },
     sass: {
@@ -20,6 +24,10 @@ module.exports = function(grunt) {
     clean: {
       check: ['.grunt/grunt-gh-pages/gh-pages/check']
     },
+
+    jshint: {
+      all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
+    },    
 
     livePages: ['index.html', 'index.css', 'showcase.html', 'styles/*.css', '**/*.map'],
     'gh-pages': {
@@ -41,7 +49,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-clean');  
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');    
 
   // Publish this to live site
   grunt.registerTask('live', ['gh-pages:live']);
@@ -50,5 +59,6 @@ module.exports = function(grunt) {
   grunt.registerTask('livecheck', ['clean:check','gh-pages:check']);
 
   grunt.registerTask('watch-css', ['watch:css']);
+  grunt.registerTask('watch-js', ['watch:js']);
   grunt.registerTask('default', []);
 };
