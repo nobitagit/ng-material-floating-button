@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html ng-app="test-app">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet"/>
+    <title>Ng-material-floating-button</title>
+  </head>
+  <body ng-controller="myCtrl">
+
+    hi!
+
+    <mfb-menu></mfb-menu>
+
+    <div mfb-menu></div>
+
+  <script type="text/javascript" src="../bower_components/angularjs/angular.js"></script>
+  <script type="text/javascript" src="directive.js"></script>
+  <script>
+
+  var app = angular.module('test-app', ['ng-mfb']);
+
+  app.controller('myCtrl', function(){
+  });
+  </script>
+  </body>
+</html>
