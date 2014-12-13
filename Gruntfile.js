@@ -25,6 +25,13 @@ module.exports = function(grunt) {
       check: ['.grunt/grunt-gh-pages/gh-pages/check']
     },
 
+    karma: {
+      unit: {
+        configFile: 'test/karma.conf.js',
+        background: true
+      }
+    },
+
     jshint: {
       options: {
         jshintrc : true
