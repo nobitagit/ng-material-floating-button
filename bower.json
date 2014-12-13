@@ -1,0 +1,27 @@
+{
+  "name": "material-floating-button",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nobitagit/ng-material-floating-button",
+  "authors": [
+    "Nobita"
+  ],
+  "description": "angular directive for material floating buttons",
+  "main": "src/directive.js",
+  "keywords": [
+    "angular",
+    "directive",
+    "material"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.6"
+  }
+}

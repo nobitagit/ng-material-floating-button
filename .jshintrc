@@ -10,5 +10,6 @@
     "trailing": true,
     "undef": true,
     "unused": true,
-    "jasmine" : true    
+    "jasmine" : true,
+    "indent": 2  
 }
