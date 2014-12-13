@@ -9,11 +9,19 @@
   </head>
   <body ng-controller="myCtrl">
 
-    hi!
+    <mfb-menu position="tl" effect="slidein">
+      <mfb-main-button>test</mfb-main-button>
+      <mfb-button>child</mfb-button>
+      <mfb-button>child</mfb-button>
+      <mfb-button>child</mfb-button>
+    </mfb-menu>
 
-    <mfb-menu></mfb-menu>
-
-    <div mfb-menu></div>
+    <div mfb-menu position="tr" effect="slidein">
+      <a mfb-main-button>test</a>  
+      <a mfb-button>test-html</a>    
+      <a mfb-button>test-html</a>    
+      <a mfb-button>test-html</a>    
+    </div>
 
   <script type="text/javascript" src="../bower_components/angularjs/angular.js"></script>
   <script type="text/javascript" src="directive.js"></script>
