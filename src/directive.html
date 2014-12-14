@@ -5,31 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">    
     <title>Ng-material-floating-button</title>
   </head>
   <body ng-controller="myCtrl">
 
-    <mfb-menu position="tl" effect="slidein">
-      <mfb-main-button>test</mfb-main-button>
-      <mfb-button>child</mfb-button>
-      <mfb-button>child</mfb-button>
-      <mfb-button>child</mfb-button>
+    <mfb-menu position="tl" effect="slidein" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">
+      <mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></mfb-button>
     </mfb-menu>
 
-    <div mfb-menu position="tr" effect="slidein">
-      <a mfb-main-button>test</a>  
-      <a mfb-button>test-html</a>    
-      <a mfb-button>test-html</a>    
-      <a mfb-button>test-html</a>    
+    <div mfb-menu position="tr" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">
+      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>  
     </div>
 
-  <script type="text/javascript" src="../bower_components/angularjs/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
+  <script>!window.angular && document.write(unescape('%3Cscript src="../bower_components/angularjs/angular.js"%3E%3C/script%3E'))</script>
+  <script type="text/javascript" src=""></script>
   <script type="text/javascript" src="directive.js"></script>
   <script>
 
   var app = angular.module('test-app', ['ng-mfb']);
 
-  app.controller('myCtrl', function(){
+  app.controller('myCtrl', function($scope){
+
+    $scope.buttons = [{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    }];
+
   });
   </script>
   </body>
