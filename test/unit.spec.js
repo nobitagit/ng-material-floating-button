@@ -15,18 +15,52 @@ describe('ng-mfb', function() {
     return node.contents();
   }
 
-  it('should transclude the div element properly', function(){
-    //expect(1+3).toBe(9);
-    var tpl = '<div mfb-menu  position="tr" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">' +
-              '  <a mfb-button icon="icon-name" label="label-text" ng-repeat="button in buttons"></a>' +
-              '</div>'
+  it('should properly transclude the div element', function(){
+    var tpl = '<div mfb-menu position="tr" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">' +
+              '  <a mfb-button icon="icon-name" label="label-text"></a>' +
+              '</div>';
+
     var node = compile(tpl);
     $rootScope.$digest();
 
-    console.log(node.children())
-    console.log(node.children().length )
-    expect(node[0].nodeType).toEqual(1);
-    expect(node[1]).toBeUndefined();    
+    expect(node.hasClass('mfb-component--tr')).toBeTruthy();
+    expect(node.find('ul').hasClass('mfb-component__list')).toBeTruthy();      
   });
+
+
+  describe('when passing an option to the position attribute', function(){
+
+    var node;
+
+    function generateTpl( pos ){
+      var tpl = '<div mfb-menu position="' + pos +'"></div>';
+
+      node = compile(tpl);
+      $rootScope.$digest();      
+    }
+
+    it('should place the menu on top right if "tr" is passed', function(){
+      generateTpl('tr');
+      expect(node.hasClass('mfb-component--tr')).toBeTruthy();     
+    });
+
+    it('should place the menu on top left if "tl" is passed', function(){
+      generateTpl('tl');
+      expect(node.hasClass('mfb-component--tl')).toBeTruthy();     
+    });
+
+    it('should place the menu on bottom right if "br" is passed', function(){
+      generateTpl('br');
+      expect(node.hasClass('mfb-component--br')).toBeTruthy();     
+    });
+
+    it('should place the menu on top left if "bl" is passed', function(){
+      generateTpl('bl');
+      expect(node.hasClass('mfb-component--bl')).toBeTruthy();     
+    });            
+  });
+
+
+
 
 });
