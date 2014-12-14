@@ -24,7 +24,8 @@ mfb.directive('mfbMenu', [function(){
               '  </a>' +
               '  <ul class="mfb-component__list" ng-transclude>' +
               '  </ul>' +
-              '</li>'              
+              ' </li>' +        
+              '</ul>'              
   };
 }]);
 
