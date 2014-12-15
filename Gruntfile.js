@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
     },    
 
-    livePages: ['index.html', 'index.css', 'showcase.html', 'styles/*.css', '**/*.map'],
+    livePages: ['index.html', 'index.css', 'mfb-directive.js', 'styles/*.css', '**/*.map'],
     'gh-pages': {
       options: {
         base: 'src',
