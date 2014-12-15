@@ -10,6 +10,13 @@ describe('ng-mfb', function() {
     $rootScope = _$rootScope_;
   }));
 
+  /**
+   * This directive uses transclusion so for testing purposes we have to
+   * wrap the tested element in a wrapping div and then fetch its
+   * contents. See: 
+   * Testing Transclusion Directives @ https://docs.angularjs.org/guide/unit-testing
+   *
+   **/
   function compile( template ){
     var node = $compile('<div>' + template + '</div>')($rootScope);
     return node.contents();
@@ -60,7 +67,106 @@ describe('ng-mfb', function() {
     });            
   });
 
+  describe('when passing an option to the effect attribute', function(){
 
+    it('should assign the correspondig animation class', function(){
 
+      var tpl = '<div mfb-menu effect="zoomin"></div>';
+
+      var node = compile(tpl);
+      $rootScope.$digest();  
+
+      expect(node.hasClass('mfb-zoomin')).toBeTruthy();     
+    });
+  });
+
+  describe('when passing some text to the label attribute', function(){
+
+    it('should assign this text to the main button "data-mfb-label" attribute', function(){
+
+      var label = 'some text',
+          tpl = '<div mfb-menu label="' + label + '"></div>',
+          node = compile(tpl),
+          main_button;
+
+      $rootScope.$digest();  
+
+      var main_button = node.find('a').eq(0);
+      expect(main_button.attr('data-mfb-label')).toBe(label);
+    });
+  });
+
+  describe('when passing values to the icons attributes', function() {
+
+    var main_button;
+
+    beforeEach(function(){
+      var tpl = '<div mfb-menu active-icon="ion-edit" resting-icon="ion-plus-round"></div>',
+          node = compile(tpl);
+
+      $rootScope.$digest();   
+
+      main_button = node.find('a').eq(0);  
+    });
+
+    it('should assign the right class for the icon shown at rest', function() {
+      var icon1 = main_button.find('i').eq(0);
+      expect( icon1.hasClass('mfb-component__main-icon--resting') ).toBeTruthy();
+      expect( icon1.hasClass('ion-plus-round') ).toBeTruthy();
+    });
+    
+    it('should assign the right class for the icon shown for active state', function() {
+      var icon2 = main_button.find('i').eq(1);
+      expect( icon2.hasClass('mfb-component__main-icon--active') ).toBeTruthy();
+      expect( icon2.hasClass('ion-edit') ).toBeTruthy();
+    });    
+  });
+
+  describe('number of child buttons should be the right one', function() {
+
+    it('if manually specified by the user', function() {
+      var tpl = '<div mfb-menu position="tr" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">' +
+                '  <a mfb-button icon="icon-name" label="label-text"></a>' +
+                '  <a mfb-button icon="icon-name" label="label-text"></a>' +
+                '  <a mfb-button icon="icon-name" label="label-text"></a>' +
+                '</div>',
+          node = compile(tpl),
+          buttons;
+
+      $rootScope.$digest();     
+
+      buttons = node.find('ul').children();
+
+      expect(buttons.length).toEqual(3);
+
+    });
+
+    it('if specified through an ng-repeat', function() {
+
+      $rootScope.buttons = [{
+          label: 'a link',
+          icon: 'ion-paper-airplane'
+        },{
+          label: 'a link',
+          icon: 'ion-paper-airplane'
+        },{
+          label: 'a link',
+          icon: 'ion-paper-airplane'
+        }];
+
+      var tpl = '<div mfb-menu position="tr" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">' +
+                '  <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>' +
+                '</div>',
+          node = compile(tpl),
+          buttons;
+
+      $rootScope.$digest();     
+
+      buttons = node.find('ul').children();
+
+      expect(buttons.length).toEqual(3);
+          
+    });        
+  });
 
 });
