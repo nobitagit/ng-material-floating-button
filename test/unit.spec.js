@@ -22,16 +22,36 @@ describe('ng-mfb', function() {
     return node.contents();
   }
 
-  it('should properly transclude the div element', function(){
-    var tpl = '<div mfb-menu position="tr" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">' +
-              '  <a mfb-button icon="icon-name" label="label-text"></a>' +
-              '</div>';
+  describe('the directive', function(){
 
-    var node = compile(tpl);
-    $rootScope.$digest();
+    it('should properly transclude the div element', function(){
+      var tpl = '<div mfb-menu position="tr" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">' +
+                '  <a mfb-button icon="icon-name" label="label-text"></a>' +
+                '</div>';
 
-    expect(node.hasClass('mfb-component--tr')).toBeTruthy();
-    expect(node.find('ul').hasClass('mfb-component__list')).toBeTruthy();      
+      var node = compile(tpl);
+      $rootScope.$digest();
+
+      expect(node.hasClass('mfb-component--tr')).toBeTruthy();
+      expect(node.find('ul').hasClass('mfb-component__list')).toBeTruthy();      
+    });
+
+    it('should be possibile to be instantiated as an attribute', function(){
+        var tpl = '<div mfb-menu></div>',
+            node = compile(tpl);
+        $rootScope.$digest();   
+
+        expect(node.parent().find('ul')).toBeTruthy();
+    });
+
+    it('should be possibile to be instantiated as an element', function(){
+        var tpl = '<mfb-menu></mfb-menu>',
+            node = compile(tpl);
+        $rootScope.$digest();   
+
+        expect(node.parent().find('mfb-menu')).toBeTruthy();
+    });
+
   });
 
 
