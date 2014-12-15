@@ -12,11 +12,7 @@ mfb.directive('mfbMenu', [function(){
       resting: '@restingIcon',
       active: '@activeIcon'      
     },
-    link: function(scope, elem, attrs){
-      scope.pos = attrs.position;
-      scope.eff = attrs.effect;
-    },
-    template: '<ul class="mfb-component--{{pos}} mfb-{{eff}}">' +
+    template: '<ul class="mfb-component--{{position}} mfb-{{effect}}">' +
               ' <li class="mfb-component__wrap">' +
               '  <a href="#" data-mfb-label="{{label}}" class="mfb-component__button--main">' +
               '   <i class="mfb-component__main-icon--resting {{resting}}"></i>' +
