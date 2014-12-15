@@ -18,7 +18,7 @@ module.exports = function(config) {
       'bower_components/angularjs/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
 
-      'src/directive.js',
+      'src/mfb-directive.js',
       'test/*.spec.js',
 
     ],
