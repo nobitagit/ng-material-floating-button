@@ -1,158 +1,31 @@
 <!DOCTYPE HTML>
-<html class="">
+<html ng-app="test-app">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet"/>
+    <base href="../">        
+    <link href="src/styles/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
-    <link href="index.css" rel="stylesheet">
+    <link href="src/index.css" rel="stylesheet">
     <!--[if lt IE 9]>
        <script src="js/libs/html5shiv.js"></script>
       <!-- <script src="js/libs/respond.min.js"></script> -->
     <![endif]-->
     <title>Material floating button. The index.</title>
   </head>
-  <body>
+  <body ng-controller="myCtrl">
 
-    <ul class="mfb-component--tl mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul>
-
-    <ul class="mfb-component--tr mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul>
-
-    <ul class="mfb-component--bl mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul>
-
-    <ul class="mfb-component--br mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul>              
+    <nav mfb-menu position="{{pos}}" effect="{{chosenEffect}}" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" ng-repeat="pos in positions">
+      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+    </nav>             
 
     <section id="panel" class="panel">
       <header>
         <h1>
-          Material Floating Buttons
+          Angularjs Material Floating Buttons
         </h1>
         <span id="showcode" class="showcode">
           <i class="ion-eye icon-yepcode"></i>
@@ -161,54 +34,52 @@
       </header>
       <article>
         <p>
-          Customizable, semantic Material button implementation. <br>  
+          Customizable, semantic Material floating action button implemented as an Angularjs directive. Also available in vanilla html. <br>  
           <span class="striked">Shamelessly</span> Openly inspired by Google Inbox, Evernote and Path.           
         </p>
         <p>
-          To add Material Floating Buttons to any project just download or clone the repo from Github.<br>
-          Click on the yellow button here above for a code preview and refer to the docs (coming soon) or to the <a href="http://nobitagit.github.io/material-floating-button/showcase.html">showcase</a>.
+          To add Material Floating Buttons to any project just download or clone the repo from Github. Click on the <strong>yellow button</strong> here above for a code preview or choose an effect from the <strong>dropdown</strong> below and hover over any button on the corners of the screen.           
         </p>
+        <p>
+          <select id="selections" ng-model="chosenEffect">
+             <option value="{{effect.value}}" ng-disabled="{{!effect.value}}" ng-repeat="effect in effects">{{effect.name}}</option>
+          </select>          
+        </p>        
 
         <div class="code">
           <p>
             To add Material Floating Buttons to any project just download the files from here below or clone the repo from Github. <br>
           </p>
-          <pre>git clone https://github.com/nobitagit/polymer-slidenav.git</pre>
+          <pre>git clone https://github.com/nobitagit/ng-material-floating-button.git</pre>
           <p>
             After referencing the styles in your header drop the MFB markup in your HTML like so:
           </p>
-<pre>&lt;ul class="mfb-component--br mfb-slidein"&gt;
-  &lt;li class="mfb-component__wrap"&gt;
-    &lt;a href="#" data-mfb-label="A label" class="mfb-component__button--main"&gt;
-      &lt;ul class="mfb-component__list"&gt;
-        &lt;li&gt;
-          &lt;a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child"&gt;
-            &lt;i class="mfb-component__child-icon ion-paper-airplane"&gt;&lt;/i&gt;
-          &lt;/a&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;    
-  &lt;/li&gt;
-&lt;/ul&gt;</pre>  
+<pre>&lt;nav mfb-menu position="{{pos}}" effect="{{chosenEffect}}" 
+        label="your main button text here" 
+        active-icon="ion-edit" resting-icon="ion-plus-round"&gt;
+  &lt;a mfb-button icon="icon-class" label="child button text"&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</pre>  
           <p>
-            The two classes of the main <code>&lt;ul&gt;</code> tag define the position of the component and its associated animation. The rest of the code always stays the same regardless of position and animation chosen. Refer to the docs or to the showcase for a thorough explanation.
+            The attributes provide the element configuration for position, labels and icons used. All the other styles and configurations are just css.
           </p>        
           <p>
-            The best way to integrate MFB in existing projects is to build the styles directly from the source. The scss file is filled with customizable variables. From there choose your favorite colors and sizes and then compile the css.
+            The best way to customise the styles is to build them directly from the source as the scss file is filled with customizable variables. From there choose your favorite colors and sizes and then compile the css.
           </p>
           <p>
-            If you use <a href="http://gruntjs.com/">Grunt</a> and have cloned the repo just run <code>grunt build</code> or <code>grunt watch</code> to have automatic compilation.
+            If you use <a href="http://gruntjs.com/">Grunt</a> and have cloned the repo run <code>npm init</code> and then <code>grunt build</code> or <code>grunt watch</code> to have automatic compilation.
           </p>
         </div>
 
       </article>    
       <footer>
-        <a href="https://github.com/nobitagit/material-floating-button"
+        <a href="https://github.com/nobitagit/ng-material-floating-button"
         >
           <button class="actions">
             <i class="ion-social-github"></i> View on Github
           </button>        
         </a>
-        <a href="http://twitter.com/share?text=Check this material floating button component!&url=http://nobitagit.github.io/material-floating-button/&hashtags=material,design,button,css">
+        <a href="http://twitter.com/share?text=Check this material floating button directive for Angularjs!&url=http://nobitagit.github.io/ng-material-floating-button/&hashtags=material,design,button,angularjs,directive">
           <button class="actions">
             <i class="ion-social-twitter"></i> Share on Twitter
           </button>           
@@ -227,5 +98,50 @@
       panel.classList.toggle('viewCode');
     }
   </script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
+  <script>!window.angular && document.write(unescape('%3Cscript src="bower_components/angularjs/angular.js"%3E%3C/script%3E'))</script>
+  <script type="text/javascript" src="src/mfb-directive.js"></script>
+  <script>
+
+  var app = angular.module('test-app', ['ng-mfb']);
+
+  app.controller('myCtrl', function($scope){
+
+    $scope.positions = ['tl', 'tr', 'br', 'bl'];
+
+    $scope.effects = [{
+      name: 'Choose an effect here',
+    },{
+      value: 'slidein',
+      name: 'Slide in + fade'
+    },{
+      value: 'zoomin',
+      name: 'Zoom in'
+    },{
+      value: 'fountain',
+      name: 'Fountain'
+    }];
+
+    $scope.buttons = [{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    }];
+
+    $scope.chosenEffect = 'zoomin';
+
+  });
+  </script>  
   </body>
 </html>

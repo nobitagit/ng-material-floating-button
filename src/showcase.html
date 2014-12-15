@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
-<html class="">
+<html ng-app="test-app">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet"/>
+    <base href="../">    
+    <link href="src/styles/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300' rel='stylesheet' type='text/css'>    
@@ -46,175 +47,61 @@
     <![endif]-->
     <title>Material Floating Button. The showcase.</title>
   </head>
-  <body>
+  <body ng-controller="myCtrl">
 
     <section>
       <h1>Material Floating Button</h1>         
-      <select id="selections">
-         <option selected disabled>Choose an effect here</option>
-         <option value="mfb-slidein">Slide in + fade</option>
-         <option value="mfb-zoomin">Zoom in</option>
-         <option value="mfb-fountain">Fountain</option>
+      <select id="selections" ng-model="chosenEffect">
+         <option value="{{effect.value}}" ng-disabled="{{!effect.value}}" ng-repeat="effect in effects">{{effect.name}}</option>
       </select>      
     </section>
 
+    <nav mfb-menu position="{{pos}}" effect="{{chosenEffect}}" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" ng-repeat="pos in positions">
+      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+    </nav>
 
-    <ul class="bt mfb-component--tl mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
 
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul>
-
-    <ul class="bt mfb-component--tr mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul>
-
-    <ul class="bt mfb-component--bl mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul> 
-
-    <ul class="bt mfb-component--br mfb-slidein">
-      <li class="mfb-component__wrap">
-        <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
-          <i class="mfb-component__main-icon--resting ion-plus-round"></i>
-          <i class="mfb-component__main-icon--active ion-edit"></i>
-        </a>     
-        <ul class="mfb-component__list">
-          <li>
-            <a href="#" data-mfb-label="Add" data-mfb-label="label with long long title" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paper-airplane"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-paperclip"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-calendar"></i>
-            </a>                     
-          </li>
-
-          <li>
-            <a href="#" data-mfb-label="Add" class="mfb-component__button--child">
-              <i class="mfb-component__child-icon ion-key"></i>
-            </a>                     
-          </li>                    
-        </ul>        
-      </li>
-    </ul>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.js"></script>
+  <script>!window.angular && document.write(unescape('%3Cscript src="bower_components/angularjs/angular.js"%3E%3C/script%3E'))</script>
+  <script type="text/javascript" src="src/mfb-directive.js"></script>
   <script>
 
-  (function(){
-    var select = document.getElementById('selections'),
-        buttons = document.querySelectorAll('.bt');
-    var previous = 'mfb-slidein',
-        chosen;
+  var app = angular.module('test-app', ['ng-mfb']);
 
-    select.addEventListener('change', toggleEffect);
+  app.controller('myCtrl', function($scope){
 
-    function toggleEffect (e) {
+    $scope.positions = ['tl', 'tr', 'br', 'bl'];
 
-      chosen = select.options[select.selectedIndex].value;
+    $scope.effects = [{
+      name: 'Choose an option here',
+    },{
+      value: 'slidein',
+      name: 'Slide in + fade'
+    },{
+      value: 'zoomin',
+      name: 'Zoom in'
+    },{
+      value: 'fountain',
+      name: 'Fountain'
+    }];
 
-      Array.prototype.forEach.call(buttons, function(button){
-        button.classList.remove(previous);
-        button.classList.add(chosen);
-      });
+    $scope.buttons = [{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    },{
+      label: 'a link',
+      icon: 'ion-paper-airplane'
+    }];
 
-      previous = chosen;      
-    }
+    $scope.chosenEffect = 'zoomin';
 
-
-  })();
+  });
   </script>
 
   </body>
