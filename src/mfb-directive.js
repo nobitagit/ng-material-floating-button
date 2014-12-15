@@ -16,7 +16,7 @@
       },
       template: '<ul class="mfb-component--{{position}} mfb-{{effect}}">' +
                 ' <li class="mfb-component__wrap">' +
-                '  <a href="#" data-mfb-label="{{label}}" class="mfb-component__button--main">' +
+                '  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--main">' +
                 '   <i class="mfb-component__main-icon--resting {{resting}}"></i>' +
                 '   <i class="mfb-component__main-icon--active {{active}}"></i>' +              
                 '  </a>' +
@@ -39,10 +39,10 @@
         label: '@'
       },
       template: '<li>' + 
-                ' <span data-mfb-label="{{label}}" class="mfb-component__button--child">' +
+                ' <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child">' +
                 '   <i class="mfb-component__child-icon {{icon}}"' +
                 '   </i>' +
-                ' </span>' +
+                ' </a>' +
                 '</li>'
     };
   }]);
