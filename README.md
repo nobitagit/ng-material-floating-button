@@ -6,9 +6,10 @@ Material design floating action button implemented as an Angularjs directive.
 Made to be semantic, fast and easy to customize.
 ~~Shamelessly~~ inspired by action buttons from Google Inbox, Evernote and Path.
 
+This project is not yet at v1.0.0, be warned.
+
 ##Demo##
 Head over to the project [homepage](http://nobitagit.github.io/ng-material-floating-button/) to see it in action.
-
 
 **Other versions**
 - [Vanilla html](https://github.com/nobitagit/material-floating-button) (original, upstream version of the component)
