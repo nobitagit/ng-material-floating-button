@@ -10,6 +10,11 @@
     "trailing": true,
     "undef": true,
     "unused": true,
-    "jasmine" : true,
-    "indent": 2  
+    "jasmine": true,
+    "indent": 2,
+    "browser": true,
+    "globals": {
+        "angular": true,
+        "inject": true
+    }
 }
