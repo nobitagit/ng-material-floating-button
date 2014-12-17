@@ -111,7 +111,7 @@ describe('ng-mfb', function() {
 
       $rootScope.$digest();  
 
-      var main_button = node.find('a').eq(0);
+      main_button = node.find('a').eq(0);
       expect(main_button.attr('data-mfb-label')).toBe(label);
     });
   });
