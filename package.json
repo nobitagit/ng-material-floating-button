@@ -1,0 +1,25 @@
+{
+  "name": "material-button",
+  "version": "0.4.0",
+  "description": "html component for button à la Path and Google Inbox",
+  "main": "index.html",
+  "repository": "https://github.com/nobitagit/material-floating-button",
+  "scripts": {
+    "test": "grunt jasmine"
+  },
+  "keywords": [
+    "component",
+    "material",
+    "design",
+    "css"
+  ],
+  "author": "Nobita",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-gh-pages": "^0.9.1"
+  }
+}
