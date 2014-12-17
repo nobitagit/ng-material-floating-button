@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
@@ -22,7 +21,8 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      check: ['.grunt/grunt-gh-pages/gh-pages/check']
+      check: ['.grunt/grunt-gh-pages/gh-pages/check'],
+      live: 'build/live/'
     },
 
     karma: {
@@ -37,21 +37,45 @@ module.exports = function(grunt) {
         jshintrc : true
       },
       all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
-    },    
+    },
 
-    livePages: ['index.html', 'index.css', 'mfb-directive.js', 'styles/*.css', '**/*.map'],
+    useminPrepare: {
+      html: 'src/index.html',
+      options: {
+        dest: 'build/live/'
+      }
+    },
+
+    usemin: {
+      html: ['build/live/index.html']
+    },
+
+    copy: {
+      live: {
+        files: [{
+          src: ['src/index.html', 'src/mfb-directive.js', 'src/index.css'],
+          dest: 'build/live/',
+          expand: true, flatten: true  
+        },{
+          src: ['mfb/src/styles/*.css', 'mfb/src/styles/*.css.map'],
+          dest: 'build/live/',
+          expand: true, flatten: true            
+        }]
+      }
+    },
+
     'gh-pages': {
       options: {
-        base: 'src',
+        base: 'build/live',
       },
       'live': {
-        src: ['<%= livePages %>'] 
+        src: ['*'] 
       },
       'check': {
         options: {
           push: false
         },
-        src: ['<%= livePages %>']      
+        src: ['*']      
       }
     }    
   });
@@ -60,16 +84,32 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');  
   grunt.loadNpmTasks('grunt-karma');    
-
-  // Publish this to live site
-  grunt.registerTask('live', ['gh-pages:live']);
-  // Live site dry run: test locally before pushing.
-  // In .grunt look for the folder 'check' and see if everything's ok
-  grunt.registerTask('livecheck', ['clean:check','gh-pages:check']);
+  grunt.loadNpmTasks('grunt-usemin');    
 
   grunt.registerTask('watch-css', ['watch:css']);
   grunt.registerTask('watch-js', ['watch:js']);
   grunt.registerTask('default', []);
+
+  // Live site dry run: test locally before pushing.
+  // In .grunt look for the folder 'check' and see if everything's ok
+  grunt.registerTask('livecheck', [
+      'clean:live',
+      'copy:live',
+      'useminPrepare',
+      'usemin',
+      'clean:check','gh-pages:check'
+    ]);
+
+  // Publish this to live site
+  grunt.registerTask('live', [
+      'clean:live',
+      'copy:live',
+      'useminPrepare',
+      'usemin',
+      'gh-pages:live'
+    ]);  
+
 };
