@@ -8,7 +8,7 @@ Made to be semantic, fast and easy to customize.
 
 See a demo [here](http://nobitagit.github.io/material-floating-button/).
 
-Docs coming soon, in the meantime please refer to the [showcase](http://nobitagit.github.io/material-floating-button/showcase.html) for code and animations overview.
+Please note that this is still **very beta**. Docs coming soon, in the meantime please refer to the [showcase](http://nobitagit.github.io/material-floating-button/showcase.html) for code and animations overview.
 
 Demo icons courtesy of [Ionicons](ionicons.com)
 
