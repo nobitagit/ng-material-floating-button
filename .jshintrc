@@ -3,6 +3,7 @@
     "eqeqeq": true,
     "eqnull": true,
     "expr": true,
+    "quotmark": "single",    
     "latedef": true,
     "onevar": true,
     "noarg": true,
