@@ -26,10 +26,13 @@ Download the whole repo or clone it, then reference the directive css file (here
 Place a reference to the directive before the closing `<body>` tag or anywhere after your angular script tag.
 
 ```html
-<link href="../mfb/src/mfb.css" rel="stylesheet"/>
+<link href="../mfb/src/mfb-directive.js" rel="stylesheet"/>
 ```
-
-Place the html structure in you template. As a first example, assuming your example is using [Ionicons](http://ionicons.com/) as icon font:
+Make sure you reference the Mfb module as a dependecy to your app or module like so:
+```js
+var app = angular.module('your-app', ['ng-mfb']);
+```
+Finally, place the correct html structure in your template. As a first example, assuming your example is using [Ionicons](http://ionicons.com/) as icon font:
 
 ```html
 <nav mfb-menu position="br" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">
