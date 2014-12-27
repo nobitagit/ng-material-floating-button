@@ -125,8 +125,36 @@ Example:
 ```html
 <a mfb-button label="About us"></a>
 ```
+
+#####Custom attributes#####
+Due to the nature of the component you'll probably want to associate some actions or use other angular directives such as ng-repeat on the buttons. As these attributes will be copied over to the generated html structure you can simply attach them to the `<mfb-element>`. A couple of examples, here using ui-router:
+```html
+<!-- if using ui-router, associate an on-click event to the anchor-->
+<a mfb-button ui-sref="yourState"></a>
+```
+And here leveraging a basic ng-repeat with buttons defined via js:
+```js
+// in your controller...
+$scope.buttons = [{
+  label: 'a link text',
+  icon: 'ion-paper-airplane'
+},{
+  label: 'another link',
+  icon: 'ion-plus'
+},{
+  label: 'a third link',
+  icon: 'ion-paperclip'
+};
+```
+```html
+<!-- in your template -->
+<!-- this will output 3 buttons with different icon, label and so on-->
+<a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons"></a>
+```
+
 ###More customisations###
 The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in `mfb/src` folder, while a customisation file is provided (`mfb/_customisation.scss`) to override the defaults without editing the source files.
+
 For a thorough overview of what and how to customise the look of the component through css read [here](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb), especially if you plan to keep your copy in sync with this repo by pulling in changes in the future.
 
 ##Unit tests##
