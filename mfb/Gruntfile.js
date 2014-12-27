@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     sass: {
       base: {
         files: {
-          'src/styles/style.css': 'src/styles/style.scss'          
+          'src/mfb.css': 'src/mfb.scss'          
         }
       }
     },
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
       check: ['.grunt/grunt-gh-pages/gh-pages/check']
     },
 
-    livePages: ['index.html', 'index.css', 'showcase.html', 'styles/*.css', '**/*.map'],
+    livePages: ['index.html', 'index.css', 'showcase.html', '*.css', '**/*.map'],
     'gh-pages': {
       options: {
         base: 'src',

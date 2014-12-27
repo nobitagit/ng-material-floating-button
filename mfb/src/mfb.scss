@@ -65,6 +65,13 @@ $main-color: #E40A5D;
 // aka the white text
 $bright-text: rgba(255, 255, 255, 0.8);
 
+/* EFFECTS ---------------------------*/
+
+// which effects must be made available in the css
+$effects-zoomin: true;
+$effects-slidein: true;
+$effects-fountain: true;
+
 /* SPEEDS ----------------------------*/
 
 // the speed of the inflation of each button after hovering on the main button
@@ -95,6 +102,10 @@ $labels-padding-horizontal: 10px;
 
 // how many child buttons does the component have
 $number-of-child-buttons: 4;
+
+/* IMPORT USER-DEFINED OVERRIDES -----*/
+
+@import "../_customise";
 
 /*------------------------------------*\
     #BASE | Raw styles
@@ -273,9 +284,20 @@ $number-of-child-buttons: 4;
     #BUTTONS | Animations
 \*------------------------------------*/ 
 
-@import "slidein";
-@import "zoomin";
-@import "fountain";
+@import "_/_slidein";
+@import "_/_zoomin";
+@import "_/_fountain";
+
+// Ugly work-around for this https://github.com/sass/sass/issues/451
+@if $effects-slidein == true {
+  @include effects-slidein;
+}
+@if $effects-zoomin == true {
+  @include effects-zoomin;
+}
+@if $effects-fountain == true {
+  @include effects-fountain;
+}
 
 /*------------------------------------*\
     #LABELS | base
