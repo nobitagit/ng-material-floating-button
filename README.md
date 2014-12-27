@@ -155,7 +155,7 @@ $scope.buttons = [{
 ###More customisations###
 The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in `mfb/src` folder, while a customisation file is provided (`mfb/_customisation.scss`) to override the defaults without editing the source files.
 
-For a thorough overview of what and how to customise the look of the component through css read [here](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb), especially if you plan to keep your copy in sync with this repo by pulling in changes in the future.
+For a thorough overview of what and how to customise the look of the component through css make sure you read [these docs](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb), especially if you plan to keep your copy in sync with this repo by pulling in changes in the future.
 
 ##Unit tests##
 To run the tests you need Jasmine and Karma runner. They can be run from the console with either `grunt karma` or `karma start test/karma.conf.js` commands.
