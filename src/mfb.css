@@ -57,6 +57,7 @@
     #SETTINGS | Variables
 \*------------------------------------*/
 /* COLORS ----------------------------*/
+/* EFFECTS ---------------------------*/
 /* SPEEDS ----------------------------*/
 /* SIZES -----------------------------*/
 /* OTHER VARIABLES -------------------*/
@@ -487,4 +488,4 @@ html.mfb-slide-in {
 html.mfb-debug * {
   border: 1px solid red; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=mfb.css.map */

@@ -1,0 +1,55 @@
+/**
+ * NOTE: This is an example file, it will *not* be compiled by Grunt.
+ * 
+ * USE: Copy all these variables (or only the ones you need) to _customise.scss,
+ * change where needed according to your preferences and recompile the css by
+ * running "grunt sass" (one-time compile) or "grunt watch-css" (for live reload).
+ *
+ * Try copy-pasting this into _customise.scss and then compile it.
+ *
+ **/
+
+/* COLORS ----------------------------*/
+
+// the main/primary color
+$main-color: #0A81E4;
+// aka the white text
+$bright-text: rgba(255, 255, 255, 0.8);
+
+/* EFFECTS ---------------------------*/
+
+// which effects must be made available in the css
+$effects-zoomin: true;
+$effects-slidein: true;
+$effects-fountain: true;
+
+/* SPEEDS ----------------------------*/
+
+// the speed of the inflation of each button after hovering on the main button
+$delay-staggering-inflate: 0.1s;
+// when hovering on the main button the child buttons slide into view
+$slide-speed: .5s;
+// the labels disappear at this speed on mouse out
+$label-hover-off: .5s;
+// the labels appear at this speed on mouse over
+$label-hover-on: .3s;
+
+/* SIZES -----------------------------*/
+
+// main button diameter
+$main_button_size: 56px;
+// main button diameter
+$child_button_size: 56px;
+// the distance of the main button from the closest corners of the screen
+$border-distance: 25px;
+// font-size for labels
+$labels-font-size: 13px;
+// top & bottom padding for the labels
+$labels-padding-vertical: 4px;
+// left & right padding for the labels
+$labels-padding-horizontal: 10px;
+
+/* OTHER VARIABLES -------------------*/
+
+// how many child buttons does the component have
+$number-of-child-buttons: 4;
