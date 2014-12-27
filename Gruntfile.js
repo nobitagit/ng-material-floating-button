@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     sass: {
       base: {
         files: {
-          'mfb/src/styles/style.css': 'mfb/src/styles/style.scss'          
+          'mfb/src/mfb.css': 'mfb/src/mfb.scss'          
         }
       }
     },
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
           dest: 'build/live/',
           expand: true, flatten: true  
         },{
-          src: ['mfb/src/styles/*.css', 'mfb/src/styles/*.css.map'],
+          src: ['mfb/src/*.css', 'mfb/src/*.css.map'],
           dest: 'build/live/',
           expand: true, flatten: true            
         }]
