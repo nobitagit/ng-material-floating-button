@@ -42,7 +42,7 @@ This above code will output a basic button menu on the bottom right corner of th
 ###Element attributes###
 A number of attributes can be passed to the elements from the template in order to customise both behavior and appearance.
 
-####mfb-menu element####
+####`<mfb-menu>` element####
 This can be defined as an attribute or an element. So this is valid:
 ```html
 <ul mfb-menu></ul>
@@ -51,7 +51,7 @@ This can be defined as an attribute or an element. So this is valid:
 ```html
 <mfb-menu></mfb-menu>
 ```
-#####position####
+#####Position####
 Defines in which corner of the screen the component should be displayed.
 
 value | explanation
@@ -68,7 +68,7 @@ Example:
 </ul>
 ```
 
-#####effect####
+#####Effect####
 Defines the effect that is performed when the menu opens up to show its child buttons.
 
 value | explanation
@@ -82,7 +82,7 @@ Example:
 <ul mfb-menu effect="zoomin">
 </ul>
 ```
-#####label####
+#####Label####
 The text that is displayed when hovering the main button.
 Example:
 ```html
@@ -90,22 +90,46 @@ Example:
 </ul>
 ```
 
-#####active-icon####
+#####Active-icon####
 The icon that will be displayed by default on the main button.
 Example:
 ```html
 <ul mfb-menu active-icon="ion-edit">
 </ul>
 ```
-#####resting-icon####
+#####Resting-icon####
 The icon that will be displayed on the main button when hovering/interacting with the menu.
 Example:
 ```html
 <ul mfb-menu resting-icon="ion-plus-round">
 </ul>
 ```
+####`<mfb-button>` element####
+This element represents the child button(s) of the menu and can only "live" inside a wrapper `<mfb-menu>` element. Like its parent, it can be defined both as an attribute and as an element. So this is valid:
+```html
+<a mfb-button></a>
+```
+...and this is valid too:
+```html
+<mfb-button></mfb-button>
+```
+#####Icon####
+Pass the class of the icon font character that is associated to the menu item:
+Example:
+```html
+<a mfb-button icon="ion-paperclip"></a>
+```
+#####Label####
+The text that is displayed when hovering the button.
+Example:
+```html
+<a mfb-button label="About us"></a>
+```
+###More customisations###
+The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in `mfb/src` folder, while a customisation file is provided (`mfb/_customisation.scss`) to override the defaults without editing the source files.
+For a thorough overview of what and how to customise the look of the component through css read [here](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb), especially if you plan to keep your copy in sync with this repo by pulling in changes in the future.
 
-##How to use##
+##Unit tests##
 To run the tests you need Jasmine and Karma runner. They can be run from the console with either `grunt karma` or `karma start test/karma.conf.js` commands.
 
 Demo icons courtesy of [Ionicons](ionicons.com)
