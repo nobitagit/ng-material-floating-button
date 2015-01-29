@@ -11,14 +11,16 @@
   .mfb-component--tr.mfb-zoomin{
     .mfb-component__list{
       li{
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
       }
       @for $i from 1 through $number-of-child-buttons {
         $distance: 70px * $i;
         li:nth-child( #{$i} ) { 
-          transform: translateY($distance) scale(0);
+          -webkit-transform: translateY($distance) scale(0);
+                  transform: translateY($distance) scale(0);
           transition: all $slide-speed;
-          // this is the delay at which the buttons start disappearing
+          // this is the delay at which the buttons *disappear*
           transition-delay: ( $number-of-child-buttons - $i ) * 0.05s;        
         }          
       }     
@@ -28,8 +30,9 @@
         @for $i from 1 through $number-of-child-buttons {
           $distance: 70px * $i;
           li:nth-child( #{$i} ) { 
-            transform: translateY($distance) scale(1); 
-            // this is the delay at which the buttons appear          
+            -webkit-transform: translateY($distance) scale(1); 
+                    transform: translateY($distance) scale(1); 
+            // this is the delay at which the buttons *appear*
             transition-delay: $i * 0.05s;
           }          
         }                
@@ -41,12 +44,14 @@
   .mfb-component--br.mfb-zoomin{
     .mfb-component__list{
       li{
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
       }
       @for $i from 1 through $number-of-child-buttons {
         $distance: -70px * $i;
         li:nth-child( #{$i} ) { 
-          transform: translateY($distance) scale(0);
+          -webkit-transform: translateY($distance) scale(0);
+                  transform: translateY($distance) scale(0);
           transition: all $slide-speed;
           // this is the delay at which the buttons start disappearing
           transition-delay: ( $number-of-child-buttons - $i ) * 0.05s;        
@@ -58,7 +63,8 @@
         @for $i from 1 through $number-of-child-buttons {
           $distance: -70px * $i;
           li:nth-child( #{$i} ) { 
-            transform: translateY($distance) scale(1); 
+            -webkit-transform: translateY($distance) scale(1); 
+                    transform: translateY($distance) scale(1); 
             // this is the delay at which the buttons appear          
             transition-delay: $i * 0.05s;
           }          
