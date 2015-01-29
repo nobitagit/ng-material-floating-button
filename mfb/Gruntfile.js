@@ -18,7 +18,8 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      check: ['.grunt/grunt-gh-pages/gh-pages/check']
+      check: ['.grunt/grunt-gh-pages/gh-pages/check'],
+      live:  ['.grunt/grunt-gh-pages/gh-pages/live']
     },
 
     livePages: ['index.html', 'index.css', 'showcase.html', '*.css', '**/*.map'],
@@ -44,7 +45,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');  
 
   // Publish this to live site
-  grunt.registerTask('live', ['gh-pages:live']);
+  grunt.registerTask('live', ['clean:live','gh-pages:live']);
   // Live site dry run: test locally before pushing.
   // In .grunt look for the folder 'check' and see if everything's ok
   grunt.registerTask('livecheck', ['clean:check','gh-pages:check']);

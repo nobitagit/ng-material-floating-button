@@ -8,6 +8,10 @@ html{
   font-weight: 200;
 }
 body{
+  display: -webkit-flex;  
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+    
   display: flex;
   align-items: center;
   justify-content: center;
