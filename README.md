@@ -35,7 +35,9 @@ var app = angular.module('your-app', ['ng-mfb']);
 Finally, place the correct html structure in your template. As a first example, assuming your example is using [Ionicons](http://ionicons.com/) as icon font:
 
 ```html
-<nav mfb-menu position="br" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round">
+<nav mfb-menu position="br" effect="zoomin" label="hover here" 
+     active-icon="ion-edit" resting-icon="ion-plus-round"
+     toggling-method="click">
   <a mfb-button icon="paper-airplane" label="menu item"></a>
 </nav>
 ```
