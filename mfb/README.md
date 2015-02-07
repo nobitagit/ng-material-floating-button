@@ -4,7 +4,7 @@ material-floating-button
 Material design floating button action implementation.
 
 Made to be semantic, fast and easy to customize.
-~~Shamelessly~~ inspired by action buttons from Google Inbox, Evernote and Path.  
+~~Shamelessly~~ inspired by action buttons from Google Inbox, Evernote and Path.
 
 See a demo [here](http://nobitagit.github.io/material-floating-button/) and test the available effects in the [showcase](http://nobitagit.github.io/material-floating-button/showcase.html).
 
@@ -26,18 +26,26 @@ Download the whole repo directly on Github or clone it, (optionally) run `npm in
 Use the appropriate html structure (better explained later), for example:
 
 ```html
-<ul class="mfb-component--tl mfb-slidein">
+<ul class="mfb-component--tl mfb-slidein" data-mfb-hover>
   <!-- the menu content -->
 </ul>
 ```
 Everything should already work fine.
 
-###Customising the component###
-####HTML####
-The basic structure of the component is the following (the customisable classes are in curly braces):
+Optionally include the provided `mfb.js` script if you need click/touch support.
 
 ```html
-<ul class="{{placement-class}} {{effect-class}}">
+<script src="path/to/js/mfb.js"></script>
+```
+
+For a breakdown on why and when you need to include the script please refer to [Toggling options and touch devices support](#toggling-opts).
+
+###Customising the component###
+####HTML####
+The basic structure of the component is the following (the customisable classes/attributes are in curly braces):
+
+```html
+<ul class="{{placement-class}} {{effect-class}}" {{hover/click-to-open}} {{menu-state}}>
   <li class="mfb-component__wrap">
     <!-- the main menu button -->
     <a data-mfb-label="{{the label text of the main button}}" class="mfb-component__button--main">
@@ -45,7 +53,7 @@ The basic structure of the component is the following (the customisable classes 
       <i class="mfb-component__main-icon--resting {{icon-class}}"></i>
       <!-- the main button icon visibile when the user is hovering/interacting with the menu -->
       <i class="mfb-component__main-icon--active {{active-icon-class}}"></i>
-    </a>     
+    </a>
     <ul class="mfb-component__list">
       <!-- a child button, repeat as many times as needed -->
       <li>
@@ -53,8 +61,8 @@ The basic structure of the component is the following (the customisable classes 
           <i class="mfb-component__child-icon {{icon-class}}"></i>
         </a>
       </li>
-    </ul>        
-  </li>  
+    </ul>
+  </li>
 </ul>
 ```
 
@@ -101,5 +109,71 @@ $labels-padding-vertical | 4px | top & bottom padding for the labels
 $labels-padding-horizontal | 10px | left & right padding for the labels
 
 You can compile the final css on your own or use the provided, pre-configured Grunt tasks for it. After installing all dependencies (by running `npm install` from the terminal) type `grunt sass` (on time compilation) or `grunt watch-css` (live reload triggered after the scss files are changed).
+
+<a name="toggling-opts"></a>
+####Toggling options and touch devices support####
+The menu can be customised to be activated either on hover or on click/tap. To assign the desired toggling method the component provides some attributes to add this functionality in a declarative way right from the markup.
+
+#####Hover toggling#####
+
+If you're only interested in desktop support and want the menu to be activated on hover you won't need to include any scripts as that animation is CSS-based and included in the stylesheet provided. Just set the `data-mfb-toggle` attribute to `hover` like so:
+
+```html
+<ul class="mfb-component--tl mfb-slidein" data-mfb-toggle="hover">
+```
+
+#####Click toggling#####
+
+To add click and touch support (and to support the open/close animation programmatically, more on this later) include the `mfb.js` file and reference it in the page. Finally set the `data-mfb-toggle` attribute to `click`, along with the initial state you want the menu to appear at load time, using the `data-mfb-state` attribute. An example:
+
+```html
+<ul class="mfb-component--tl mfb-slidein" data-mfb-toggle="click" data-mfb-state="closed">
+```
+
+If you want the menu to appear open at load time, do this instead:
+
+```html
+<ul class="mfb-component--tl mfb-slidein" data-mfb-toggle="click" data-mfb-state="open">
+```
+
+#####Hover toggling along with touch support#####
+
+If you want the menu to work on hover but need support for touch devices you first need to include Modernizr to detect touch support. If you are alreay using it in your project just make sure that the touch detection is enabled.
+
+If you're not using Modernizr already, just include the provided `modernizr.touch.js` script (look in the `src/lib/` folder) in your `<head>` or get the latest version of this very script right from [here](http://modernizr.com/download/#-touch-teststyles-prefixes). Note that this is a custom build and will only detect for touch support, it's not the full library.
+
+Then include the `mfb.js` file, ideally at the bottom of your page.
+Once the scripts are in place just set up a normal button with hover toggling like so:
+
+```html
+<ul class="mfb-component--tl mfb-slidein" data-mfb-toggle="hover">
+```
+
+The script will take care of changing the behavior when the page is viewed from a touch enabled device.
+
+#####Opening/closing the menu programmatically#####
+
+If you need to close the menu after a certain event (or open it without user interaction) you can easily do so just by setting its state to `closed` or `open`. Once you have selected the menu in your desired way just close it like so:
+
+```js
+menu.setAttribute('data-mfb-state', 'closed');
+```
+Or open it with:
+
+```js
+menu.setAttribute('data-mfb-state', 'open');
+```
+
+##Todos##
+
+-[ ] provide minified script and stylesheet
+-[ ] replace `@extend`s as much as possible from the SCSS to optimize output
+-[ ] more animations
+
+
+
+
+
+
 
 

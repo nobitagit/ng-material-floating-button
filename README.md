@@ -70,6 +70,37 @@ Example:
   <!-- this will be displayed on the bottom-right corner of the screen -->
 </ul>
 ```
+#####Toggling method####
+Defines how the user will open the menu. Two values are possible:
+
+value | explanation
+--- | --- 
+`hover` | hover to open the menu
+`click` | click or tap to open the menu
+
+Example:
+
+```html
+<ul mfb-menu toggling-method="hover">
+  <!-- this will be displayed on the bottom-right corner of the screen -->
+</ul>
+```
+
+**NOTE**: Using `hover` will prevent user browsing on modbile/touch devices to properly interact with the menu. The directive provides a fallback for this case.
+
+If you want the menu to work on hover but need support for touch devices you first need to include Modernizr to detect touch support. If you are alreay using it in your project just make sure that the touch detection is enabled.
+
+If you're not using Modernizr already, just include the tiny (<3KB) provided `modernizr.touch.js` script (look in the `mfb/src/lib/` folder) in your `<head>` or get the latest version of this very script right from [here](http://modernizr.com/download/#-touch-teststyles-prefixes). Note that this is a custom build and will only detect for touch support, it's not the full library.
+
+#####Menu state####
+You can optionally include the desired starting state of the menu (open or closed). If this attribute is not specified a closed state is assumed.
+
+You can also programmatically open/close the menu leveraging this attribute at any time after compilation, without any clicking required by the user.
+
+value | explanation
+--- | --- 
+`open` | menu is... open (surprise, surprise)
+`closed` | menu is...(hold tight) ... closed
 
 #####Effect####
 Defines the effect that is performed when the menu opens up to show its child buttons.

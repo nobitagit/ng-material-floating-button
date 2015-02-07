@@ -227,7 +227,9 @@ $number-of-child-buttons: 4;
   padding: $border-distance;
   margin: -$border-distance;
 }
-.mfb-component:hover{
+
+[data-mfb-toggle="hover"]:hover,
+[data-mfb-state="open"]{
   .mfb-component__icon {
     -webkit-transform: scale(1) rotate(0deg);    
     transform: scale(1) rotate(0deg);    
@@ -255,9 +257,9 @@ $number-of-child-buttons: 4;
 .mfb-component__main-icon--resting{
   @extend .mfb-component__icon;  
   -webkit-transform: scale(1) rotate(360deg);
-  transform: scale(1) rotate(360deg);
+          transform: scale(1) rotate(360deg);
   -webkit-transition: -webkit-transform 150ms cubic-bezier(.4,0,1,1);
-  transition: transform 150ms cubic-bezier(.4,0,1,1);   
+          transition: transform 150ms cubic-bezier(.4,0,1,1);   
 }
 // the icons for the main button
 .mfb-component__child-icon,
@@ -267,7 +269,8 @@ $number-of-child-buttons: 4;
 .mfb-component__main-icon--active{
   opacity: 0;
 }
-.mfb-component:hover{
+[data-mfb-toggle="hover"]:hover,
+[data-mfb-state="open"]{
   .mfb-component__main-icon{
     -webkit-transform: scale(1) rotate(0deg);    
     transform: scale(1) rotate(0deg);    
@@ -325,7 +328,8 @@ $number-of-child-buttons: 4;
   margin-top: - ($labels-padding-vertical + $labels-font-size / 2);  
   transition: all $label-hover-off; // the label disappears at this speed     
 }
-[data-mfb-label]:hover:after {
+[data-mfb-toggle="hover"] [data-mfb-label]:hover:after,
+[data-mfb-state="open"] [data-mfb-label]:after{
   content: attr(data-mfb-label);
   opacity: 1;
   transition: all $label-hover-on; // the label appears at this speed

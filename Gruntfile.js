@@ -57,7 +57,7 @@ module.exports = function(grunt) {
           dest: 'build/live/',
           expand: true, flatten: true  
         },{
-          src: ['mfb/src/*.css', 'mfb/src/*.css.map'],
+          src: ['mfb/src/*.css', 'mfb/src/*.css.map', 'mfb/src/lib/**/*.js'],
           dest: 'build/live/',
           expand: true, flatten: true            
         }]

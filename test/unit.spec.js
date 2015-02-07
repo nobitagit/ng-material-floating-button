@@ -189,4 +189,47 @@ describe('ng-mfb', function() {
     });        
   });
 
+  describe('when instantiated with click support', function() {
+
+    var node;
+
+    function generateTpl( state ){
+      var tpl = '<div mfb-menu menu-state="' + state +'"></div>';
+
+      node = compile(tpl);
+      $rootScope.$digest();      
+    }
+
+    describe('should retain the initial state as set by the user:', function(){
+
+      it('data-mfb-state must be "open" if menu-state is "open"', function(){
+        generateTpl( 'open' );
+        expect(node[0].getAttribute('data-mfb-state')).toBe('open');
+      });
+
+      it('data-mfb-state must be "closed" if menu-state is "closed"', function(){
+        generateTpl( 'closed' );
+        expect(node[0].getAttribute('data-mfb-state')).toBe('closed');
+      });      
+    });
+  });
+
+  describe('Touch support:', function() {
+    var node;
+
+    function generateTpl( togglingMethod ){
+      var tpl = '<div mfb-menu toggling-method="' + togglingMethod +'"></div>';
+
+      node = compile(tpl);
+      $rootScope.$digest();      
+    }
+
+    it('', function() {
+      window.Modernizr = {
+        touch: true
+      };
+      generateTpl('hover');
+    });
+  });
+
 });
