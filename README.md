@@ -198,6 +198,7 @@ To run the tests you need Jasmine and Karma runner. They can be run from the con
 
 ##Todos##
 - [x] add "click to open" functionality and option
+- [ ] add the directive to bower
 
 ##Credits##
 Demo icons courtesy of [Ionicons](ionicons.com)
