@@ -197,7 +197,7 @@ For a thorough overview of what and how to customise the look of the component t
 To run the tests you need Jasmine and Karma runner. They can be run from the console with either `grunt karma` or `karma start test/karma.conf.js` commands.
 
 ##Todos##
-- [ ] add "click to open" functionality and option
+- [x] add "click to open" functionality and option
 
 ##Credits##
 Demo icons courtesy of [Ionicons](ionicons.com)
