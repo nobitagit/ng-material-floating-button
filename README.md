@@ -83,8 +83,8 @@ value | explanation
 Example:
 
 ```html
-<ul mfb-menu toggling-method="hover">
-  <!-- this will be displayed on the bottom-right corner of the screen -->
+<ul mfb-menu toggling-method="click">
+  <!-- click on the button to open the menu -->
 </ul>
 ```
 
