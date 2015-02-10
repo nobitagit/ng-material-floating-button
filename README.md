@@ -196,6 +196,10 @@ For a thorough overview of what and how to customise the look of the component t
 ##Unit tests##
 To run the tests you need Jasmine and Karma runner. They can be run from the console with either `grunt karma` or `karma start test/karma.conf.js` commands.
 
+##Contributing and issues##
+Contributions are very welcome, as well as opening issues if you find any bugs.
+If an issue is **not** specifically related to the Angularjs version (i.e. it's a layout/css bug) please open it on the original component repo, if possible.
+
 ##Todos##
 - [x] add "click to open" functionality and option
 - [ ] add the directive to bower
