@@ -198,7 +198,7 @@ To run the tests you need Jasmine and Karma runner. They can be run from the con
 
 ##Contributing and issues##
 Contributions are very welcome, as well as opening issues if you find any bugs.
-If an issue is **not** specifically related to the Angularjs version (i.e. it's a layout/css bug) please open it on the original component repo, if possible.
+If an issue is **not** specifically related to the Angularjs version (i.e. it's a layout/css bug) please open it on the original component [repo](https://github.com/nobitagit/material-floating-button), if possible.
 
 ##Todos##
 - [x] add "click to open" functionality and option
