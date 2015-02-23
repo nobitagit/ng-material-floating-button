@@ -182,8 +182,8 @@
 
 .mfb-component__main-icon--active,
 .mfb-component__main-icon--resting {
-  -webkit-transform: scale(1) rotate(360deg);
-  transform: scale(1) rotate(360deg);
+  -webkit-transform: scale(1) rotate(-90deg);
+  transform: scale(1) rotate(-90deg);
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1); }
 
