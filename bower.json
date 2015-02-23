@@ -6,14 +6,17 @@
     "Nobita"
   ],
   "description": "angular directive for material floating buttons",
-  "main": "src/directive.js",
+  "main": [
+    "src/mfb-directive.js",
+    "mfb/src/mfb.css"
+  ],
   "keywords": [
     "angular",
     "directive",
     "material"
   ],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -22,6 +25,6 @@
     "tests"
   ],
   "dependencies": {
-    "angularjs": "~1.3.6"
+    "angular": "~1.3.6"
   }
 }
