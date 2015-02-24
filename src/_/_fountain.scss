@@ -24,7 +24,8 @@
         }          
       }     
     }
-    &:hover{
+    &[data-mfb-toggle="hover"]:hover,
+    &[data-mfb-state="open"]{
       .mfb-component__list{
         @for $i from 1 through $number-of-child-buttons {
           $distance: 70px * $i;
@@ -57,7 +58,8 @@
         }          
       }     
     }
-    &:hover{
+    &[data-mfb-toggle="hover"]:hover,
+    &[data-mfb-state="open"]{
       .mfb-component__list{
         @for $i from 1 through $number-of-child-buttons {
           $distance: -70px * $i;

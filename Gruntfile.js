@@ -22,7 +22,14 @@ module.exports = function(grunt) {
       live:  ['.grunt/grunt-gh-pages/gh-pages/live']
     },
 
-    livePages: ['index.html', 'index.css', 'showcase.html', '*.css', '**/*.map'],
+    livePages: [
+            'index.html', 
+            'index.css', 
+            'showcase.html', 
+            '*.css', 
+            '**/*.map', 
+            'mfb.js',
+            'lib/modernizr.touch.js'],
     'gh-pages': {
       options: {
         base: 'src',
@@ -47,7 +54,7 @@ module.exports = function(grunt) {
   // Publish this to live site
   grunt.registerTask('live', ['clean:live','gh-pages:live']);
   // Live site dry run: test locally before pushing.
-  // In .grunt look for the folder 'check' and see if everything's ok
+  // In .grunt look for the folder 'check'
   grunt.registerTask('livecheck', ['clean:check','gh-pages:check']);
 
   grunt.registerTask('watch-css', ['watch:css']);

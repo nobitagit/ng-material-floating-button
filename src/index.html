@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/1.5.2/css/ionicons.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
+    <script src="lib/modernizr.touch.js"></script>     
     <link href="index.css" rel="stylesheet">
     <link href="mfb.css" rel="stylesheet">
     <title>Material floating button. The index.</title>
   </head>
   <body>
 
-    <ul class="mfb-component--tl mfb-slidein">
+    <ul class="mfb-component--tl mfb-slidein" data-mfb-toggle="hover">
       <li class="mfb-component__wrap">
         <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
           <i class="mfb-component__main-icon--resting ion-plus-round"></i>
@@ -46,7 +47,7 @@
       </li>
     </ul>
 
-    <ul class="mfb-component--tr mfb-slidein">
+    <ul class="mfb-component--tr mfb-slidein" data-mfb-toggle="hover">
       <li class="mfb-component__wrap">
         <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
           <i class="mfb-component__main-icon--resting ion-plus-round"></i>
@@ -79,7 +80,7 @@
       </li>
     </ul>
 
-    <ul class="mfb-component--bl mfb-slidein">
+    <ul class="mfb-component--bl mfb-slidein" data-mfb-toggle="hover">
       <li class="mfb-component__wrap">
         <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
           <i class="mfb-component__main-icon--resting ion-plus-round"></i>
@@ -112,7 +113,7 @@
       </li>
     </ul>
 
-    <ul class="mfb-component--br mfb-slidein">
+    <ul class="mfb-component--br mfb-slidein" data-mfb-toggle="hover">
       <li class="mfb-component__wrap">
         <a href="#" data-mfb-label="A long long label" class="mfb-component__button--main">
           <i class="mfb-component__main-icon--resting ion-plus-round"></i>
@@ -173,7 +174,7 @@
           <p>
             After referencing the styles in your header drop the MFB markup in your HTML like so:
           </p>
-<pre>&lt;ul class="mfb-component--br mfb-slidein"&gt;
+<pre>&lt;ul class="mfb-component--br mfb-slidein" data-mfb-toggle="hover"&gt;
   &lt;li class="mfb-component__wrap"&gt;
     &lt;a href="#" data-mfb-label="A label" class="mfb-component__button--main"&gt;
       &lt;ul class="mfb-component__list"&gt;
@@ -212,6 +213,7 @@
       </footer>
     </section>
  
+  <script src="mfb.js"></script>
   <script>
 
     var panel = document.getElementById('panel'),

@@ -13,7 +13,8 @@
       opacity: 0;
       transition: all $slide-speed;
     }
-    &:hover{
+    &[data-mfb-toggle="hover"]:hover,
+    &[data-mfb-state="open"]{
       .mfb-component__list{
         li{
           opacity: 1;         
@@ -34,7 +35,8 @@
       opacity: 0;
       transition: all $slide-speed;
     }
-    &:hover{
+    &[data-mfb-toggle="hover"]:hover,
+    &[data-mfb-state="open"]{
       .mfb-component__list{
         li{
           opacity: 1;         
