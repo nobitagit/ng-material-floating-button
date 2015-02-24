@@ -1,4 +1,4 @@
-material-floating-button
+Material Floating Button
 ========================
 
 Material design floating button action implementation.
@@ -13,7 +13,7 @@ Demo icons courtesy of [Ionicons](ionicons.com)
 ##Other versions##
 Also available as:
 
-- [Angular directive](https://github.com/nobitagit/material-floating-button)
+- [Angular directive](https://github.com/nobitagit/ng-material-floating-button)
 
 ##How to use##
 ###Basic usage###
@@ -164,11 +164,14 @@ Or open it with:
 menu.setAttribute('data-mfb-state', 'open');
 ```
 
+##Contributions##
+Contributions are welcome. :)
+
 ##Todos##
 
--[ ] provide minified script and stylesheet
--[ ] replace `@extend`s as much as possible from the SCSS to optimize output
--[ ] more animations
+- [ ] provide minified script and stylesheet
+- [ ] replace `@extend`s as much as possible from the SCSS to optimize output
+- [ ] more animations
 
 
 
