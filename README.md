@@ -26,7 +26,7 @@ Download the whole repo or clone it, then reference the directive css file (here
 Place a reference to the directive before the closing `<body>` tag or anywhere after your angular script tag.
 
 ```html
-<link href="../mfb/src/mfb-directive.js" rel="stylesheet"/>
+<script src="../mfb/src/mfb-directive.js"></script>
 ```
 Make sure you reference the Mfb module as a dependecy to your app or module like so:
 ```js
