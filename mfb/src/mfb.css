@@ -20,7 +20,7 @@
  * #BUTTONS
  * Base..................Wrapping and constraining every button.
  * Modifiers.............Styles that depends on state and settings.
- * Animations............Main animations of the component. 
+ * Animations............Main animations of the component.
  * Debuggers.............Styles for development.
  *
  * #LABELS
@@ -33,24 +33,24 @@
  * Debuggers..........helper styles and flags for development.
  */
 /*------------------------------------*\
-    #Introduction 
+    #Introduction
 \*------------------------------------*/
 /**
- * The code AND the comments use naming conventions to refer to each part of 
+ * The code AND the comments use naming conventions to refer to each part of
  * the UI put in place by this component. If you see that somewhere they are
  * not followed please consider a Pull Request. The naming conventions are:
  *
  * "Component" : the widget itself as a whole. This is the last time it will be
- *               called anything different than "component". So, stay away from 
- *               "widget", "button" or anything else when referring to the 
+ *               called anything different than "component". So, stay away from
+ *               "widget", "button" or anything else when referring to the
  *               Component in general.
- * 
+ *
  * "Main Button" : the button that is always in view. Hovering or clicking on it
  *                 will reveal the child buttons.
  *
  * "Child buttons" : if you've read the previous point you know what they are.
  *                   Did you read the previous point? :)
- *  
+ *
  * "Label(s)" : the tooltip that fades in when hovering over a button.
 
 /*------------------------------------*\
@@ -129,7 +129,7 @@
   color: #f1f1f1; }
 
 /**
- * This is the unordered list for the list items that contain 
+ * This is the unordered list for the list items that contain
  * the child buttons.
  *
  */
