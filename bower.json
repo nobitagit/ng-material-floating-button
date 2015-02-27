@@ -9,6 +9,7 @@
   "main": [
     "src/directive.js",
     "mfb/src/mfb.css"
+  ],
   "keywords": [
     "angular",
     "directive",
