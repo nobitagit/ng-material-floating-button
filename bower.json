@@ -6,7 +6,9 @@
     "Nobita"
   ],
   "description": "angular directive for material floating buttons",
-  "main": "src/directive.js",
+  "main": [
+    "src/directive.js",
+    "mfb/src/mfb.css"
   "keywords": [
     "angular",
     "directive",

@@ -3,7 +3,7 @@
     "eqeqeq": true,
     "eqnull": true,
     "expr": true,
-    "quotmark": "single",    
+    "quotmark": "single",
     "latedef": true,
     "onevar": true,
     "noarg": true,
@@ -16,6 +16,7 @@
     "browser": true,
     "globals": {
         "angular": true,
-        "inject": true
+        "inject": true,
+        "Modernizr": true
     }
 }
