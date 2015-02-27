@@ -24,6 +24,7 @@
   "private": false,
   "ignore": [
     "**/.*",
+    "**/*.html",
     "README.md",
     "package.json",
     "node_modules",

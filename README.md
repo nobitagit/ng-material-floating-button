@@ -1,7 +1,7 @@
 ng-material-floating-button
 ========================
 
-Material design floating action button implemented as an Angularjs directive. 
+Material design floating action button implemented as an Angularjs directive.
 
 Made to be semantic, fast and easy to customize.
 ~~Shamelessly~~ inspired by action buttons from Google Inbox, Evernote and Path.
@@ -13,9 +13,15 @@ Head over to the project [homepage](http://nobitagit.github.io/ng-material-float
 - [Vanilla html](https://github.com/nobitagit/material-floating-button) (original, upstream version of the component)
 
 ##How to use##
-Download the whole repo directly here on Github or clone it, then (optionally) run `npm install` to have access to the configured Grunt tasks.
 
-Docs are still in the works (and coming soon), for the time being look in the `src` folder for usage examples and head to the original component [docs](https://github.com/nobitagit/material-floating-button#how-to-use) to see how to customise the styles of the menu.
+Download/clone the repo or use Bower:
+```
+bower install ng-mfb --save
+```
+
+Then (optionally) run `npm install` to have access to the configured Grunt tasks.
+
+Look in the `src` folder for usage examples and head to the original component [docs](https://github.com/nobitagit/material-floating-button#how-to-use) to see how to customise the styles of the menu.
 
 ###Basic setup###
 Download the whole repo or clone it, then reference the directive css file (here is `mfb/src/mfb.css`)in your `<head>`:
@@ -35,14 +41,14 @@ var app = angular.module('your-app', ['ng-mfb']);
 Finally, place the correct html structure in your template. As a first example, assuming your example is using [Ionicons](http://ionicons.com/) as icon font:
 
 ```html
-<nav mfb-menu position="br" effect="zoomin" label="hover here" 
+<nav mfb-menu position="br" effect="zoomin" label="hover here"
      active-icon="ion-edit" resting-icon="ion-plus-round"
      toggling-method="click">
   <a mfb-button icon="paper-airplane" label="menu item"></a>
 </nav>
 ```
 This example shows the two basic components of the directive, a unique `mfb-menu` element which serves as a wrapper to a variable number of child buttons, defined by the `mfb-button` attribute.
-This above code will output a basic button menu on the bottom right corner of the screen with a single menu item. Hardly amazing, so let's see how to customise it. 
+This above code will output a basic button menu on the bottom right corner of the screen with a single menu item. Hardly amazing, so let's see how to customise it.
 
 ###Element attributes###
 A number of attributes can be passed to the elements from the template in order to customise both behavior and appearance.
@@ -60,7 +66,7 @@ This can be defined as an attribute or an element. So this is valid:
 Defines in which corner of the screen the component should be displayed.
 
 value | explanation
---- | --- 
+--- | ---
 `tl` |  top-left corner
 `tr` |  top-right corner
 `br` |  bottom-right corner
@@ -76,7 +82,7 @@ Example:
 Defines how the user will open the menu. Two values are possible:
 
 value | explanation
---- | --- 
+--- | ---
 `hover` | hover to open the menu
 `click` | click or tap to open the menu
 
@@ -100,7 +106,7 @@ You can optionally include the desired starting state of the menu (open or close
 You can also programmatically open/close the menu leveraging this attribute at any time after compilation, without any clicking required by the user.
 
 value | explanation
---- | --- 
+--- | ---
 `open` | menu is... open (surprise, surprise)
 `closed` | menu is...(hold tight) ... closed
 
@@ -108,7 +114,7 @@ value | explanation
 Defines the effect that is performed when the menu opens up to show its child buttons.
 
 value | explanation
---- | --- 
+--- | ---
 `zoomin` |  test it [here](http://nobitagit.github.io/ng-material-floating-button/)
 `slidein` | test it [here](http://nobitagit.github.io/ng-material-floating-button/)
 `fountain` | test it [here](http://nobitagit.github.io/ng-material-floating-button/)
@@ -206,4 +212,3 @@ If an issue is **not** specifically related to the Angularjs version (i.e. it's 
 
 ##Credits##
 Demo icons courtesy of [Ionicons](ionicons.com)
-
