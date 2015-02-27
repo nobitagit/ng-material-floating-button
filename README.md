@@ -208,7 +208,8 @@ If an issue is **not** specifically related to the Angularjs version (i.e. it's 
 
 ##Todos##
 - [x] add "click to open" functionality and option
-- [ ] add the directive to bower
+- [x] add to bower
+- [ ] add to npm
 
 ##Credits##
 Demo icons courtesy of [Ionicons](ionicons.com)
