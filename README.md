@@ -7,7 +7,9 @@ Made to be semantic, fast and easy to customize.
 ~~Shamelessly~~ inspired by action buttons from Google Inbox, Evernote and Path.
 
 ##Demo##
-Head over to the project [homepage](http://nobitagit.github.io/ng-material-floating-button/) to see it in action.
+Head over to the project [homepage](http://nobitagit.github.io/ng-material-floating-button/) to see it in action or just look at this awesome gif:
+
+<iframe src="http://gfycat.com/ifr/LimitedTatteredFieldmouse" frameborder="0" scrolling="no" width="256" height="312" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
 
 **Other versions**
 - [Vanilla html](https://github.com/nobitagit/material-floating-button) (original, upstream version of the component)
