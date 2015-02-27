@@ -1,6 +1,6 @@
 {
   "name": "ng-material-floating-button",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/nobitagit/ng-material-floating-button",
   "authors": [
     "Nobita"
@@ -10,18 +10,26 @@
   "keywords": [
     "angular",
     "directive",
-    "material"
+    "material",
+    "design",
+    "floating",
+    "button",
+    "google",
+    "inbox"
   ],
   "license": "MIT",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
+    "README.md",
+    "package.json",
     "node_modules",
     "bower_components",
+    "Gruntfile.js",
     "test",
     "tests"
   ],
   "dependencies": {
-    "angularjs": "~1.3.6"
+    "angular": "~1.3.6"
   }
 }
