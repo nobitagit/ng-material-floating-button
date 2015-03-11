@@ -13,6 +13,7 @@ Head over to the project [homepage](http://nobitagit.github.io/ng-material-float
 
 **Other versions**
 - [Vanilla html](https://github.com/nobitagit/material-floating-button) (original, upstream version of the component)
+- [React component](https://github.com/nobitagit/react-material-floating-button)
 
 ##How to use##
 
