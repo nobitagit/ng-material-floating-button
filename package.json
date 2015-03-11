@@ -2,7 +2,10 @@
   "name": "ng-material-floating-button",
   "version": "0.1.2",
   "description": "html component for button à la Path and Google Inbox",
-  "main": "index.html",
+  "main": [
+    "src/mfb-directive.js",
+    "mfb/src/mfb.css"
+  ],
   "repository": "https://github.com/nobitagit/ng-material-floating-button",
   "scripts": {
     "test": "grunt karma"
