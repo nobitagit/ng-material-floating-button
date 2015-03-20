@@ -15,7 +15,7 @@
                 transform: scale(0);
       }
       @for $i from 1 through $number-of-child-buttons {
-        $distance: 70px * $i;
+        $distance: $button-space * $i;
         li:nth-child( #{$i} ) { 
           -webkit-transform: translateY($distance) scale(0);
                   transform: translateY($distance) scale(0);
@@ -29,7 +29,7 @@
     &[data-mfb-state="open"]{
       .mfb-component__list{
         @for $i from 1 through $number-of-child-buttons {
-          $distance: 70px * $i;
+          $distance: $button-space * $i;
           li:nth-child( #{$i} ) { 
             -webkit-transform: translateY($distance) scale(1); 
                     transform: translateY($distance) scale(1); 
@@ -49,7 +49,7 @@
                 transform: scale(0);
       }
       @for $i from 1 through $number-of-child-buttons {
-        $distance: -70px * $i;
+        $distance: -1 * $button-space * $i;
         li:nth-child( #{$i} ) { 
           -webkit-transform: translateY($distance) scale(0);
                   transform: translateY($distance) scale(0);
@@ -63,7 +63,7 @@
     &[data-mfb-state="open"]{
       .mfb-component__list{
         @for $i from 1 through $number-of-child-buttons {
-          $distance: -70px * $i;
+          $distance: -1 * $button-space * $i;
           li:nth-child( #{$i} ) { 
             -webkit-transform: translateY($distance) scale(1); 
                     transform: translateY($distance) scale(1); 

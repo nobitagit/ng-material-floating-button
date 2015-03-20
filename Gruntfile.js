@@ -79,6 +79,12 @@ module.exports = function(grunt) {
   // In .grunt look for the folder 'check'
   grunt.registerTask('livecheck', ['clean:check','gh-pages:check']);
 
+  grunt.registerTask('build', [
+    'sass',
+    'cssmin',
+    'uglify'
+  ]);
+
   grunt.registerTask('watch-css', ['watch:css']);
   grunt.registerTask('default', []);
 };
