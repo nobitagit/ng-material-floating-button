@@ -198,7 +198,7 @@ $scope.buttons = [{
 ```
 
 ###More customisations###
-The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in the `mfb/` folder (which is actually a subtree that pulls from [this repo](https://github.com/nobitagit/material-floating-button)), while a customisation file is provided (`mfb/_customisation.scss`) to override the defaults without editing the source files.
+The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in the `mfb/` folder (which is actually a subtree that pulls from [this repo](https://github.com/nobitagit/material-floating-button)).
 
 For a thorough overview of what and how to customise the look of the component through css make sure you read [these docs](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb), especially if you plan to keep your copy in sync with this repo by pulling in changes in the future.
 
