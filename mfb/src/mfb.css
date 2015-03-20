@@ -13,9 +13,9 @@
  * Demo styles..........Styles for demo only (consider removing these).
  *
  * #BASE
- * Raw styles.............the very basic component wrapper.
- * Modifiers..............the basic styles dependant on component placement.
- * Debuggers..............the basic styles dependant on component placement.
+ * Raw styles...........The very basic component wrapper.
+ * Modifiers............The basic styles dependant on component placement.
+ * Debuggers............The basic styles dependant on component placement.
  *
  * #BUTTONS
  * Base..................Wrapping and constraining every button.
@@ -25,12 +25,12 @@
  *
  * #LABELS
  * Base..................Wrapping and constraining every label.
- * Modifiers.............styles that depends on state and settings.
+ * Modifiers.............Styles that depends on state and settings.
  * Debuggers.............Styles for development.
  *
  * #DEVELOPMENT
  * In development........These styles are in development and not yet finalised
- * Debuggers..........helper styles and flags for development.
+ * Debuggers.............Helper styles and flags for development.
  */
 /*------------------------------------*\
     #Introduction
@@ -56,12 +56,18 @@
 /*------------------------------------*\
     #SETTINGS | Variables
 \*------------------------------------*/
+/**
+ * These variables are the default styles that serve as fallback and can be
+ * easily customised at compile time.
+ * Consider overriding them in your own style sheets rather than editing them
+ * here. Refer to the docs for more info.
+ */
 /* COLORS ----------------------------*/
 /* EFFECTS ---------------------------*/
 /* SPEEDS ----------------------------*/
 /* SIZES -----------------------------*/
+/* SPACING ---------------------------*/
 /* OTHER VARIABLES -------------------*/
-/* IMPORT USER-DEFINED OVERRIDES -----*/
 /*------------------------------------*\
     #BASE | Raw styles
 \*------------------------------------*/
@@ -141,11 +147,12 @@
     display: block;
     position: absolute;
     top: 0;
+    right: 1px;
     padding: 10px 0;
     margin: -10px 0; }
 
 /**
- * This is the basic styles for all the icons inside the main button
+ * These are the basic styles for all the icons inside the main button
  */
 .mfb-component__icon, .mfb-component__main-icon--active,
 .mfb-component__main-icon--resting, .mfb-component__child-icon {
@@ -186,6 +193,11 @@
   transform: scale(1) rotate(360deg);
   -webkit-transition: -webkit-transform 150ms cubic-bezier(0.4, 0, 1, 1);
   transition: transform 150ms cubic-bezier(0.4, 0, 1, 1); }
+
+.mfb-component__child-icon,
+.mfb-component__child-icon {
+  line-height: 56px;
+  font-size: 18px; }
 
 .mfb-component__main-icon--active {
   opacity: 0; }
@@ -528,7 +540,15 @@
   content: attr(data-mfb-label);
   right: 70px; }
 
+.mfb-component--br .mfb-component__list [data-mfb-label]:after, .mfb-component--tr .mfb-component__list [data-mfb-label]:after {
+  content: attr(data-mfb-label);
+  right: 70px; }
+
 .mfb-component--tl [data-mfb-label]:after, .mfb-component--bl [data-mfb-label]:after {
+  content: attr(data-mfb-label);
+  left: 70px; }
+
+.mfb-component--tl .mfb-component__list [data-mfb-label]:after, .mfb-component--bl .mfb-component__list [data-mfb-label]:after {
   content: attr(data-mfb-label);
   left: 70px; }
 
@@ -549,10 +569,5 @@
 /**
  * Apply this class to the html tag when developing the slide-in button
  */
-html.mfb-slide-in {
-  border-top: 5px solid teal; }
-
-html.mfb-debug * {
-  border: 1px solid red; }
 
 /*# sourceMappingURL=mfb.css.map */

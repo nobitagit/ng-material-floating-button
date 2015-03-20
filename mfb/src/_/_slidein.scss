@@ -20,7 +20,7 @@
           opacity: 1;         
         }
         @for $i from 1 through $number-of-child-buttons {
-          $distance: 70px * $i;
+          $distance: $button-space * $i;
           li:nth-child( #{$i} ) { 
             -webkit-transform: translateY( $distance ); 
                     transform: translateY( $distance ); }          
@@ -42,7 +42,7 @@
           opacity: 1;         
         }
         @for $i from 1 through $number-of-child-buttons {
-          $distance: -70px * $i;
+          $distance: -1 * $button-space * $i;
           li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); 
                                          transform: translateY( $distance ); }          
         }                
