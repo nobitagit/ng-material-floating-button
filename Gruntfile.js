@@ -45,7 +45,6 @@ module.exports = function(grunt) {
     livePages: [
             'index.html',
             'index.css',
-            'showcase.html',
             '*.css',
             '**/*.map',
             'mfb.js',

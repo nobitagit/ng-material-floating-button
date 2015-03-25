@@ -17,14 +17,14 @@
     &[data-mfb-state="open"]{
       .mfb-component__list{
         li{
-          opacity: 1;         
+          opacity: 1;
         }
         @for $i from 1 through $number-of-child-buttons {
           $distance: $button-space * $i;
           li:nth-child( #{$i} ) { 
-            -webkit-transform: translateY( $distance ); 
-                    transform: translateY( $distance ); }          
-        }                
+            -webkit-transform: translateY( $distance );
+                    transform: translateY( $distance ); }
+        }
       }
     }
   }
@@ -39,13 +39,13 @@
     &[data-mfb-state="open"]{
       .mfb-component__list{
         li{
-          opacity: 1;         
+          opacity: 1;
         }
         @for $i from 1 through $number-of-child-buttons {
           $distance: -1 * $button-space * $i;
-          li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance ); 
-                                         transform: translateY( $distance ); }          
-        }                
+          li:nth-child( #{$i} ) { -webkit-transform: translateY( $distance );
+                                         transform: translateY( $distance ); }
+        }
       }
     }
   }
