@@ -129,7 +129,7 @@ $number-of-child-buttons: 4 !default;
  * options chosen by the user or state of the button.
  */
 
-.mfb-component{
+%mfb-component{
   box-sizing: border-box; // A better box-sizing
   margin: $border-distance;
   position: fixed;
@@ -139,11 +139,9 @@ $number-of-child-buttons: 4 !default;
   // otherwise it can probably be ditched.
   padding-left: 0;
   list-style: none;
-}
 
-// make sure that everything inside this component
-// inherits the same box-sizing
-.mfb-component{
+  // make sure that everything inside this component
+  // inherits the same box-sizing
   *, *:before, *:after {
     box-sizing: inherit;
   }
@@ -163,19 +161,19 @@ $number-of-child-buttons: 4 !default;
  */
 
 .mfb-component--tl{
-  @extend .mfb-component;
+  @extend %mfb-component;
   left: 0; top: 0;
 }
 .mfb-component--tr{
-  @extend .mfb-component;
+  @extend %mfb-component;
   right: 0; top: 0;
 }
 .mfb-component--bl{
-  @extend .mfb-component;
+  @extend %mfb-component;
   left: 0; bottom: 0;
 }
 .mfb-component--br{
-  @extend .mfb-component;
+  @extend %mfb-component;
   right: 0; bottom: 0;
 }
 
@@ -184,7 +182,7 @@ $number-of-child-buttons: 4 !default;
     #BUTTONS | Base
 \*------------------------------------*/
 
-.mfb-component__button{
+%mfb-component__button{
   background-color: $main-color;
   display: inline-block;
   position: relative;
@@ -253,13 +251,13 @@ $number-of-child-buttons: 4 !default;
 \*------------------------------------*/
 
 .mfb-component__button--main{
-  @extend .mfb-component__button;
+  @extend %mfb-component__button;
   height: $main_button_size;
   width: $main_button_size;
   z-index: 20;
 }
 .mfb-component__button--child{
-  @extend .mfb-component__button;
+  @extend %mfb-component__button;
   height: $child_button_size;
   width: $child_button_size;
 }
@@ -301,12 +299,16 @@ $number-of-child-buttons: 4 !default;
 \*------------------------------------*/
 
 @import "_/_slidein";
+@import "_/_slidein-spring";
 @import "_/_zoomin";
 @import "_/_fountain";
 
 // Ugly work-around for this https://github.com/sass/sass/issues/451
 @if $effects-slidein == true {
   @include effects-slidein;
+}
+@if $effects-slidein == true {
+  @include effects-slidein-spring;
 }
 @if $effects-zoomin == true {
   @include effects-zoomin;

@@ -10,9 +10,7 @@ See a demo [here](http://nobitagit.github.io/material-floating-button/) to see i
 
 <img src="http://zippy.gfycat.com/LimitedTatteredFieldmouse.gif">
 
-Test the available effects in the [showcase](http://nobitagit.github.io/material-floating-button/showcase.html).
-
-Demo icons courtesy of [Ionicons](ionicons.com)
+Test all the available effects to date in the [demo](http://nobitagit.github.io/material-floating-button/).
 
 ##Other versions##
 Also available as:
@@ -104,13 +102,14 @@ $number-of-child-buttons | 4 | how many child buttons the component supports
 #####Effects#####
 **n.b.** - set to true to include the effect styles in the compiled .css file. To actually activate the desired effect you need to reference the corresponding class in the markup (see [here](#html))
 
-Variable name | Default value | Explanation
---- | --- | ---
-$effects-zoomin | true | include zoomin styles in the css
-$effects-slidein | true | include slidein styles in the css
-$effects-fountain | true | include fountain styles in the css
+Variable name | Default value
+--- | ---
+$effects-zoomin | true
+$effects-slidein | true
+$effects-slidein-spring | true
+$effects-fountain | true
 
-As a suggestion, try to only include the animation you're using in production in order to have a lighter css.
+As a suggestion, try to only include the animation you're using in production in order to have a much lighter css.
 
 #####Speeds#####
 
@@ -189,6 +188,11 @@ menu.setAttribute('data-mfb-state', 'open');
 ##Contributions?##
 Yes please!
 If you submit a PR please add the relative documentation in this README (if needed) and don't forget to add you name and/or email to the contributors list in the package.json file.
+
+##Credits##
+- Andrey Sitnik's [Easings.net](http://easings.net/) for visualizing animations.
+- Demo icons courtesy of [Ionicons](ionicons.com).
+- All the [contributors](https://github.com/nobitagit/material-floating-button/graphs/contributors) to this project.
 
 ##Todos##
 
