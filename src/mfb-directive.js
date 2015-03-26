@@ -17,15 +17,15 @@
         menuState: '@',
         togglingMethod: '@',
       },
-      template: '<ul class="mfb-component--{{position}} mfb-{{effect}}" data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{currentState}}">' +
+      template: '<ul class="mfb-component--{{position}} mfb-{{effect}}" data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">' +
                 ' <li class="mfb-component__wrap">' +
-                '  <a ng-click="toggleMenu()" data-mfb-label="{{label}}" class="mfb-component__button--main">' +
+                '  <a ng-click="toggleMenu()" ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
                 '   <i class="mfb-component__main-icon--resting {{resting}}"></i>' +
-                '   <i class="mfb-component__main-icon--active {{active}}"></i>' +              
+                '   <i class="mfb-component__main-icon--active {{active}}"></i>' +
                 '  </a>' +
                 '  <ul class="mfb-component__list" ng-transclude>' +
                 '  </ul>' +
-                ' </li>' +        
+                ' </li>' +
                 '</ul>',
       link: function(scope, elem, attrs) {
 
@@ -52,14 +52,14 @@
         function useClick(){
           scope.$apply(function(){
             scope.togglingMethod = 'click';
-          });            
+          });
         }
 
         /**
          * Set the state to user-defined value. Fallback to closed if no
          * value is passed from the outside.
          */
-        scope.currentState = attrs.menuState || closedState;
+        scope.menuState = attrs.menuState || closedState;
 
         /**
          * Invert the current state of the menu.
@@ -69,22 +69,22 @@
          */
         scope.toggleMenu = function() {
           if ( _isHoverActive() ){ return; }
-          scope.currentState = scope.currentState === openState ? closedState : openState;
+          scope.menuState = scope.menuState === openState ? closedState : openState;
         };
 
         /**
          * If on touch device AND 'hover' method is selected:
          * wait for the digest to perform and then change hover to click.
-         */        
+         */
         if ( _isTouchDevice() && _isHoverActive() ){
           $timeout(useClick);
-        } 
+        }
 
         attrs.$observe('menuState', function(){
-          scope.currentState = scope.menuState;          
+          scope.currentState = scope.menuState;
         });
 
-      }           
+      }
     };
   }]);
 
@@ -93,13 +93,13 @@
     return {
       require: '^mfbMenu',
       restrict: 'EA',
-      transclude: true,  
+      transclude: true,
       replace: true,
       scope: {
         icon: '@',
         label: '@'
       },
-      template: '<li>' + 
+      template: '<li>' +
                 ' <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child">' +
                 '   <i class="mfb-component__child-icon {{icon}}"' +
                 '   </i>' +
@@ -109,6 +109,3 @@
   }]);
 
 })(window, angular);
-
-
-

@@ -116,11 +116,14 @@ value | explanation
 #####Effect####
 Defines the effect that is performed when the menu opens up to show its child buttons.
 
-value | explanation
---- | ---
-`zoomin` |  test it [here](http://nobitagit.github.io/ng-material-floating-button/)
-`slidein` | test it [here](http://nobitagit.github.io/ng-material-floating-button/)
-`fountain` | test it [here](http://nobitagit.github.io/ng-material-floating-button/)
+value |
+--- |
+`zoomin` |  
+`slidein` |
+`slidein-spring` |
+`fountain` |
+
+Test them [here](http://nobitagit.github.io/ng-material-floating-button/).
 
 Example:
 ```html
