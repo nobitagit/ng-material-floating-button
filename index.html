@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="mfb.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/1.5.2/css/ionicons.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
 
     <script src="modernizr.touch.js"></script>
@@ -17,9 +17,12 @@
     <title>Material floating button. The index.</title>
   </head>
   <body ng-controller="myCtrl">
-    <nav mfb-menu position="{{pos}}" effect="{{chosenEffect}}" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" ng-repeat="pos in positions" toggling-method="hover" menu-state="{{changeState}}">
-      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
-    </nav>             
+
+    <nav mfb-menu position="{{chosenPosition}}" effect="{{chosenEffect}}"
+         active-icon="ion-close-round" resting-icon="ion-plus-round"
+         toggling-method="{{chosenMethod}}" menu-state="{{menuState}}">
+      <a mfb-button icon="{{button.icon}}" href="{{button.href}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+    </nav>
 
     <section id="panel" class="panel">
       <header>
@@ -28,22 +31,30 @@
         </h1>
         <span id="showcode" class="showcode">
           <i class="ion-eye icon-yepcode"></i>
-          <i class="ion-eye-disabled icon-nocode"></i>          
+          <i class="ion-eye-disabled icon-nocode"></i>
         </span>
       </header>
       <article>
         <p>
-          Customizable, semantic Material floating action button implemented as an Angularjs directive. Also available in vanilla html. <br>  
-          <span class="striked">Shamelessly</span> Openly inspired by Google Inbox, Evernote and Path.           
+          Customizable, semantic Material floating action button implemented as an Angularjs directive. Also available in vanilla html. <br>
+          <span class="striked">Shamelessly</span> Openly inspired by Google Inbox, Evernote and Path.
         </p>
         <p>
-          To add Material Floating Buttons to any project just download or clone the repo from Github. Click on the <strong>yellow button</strong> here above for a code preview or choose an effect from the <strong>dropdown</strong> below and hover over any button on the corners of the screen.           
+          To add Material Floating Buttons to any project just download or clone the repo from Github. Click on the <strong>yellow button</strong> here above for a code preview or choose an effect from the <strong>dropdown</strong> below and hover over any button on the corners of the screen.
         </p>
         <p>
           <select id="selections" ng-model="chosenEffect">
              <option value="{{effect.value}}" ng-disabled="{{!effect.value}}" ng-repeat="effect in effects">{{effect.name}}</option>
-          </select>          
-        </p>        
+          </select>
+
+          <select ng-model="chosenPosition">
+             <option value="{{position.value}}" ng-disabled="{{!position.value}}" ng-repeat="position in positions">{{position.name}}</option>
+          </select>
+
+          <select ng-model="chosenMethod" ng-change="closeMenu()">
+            <option value="{{method.value}}" ng-disabled="{{!method.value}}" ng-repeat="method in methods">{{method.name}}</option>
+          </select>
+        </p>
 
         <div class="code">
           <p>
@@ -53,15 +64,15 @@
           <p>
             After referencing the styles in your header drop the MFB markup in your HTML like so:
           </p>
-<pre>&lt;nav mfb-menu position="{{pos}}" effect="{{chosenEffect}}" 
-        label="your main button text here" 
+<pre>&lt;nav mfb-menu position="{{pos}}" effect="{{chosenEffect}}"
+        label="your main button text here"
         active-icon="ion-edit" resting-icon="ion-plus-round"&gt;
   &lt;a mfb-button icon="icon-class" label="child button text"&gt;
   &lt;/a&gt;
-&lt;/nav&gt;</pre>  
+&lt;/nav&gt;</pre>
           <p>
             The attributes provide the element configuration for position, labels and icons used. All the other styles and configurations are just css.
-          </p>        
+          </p>
           <p>
             The best way to customise the styles is to build them directly from the source as the scss file is filled with customizable variables. From there choose your favorite colors and sizes and then compile the css.
           </p>
@@ -70,22 +81,22 @@
           </p>
         </div>
 
-      </article>    
+      </article>
       <footer>
         <a href="https://github.com/nobitagit/ng-material-floating-button"
         >
           <button class="actions">
             <i class="ion-social-github"></i> View on Github
-          </button>        
+          </button>
         </a>
         <a href="http://twitter.com/share?text=Check this material floating button directive for Angularjs!&url=http://nobitagit.github.io/ng-material-floating-button/&hashtags=material,design,button,angularjs,directive">
           <button class="actions">
             <i class="ion-social-twitter"></i> Share on Twitter
-          </button>           
-        </a>         
+          </button>
+        </a>
       </footer>
     </section>
- 
+
   <script>
 
     var panel = document.getElementById('panel'),
@@ -107,12 +118,26 @@
 
   var app = angular.module('test-app', ['ng-mfb']);
 
-  app.controller('myCtrl', function($scope){
+  app.controller('myCtrl', function($scope, $timeout){
 
-    $scope.positions = ['tl', 'tr', 'br', 'bl'];
+    $scope.positions = [{
+      name: 'Position',
+    },{
+      value: 'tl',
+      name: 'Top left'
+    },{
+      value: 'tr',
+      name: 'Top right'
+    },{
+      value: 'br',
+      name: 'Bottom right'
+    },{
+      value: 'bl',
+      name: 'Bottom left'
+    }];
 
     $scope.effects = [{
-      name: 'Choose an effect here',
+      name: 'Effect',
     },{
       value: 'slidein',
       name: 'Slide in + fade'
@@ -122,22 +147,64 @@
     },{
       value: 'fountain',
       name: 'Fountain'
+    },{
+      value: 'slidein-spring',
+      name: 'Slidein (spring)'
     }];
 
+    $scope.methods = [{
+        name: 'Method'
+      },{
+        value: 'click',
+        name: 'Click'
+      },{
+        value: 'hover',
+        name: 'Hover'
+      }
+    ];
+
     $scope.buttons = [{
-      label: 'a link',
-      icon: 'ion-paper-airplane'
+      label: 'View on Github',
+      icon: 'ion-social-github',
+      href: 'https://github.com/nobitagit/material-floating-button/'
     },{
-      label: 'a link',
-      icon: 'ion-paper-airplane'
+      label: 'Follow me on Github',
+      icon: 'ion-social-octocat',
+      href: 'https://github.com/nobitagit'
     },{
-      label: 'a link',
-      icon: 'ion-paper-airplane'
+      label: 'Share on Twitter',
+      icon: 'ion-social-twitter',
+      href: 'http://twitter.com/share?text=Check this material floating button component!&url=http://nobitagit.github.io/material-floating-button/&hashtags=material,design,button,css'
     }];
 
     $scope.chosenEffect = 'zoomin';
+    $scope.chosenPosition = 'br';
+    $scope.chosenMethod = 'click';
+
+    $scope.menuState = 'closed';
+
+    $scope.toggle = function() {
+      $scope.menuState = $scope.menuState === 'closed' ? 'open' : 'closed'
+    }
+
+    $scope.closeMenu = function() {
+      $scope.toggle();
+      $timeout(function(arguments) {
+        $scope.menuState = 'closed';
+      },10);
+    };
 
   });
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-61205914-2', 'auto');
+    ga('send', 'pageview');
+
   </script>  
   </body>
 </html>
