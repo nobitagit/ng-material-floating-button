@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     copy: {
       live: {
         files: [{
-          src: ['src/index.html', 'src/mfb-directive.js', 'src/index.css', 'ga.html'],
+          src: ['src/index.html', 'src/mfb-directive.js', 'src/*.tpl.html', 'src/index.css', 'ga.html'],
           dest: 'build/live/',
           expand: true, flatten: true
         },{

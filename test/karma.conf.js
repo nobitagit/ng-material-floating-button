@@ -18,6 +18,7 @@ module.exports = function(config) {
       'bower_components/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
 
+      'src/**/*.tpl.html',
       'src/mfb-directive.js',
       'test/*.spec.js',
 
@@ -28,12 +29,16 @@ module.exports = function(config) {
     exclude: [
     ],
 
-
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/**/*.tpl.html': ['ng-html2js']
     },
 
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'src/',
+      moduleName: 'MfbTemplate'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

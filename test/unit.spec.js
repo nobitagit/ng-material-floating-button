@@ -1,24 +1,28 @@
 describe('ng-mfb', function() {
 
   var $compile,
+      $timeout,
       $rootScope;
 
   beforeEach(module('ng-mfb'));
+  beforeEach(module('MfbTemplate'));
 
-  beforeEach(inject(function(_$compile_, _$rootScope_){
+  beforeEach(inject(function(_$compile_, _$rootScope_, _$timeout_){
     $compile = _$compile_;
     $rootScope = _$rootScope_;
+    $timeout = _$timeout_;
   }));
 
   /**
    * This directive uses transclusion so for testing purposes we have to
    * wrap the tested element in a wrapping div and then fetch its
-   * contents. See: 
+   * contents. See:
    * Testing Transclusion Directives @ https://docs.angularjs.org/guide/unit-testing
    *
    **/
   function compile( template ){
     var node = $compile('<div>' + template + '</div>')($rootScope);
+    $rootScope.$digest();
     return node.contents();
   }
 
@@ -30,16 +34,14 @@ describe('ng-mfb', function() {
                 '</div>';
 
       var node = compile(tpl);
-      $rootScope.$digest();
 
       expect(node.hasClass('mfb-component--tr')).toBeTruthy();
-      expect(node.find('ul').hasClass('mfb-component__list')).toBeTruthy();      
+      expect(node.find('ul').hasClass('mfb-component__list')).toBeTruthy();
     });
 
     it('should be possibile to be instantiated as an attribute', function(){
         var tpl = '<div mfb-menu></div>',
             node = compile(tpl);
-        $rootScope.$digest();   
 
         expect(node.parent().find('ul')).toBeTruthy();
     });
@@ -47,7 +49,6 @@ describe('ng-mfb', function() {
     it('should be possibile to be instantiated as an element', function(){
         var tpl = '<mfb-menu></mfb-menu>',
             node = compile(tpl);
-        $rootScope.$digest();   
 
         expect(node.parent().find('mfb-menu')).toBeTruthy();
     });
@@ -63,28 +64,28 @@ describe('ng-mfb', function() {
       var tpl = '<div mfb-menu position="' + pos +'"></div>';
 
       node = compile(tpl);
-      $rootScope.$digest();      
+      $rootScope.$digest();
     }
 
     it('should place the menu on top right if "tr" is passed', function(){
       generateTpl('tr');
-      expect(node.hasClass('mfb-component--tr')).toBeTruthy();     
+      expect(node.hasClass('mfb-component--tr')).toBeTruthy();
     });
 
     it('should place the menu on top left if "tl" is passed', function(){
       generateTpl('tl');
-      expect(node.hasClass('mfb-component--tl')).toBeTruthy();     
+      expect(node.hasClass('mfb-component--tl')).toBeTruthy();
     });
 
     it('should place the menu on bottom right if "br" is passed', function(){
       generateTpl('br');
-      expect(node.hasClass('mfb-component--br')).toBeTruthy();     
+      expect(node.hasClass('mfb-component--br')).toBeTruthy();
     });
 
     it('should place the menu on top left if "bl" is passed', function(){
       generateTpl('bl');
-      expect(node.hasClass('mfb-component--bl')).toBeTruthy();     
-    });            
+      expect(node.hasClass('mfb-component--bl')).toBeTruthy();
+    });
   });
 
   describe('when passing an option to the effect attribute', function(){
@@ -94,9 +95,9 @@ describe('ng-mfb', function() {
       var tpl = '<div mfb-menu effect="zoomin"></div>';
 
       var node = compile(tpl);
-      $rootScope.$digest();  
+      $rootScope.$digest();
 
-      expect(node.hasClass('mfb-zoomin')).toBeTruthy();     
+      expect(node.hasClass('mfb-zoomin')).toBeTruthy();
     });
   });
 
@@ -109,7 +110,7 @@ describe('ng-mfb', function() {
           node = compile(tpl),
           main_button;
 
-      $rootScope.$digest();  
+      $rootScope.$digest();
 
       main_button = node.find('a').eq(0);
       expect(main_button.attr('data-mfb-label')).toBe(label);
@@ -124,9 +125,9 @@ describe('ng-mfb', function() {
       var tpl = '<div mfb-menu active-icon="ion-edit" resting-icon="ion-plus-round"></div>',
           node = compile(tpl);
 
-      $rootScope.$digest();   
+      $rootScope.$digest();
 
-      main_button = node.find('a').eq(0);  
+      main_button = node.find('a').eq(0);
     });
 
     it('should assign the right class for the icon shown at rest', function() {
@@ -134,12 +135,12 @@ describe('ng-mfb', function() {
       expect( icon1.hasClass('mfb-component__main-icon--resting') ).toBeTruthy();
       expect( icon1.hasClass('ion-plus-round') ).toBeTruthy();
     });
-    
+
     it('should assign the right class for the icon shown for active state', function() {
       var icon2 = main_button.find('i').eq(1);
       expect( icon2.hasClass('mfb-component__main-icon--active') ).toBeTruthy();
       expect( icon2.hasClass('ion-edit') ).toBeTruthy();
-    });    
+    });
   });
 
   describe('number of child buttons should be the right one', function() {
@@ -153,7 +154,7 @@ describe('ng-mfb', function() {
           node = compile(tpl),
           buttons;
 
-      $rootScope.$digest();     
+      $rootScope.$digest();
 
       buttons = node.find('ul').children();
 
@@ -180,13 +181,13 @@ describe('ng-mfb', function() {
           node = compile(tpl),
           buttons;
 
-      $rootScope.$digest();     
+      $rootScope.$digest();
 
       buttons = node.find('ul').children();
 
       expect(buttons.length).toEqual(3);
-          
-    });        
+
+    });
   });
 
   describe('when instantiated with click support', function() {
@@ -197,7 +198,7 @@ describe('ng-mfb', function() {
       var tpl = '<div mfb-menu menu-state="' + state +'"></div>';
 
       node = compile(tpl);
-      $rootScope.$digest();      
+      $rootScope.$digest();
     }
 
     describe('should retain the initial state as set by the user:', function(){
@@ -210,25 +211,26 @@ describe('ng-mfb', function() {
       it('data-mfb-state must be "closed" if menu-state is "closed"', function(){
         generateTpl( 'closed' );
         expect(node[0].getAttribute('data-mfb-state')).toBe('closed');
-      });      
+      });
     });
   });
 
-  describe('Touch support:', function() {
+  describe('When Touch support is detected', function() {
     var node;
 
     function generateTpl( togglingMethod ){
       var tpl = '<div mfb-menu toggling-method="' + togglingMethod +'"></div>';
-
       node = compile(tpl);
-      $rootScope.$digest();      
+      $rootScope.$digest();
     }
 
-    it('', function() {
+    it('hover should be converted to click behavior', function() {
       window.Modernizr = {
         touch: true
       };
       generateTpl('hover');
+      $timeout.flush();
+      expect(node[0].getAttribute('data-mfb-toggle')).toBe('click');      
     });
   });
 
