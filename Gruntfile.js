@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     sass: {
       base: {
         files: {
-          'mfb/src/mfb.css': 'mfb/src/mfb.scss'          
+          'mfb/src/mfb.css': 'mfb/src/mfb.scss'
         }
       }
     },
@@ -53,14 +53,26 @@ module.exports = function(grunt) {
     copy: {
       live: {
         files: [{
-          src: ['src/index.html', 'src/mfb-directive.js', 'src/index.css'],
+          src: ['src/index.html', 'src/mfb-directive.js', 'src/index.css', 'ga.html'],
           dest: 'build/live/',
-          expand: true, flatten: true  
+          expand: true, flatten: true
         },{
           src: ['mfb/src/*.css', 'mfb/src/*.css.map', 'mfb/src/lib/**/*.js'],
           dest: 'build/live/',
-          expand: true, flatten: true            
+          expand: true, flatten: true
         }]
+      }
+    },
+
+    preprocess: {
+      inline : {
+        src : [ 'build/**/*.html' ],
+        options: {
+          inline : true,
+          context : {
+            DEBUG: false
+          }
+        }
       }
     },
 
@@ -69,15 +81,15 @@ module.exports = function(grunt) {
         base: 'build/live',
       },
       'live': {
-        src: ['*'] 
+        src: ['*']
       },
       'check': {
         options: {
           push: false
         },
-        src: ['*']      
+        src: ['*']
       }
-    }    
+    }
   });
 
   grunt.loadNpmTasks('grunt-gh-pages');
@@ -85,9 +97,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-jshint');  
-  grunt.loadNpmTasks('grunt-karma');    
-  grunt.loadNpmTasks('grunt-usemin');    
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-preprocess');
 
   grunt.registerTask('watch-css', ['watch:css']);
   grunt.registerTask('watch-js', ['watch:js']);
@@ -99,6 +112,7 @@ module.exports = function(grunt) {
       'clean:live',
       'copy:live',
       'useminPrepare',
+      'preprocess',
       'usemin',
       'clean:check','gh-pages:check'
     ]);
@@ -108,8 +122,9 @@ module.exports = function(grunt) {
       'clean:live',
       'copy:live',
       'useminPrepare',
+      'preprocess',
       'usemin',
       'gh-pages:live'
-    ]);  
+    ]);
 
 };
