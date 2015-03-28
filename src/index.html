@@ -27,9 +27,21 @@
 
     <nav mfb-menu position="{{chosenPosition}}" effect="{{chosenEffect}}"
          active-icon="ion-close-round" resting-icon="ion-plus-round"
-         toggling-method="{{chosenMethod}}" menu-state="{{menuState}}">
-      <a mfb-button icon="{{button.icon}}" href="{{button.href}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+         toggling-method="{{chosenMethod}}" menu-state="{{menuState}}"
+         custom-content="main-icon-custom-template">
+      <a mfb-button icon="{{button.icon}}" href="{{button.href}}"
+         label="{{button.label}}" ng-repeat="button in buttons"
+         custom-content="child-icon-custom-template"></a>
     </nav>
+
+    <script type="text/ng-template" id="main-icon-custom-template">
+      <span class="mfb-component__main-icon--resting {{resting}}"></span>
+      <span class="mfb-component__main-icon--active {{active}}"></span>
+    </script>
+
+    <script type="text/ng-template" id="child-icon-custom-template">
+      <span class="mfb-component__child-icon {{icon}}"></span>
+    </script>
 
     <section id="panel" class="panel">
       <header>

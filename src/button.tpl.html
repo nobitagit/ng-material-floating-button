@@ -1,6 +1,8 @@
 <li>
-  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child">
-    <i class="mfb-component__child-icon {{icon}}">
-    </i>
+  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child"
+     ng-include="customContent">
+     <script type="text/ng-template" id="NGMFB_child-icon-template">
+       <i class="mfb-component__child-icon {{icon}}"></i>
+     </script>
   </a>
 </li>

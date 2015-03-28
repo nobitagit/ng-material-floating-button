@@ -3,6 +3,10 @@
   var mfb = angular.module('ng-mfb', []);
 
   mfb.directive('mfbMenu', ['$timeout',function($timeout){
+
+    var templateUrl = 'menu.tpl.html',
+        iconTemplate = 'NGMFB_main-icon-template';
+
     return {
       restrict: 'EA',
       transclude: true,
@@ -13,13 +17,16 @@
         label: '@',
         resting: '@restingIcon',
         active: '@activeIcon',
+        customContent: '@',
 
         menuState: '@',
         togglingMethod: '@',
       },
-      templateUrl: 'menu.tpl.html',
+      templateUrl: templateUrl,
+      controller: function($scope){
+        return ctrl($scope, iconTemplate);
+      },
       link: function(scope, elem, attrs) {
-
         var openState = 'open',
             closedState = 'closed';
 
@@ -81,6 +88,10 @@
 
 
   mfb.directive('mfbButton', [function(){
+
+    var templateUrl = 'button.tpl.html',
+        iconTemplate = 'NGMFB_child-icon-template';
+
     return {
       require: '^mfbMenu',
       restrict: 'EA',
@@ -88,10 +99,20 @@
       replace: true,
       scope: {
         icon: '@',
-        label: '@'
+        label: '@',
+        customContent: '@'
       },
-      templateUrl: 'button.tpl.html'
+      templateUrl: templateUrl,
+      controller: function($scope){
+        return ctrl($scope, iconTemplate);
+      },
     };
   }]);
+
+  function ctrl($scope, iconTemplate) {
+    $scope.customContent =  $scope.customContent ?
+                            $scope.customContent :
+                            iconTemplate;
+  }
 
 })(window, angular);
