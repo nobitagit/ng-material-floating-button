@@ -14,19 +14,10 @@
         resting: '@restingIcon',
         active: '@activeIcon',
 
-        menuState: '@',
+        menuState: '=?',
         togglingMethod: '@',
       },
-      template: '<ul class="mfb-component--{{position}} mfb-{{effect}}" data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">' +
-                ' <li class="mfb-component__wrap">' +
-                '  <a ng-click="toggleMenu()" ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
-                '   <i class="mfb-component__main-icon--resting {{resting}}"></i>' +
-                '   <i class="mfb-component__main-icon--active {{active}}"></i>' +
-                '  </a>' +
-                '  <ul class="mfb-component__list" ng-transclude>' +
-                '  </ul>' +
-                ' </li>' +
-                '</ul>',
+      templateUrl: 'menu.tpl.html',
       link: function(scope, elem, attrs) {
 
         var openState = 'open',
@@ -54,23 +45,32 @@
             scope.togglingMethod = 'click';
           });
         }
+        /**
+         * Invert the current state of the menu.
+         */
+        function flipState() {
+          scope.menuState = scope.menuState === openState ? closedState : openState;
+        }
 
         /**
          * Set the state to user-defined value. Fallback to closed if no
          * value is passed from the outside.
          */
-        scope.menuState = attrs.menuState || closedState;
+        //scope.menuState = attrs.menuState || closedState;
+        if(!scope.menuState){
+          scope.menuState = closedState;
+        }
 
-        /**
-         * Invert the current state of the menu.
-         *
-         * The click handler is always attached, so we prevent this callback
-         * from firing when hover is selected.
-         */
-        scope.toggleMenu = function() {
-          if ( _isHoverActive() ){ return; }
-          scope.menuState = scope.menuState === openState ? closedState : openState;
+        scope.clicked = function() {
+          if(!_isHoverActive()){
+            flipState();
+          }
         };
+        scope.hovered = function() {
+          if(_isHoverActive()){
+            //flipState();
+          }
+        }
 
         /**
          * If on touch device AND 'hover' method is selected:
@@ -99,12 +99,7 @@
         icon: '@',
         label: '@'
       },
-      template: '<li>' +
-                ' <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child">' +
-                '   <i class="mfb-component__child-icon {{icon}}"' +
-                '   </i>' +
-                ' </a>' +
-                '</li>'
+      templateUrl: 'button.tpl.html'
     };
   }]);
 
