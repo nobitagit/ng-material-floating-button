@@ -27,10 +27,11 @@
 
     <nav mfb-menu position="{{chosenPosition}}" effect="{{chosenEffect}}"
          active-icon="ion-close-round" resting-icon="ion-plus-round"
-         toggling-method="{{chosenMethod}}" menu-state="{{menuState}}">
+         ng-mouseenter="hovered()" ng-mouseleave="hovered()"
+         toggling-method="{{chosenMethod}}" menu-state="menuState">
       <a mfb-button icon="{{button.icon}}" href="{{button.href}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
     </nav>
-
+{{menuState}}
     <section id="panel" class="panel">
       <header>
         <h1>
@@ -186,19 +187,20 @@
 
     $scope.chosenEffect = 'zoomin';
     $scope.chosenPosition = 'br';
-    $scope.chosenMethod = 'hover';
+    $scope.chosenMethod = 'click';
 
     $scope.menuState = 'closed';
+
+    $scope.hovered = function() {
+      // toggle something on hover.
+    }
 
     $scope.toggle = function() {
       $scope.menuState = $scope.menuState === 'closed' ? 'open' : 'closed'
     }
 
     $scope.closeMenu = function() {
-      $scope.toggle();
-      $timeout(function(arguments) {
-        $scope.menuState = 'closed';
-      },10);
+      $scope.menuState = 'closed';
     };
 
   });

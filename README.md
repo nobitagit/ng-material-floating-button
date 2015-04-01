@@ -104,14 +104,24 @@ If you want the menu to work on hover but need support for touch devices you fir
 If you're not using Modernizr already, just include the tiny (<3KB) provided `modernizr.touch.js` script (look in the `mfb/src/lib/` folder) in your `<head>` or get the latest version of this very script right from [here](http://modernizr.com/download/#-touch-teststyles-prefixes). Note that this is a custom build and will only detect for touch support, it's not the full library.
 
 #####Menu state####
-You can optionally include the desired starting state of the menu (open or closed). If this attribute is not specified a closed state is assumed.
-
-You can also programmatically open/close the menu leveraging this attribute at any time after compilation, without any clicking required by the user.
+You can programmatically open/close the menu leveraging this attribute at any time after compilation, without any clicking required by the user, or listen to the current state of the menu.
 
 value | explanation
 --- | ---
 `open` | menu is... open (surprise, surprise)
 `closed` | menu is...(hold tight) ... closed
+
+Example:
+
+```html
+<ul mfb-menu menu-state="myVar">
+</ul>
+```
+```js
+// in your controller
+$scope.myVar = 'closed';
+```
+NB: currently this value is only updated if using `click` toggling.
 
 #####Effect####
 Defines the effect that is performed when the menu opens up to show its child buttons.

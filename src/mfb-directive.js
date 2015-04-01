@@ -14,7 +14,7 @@
         resting: '@restingIcon',
         active: '@activeIcon',
 
-        menuState: '@',
+        menuState: '=?',
         togglingMethod: '@',
       },
       templateUrl: 'menu.tpl.html',
@@ -45,23 +45,32 @@
             scope.togglingMethod = 'click';
           });
         }
+        /**
+         * Invert the current state of the menu.
+         */
+        function flipState() {
+          scope.menuState = scope.menuState === openState ? closedState : openState;
+        }
 
         /**
          * Set the state to user-defined value. Fallback to closed if no
          * value is passed from the outside.
          */
-        scope.menuState = attrs.menuState || closedState;
+        //scope.menuState = attrs.menuState || closedState;
+        if(!scope.menuState){
+          scope.menuState = closedState;
+        }
 
-        /**
-         * Invert the current state of the menu.
-         *
-         * The click handler is always attached, so we prevent this callback
-         * from firing when hover is selected.
-         */
-        scope.toggleMenu = function() {
-          if ( _isHoverActive() ){ return; }
-          scope.menuState = scope.menuState === openState ? closedState : openState;
+        scope.clicked = function() {
+          if(!_isHoverActive()){
+            flipState();
+          }
         };
+        scope.hovered = function() {
+          if(_isHoverActive()){
+            //flipState();
+          }
+        }
 
         /**
          * If on touch device AND 'hover' method is selected:

@@ -190,28 +190,41 @@ describe('ng-mfb', function() {
     });
   });
 
-  describe('when instantiated with click support', function() {
+  describe('State of the menu', function() {
 
     var node;
 
     function generateTpl( state ){
-      var tpl = '<div mfb-menu menu-state="' + state +'"></div>';
+      var tpl = '<div mfb-menu menu-state="state"></div>';
 
       node = compile(tpl);
       $rootScope.$digest();
     }
 
-    describe('should retain the initial state as set by the user:', function(){
+    it('should be open if user sets it as open', function(){
+      $rootScope.state = 'open';
+      generateTpl();
+      expect(node[0].getAttribute('data-mfb-state')).toBe('open');
+    });
 
-      it('data-mfb-state must be "open" if menu-state is "open"', function(){
-        generateTpl( 'open' );
-        expect(node[0].getAttribute('data-mfb-state')).toBe('open');
-      });
+    it('should be closed if user sets it as closed', function(){
+      $rootScope.state = 'closed';
+      generateTpl();
+      expect(node[0].getAttribute('data-mfb-state')).toBe('closed');
+    });
 
-      it('data-mfb-state must be "closed" if menu-state is "closed"', function(){
-        generateTpl( 'closed' );
-        expect(node[0].getAttribute('data-mfb-state')).toBe('closed');
-      });
+    it('should default to closed if unspecified', function(){
+      $rootScope.state;
+      generateTpl();
+      expect(node[0].getAttribute('data-mfb-state')).toBe('closed');
+    });
+
+    it('should be possible to be changed from outside', function(){
+      $rootScope.state;
+      generateTpl();
+      $rootScope.state = 'open';
+      $rootScope.$digest();
+      expect(node[0].getAttribute('data-mfb-state')).toBe('open');
     });
   });
 
@@ -230,7 +243,7 @@ describe('ng-mfb', function() {
       };
       generateTpl('hover');
       $timeout.flush();
-      expect(node[0].getAttribute('data-mfb-toggle')).toBe('click');      
+      expect(node[0].getAttribute('data-mfb-toggle')).toBe('click');
     });
   });
 
