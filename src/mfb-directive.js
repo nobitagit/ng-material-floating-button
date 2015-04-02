@@ -2,6 +2,32 @@
 
   var mfb = angular.module('ng-mfb', []);
 
+  mfb.run(['$templateCache', function($templateCache) {
+    $templateCache.put('ng-mfb-menu.tpl.html',
+    '<ul class="mfb-component--{{position}} mfb-{{effect}}"' +
+    '    data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">' +
+    '  <li class="mfb-component__wrap">' +
+    '    <a ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
+    '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
+    '     <i class="mfb-component__main-icon--resting {{resting}}"></i>' +
+    '     <i class="mfb-component__main-icon--active {{active}}"></i>' +
+    '    </a>' +
+    '    <ul class="mfb-component__list" ng-transclude>' +
+    '    </ul>' +
+    '</li>' +
+    '</ul>'
+    );
+
+    $templateCache.put('ng-mfb-button.tpl.html',
+    '<li>' +
+    '  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child">' +
+    '    <i class="mfb-component__child-icon {{icon}}">' +
+    '    </i>' +
+    '  </a>' +
+    '</li>'
+    );
+  }]);
+
   mfb.directive('mfbMenu', ['$timeout',function($timeout){
     return {
       restrict: 'EA',
@@ -17,7 +43,7 @@
         menuState: '=?',
         togglingMethod: '@',
       },
-      templateUrl: 'menu.tpl.html',
+      templateUrl: 'ng-mfb-menu.tpl.html',
       link: function(scope, elem, attrs) {
 
         var openState = 'open',
@@ -99,7 +125,7 @@
         icon: '@',
         label: '@'
       },
-      templateUrl: 'button.tpl.html'
+      templateUrl: 'ng-mfb-button.tpl.html'
     };
   }]);
 
