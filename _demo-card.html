@@ -1,0 +1,82 @@
+<div ng-class="{'viewCode' : openPanel}">
+  <header>
+    <h1>
+      Angularjs Material Floating Buttons
+    </h1>
+    <span id="showcode" class="showcode" ng-click="openPanel = !openPanel">
+      <i class="ion-eye icon-yepcode"></i>
+      <i class="ion-eye-disabled icon-nocode"></i>
+    </span>
+  </header>
+  <article>
+    <p>
+      Standalone Angularjs directive for Material floating action buttons. <br>
+      <span class="striked">Shamelessly</span> Openly inspired by Google Inbox, Evernote and Path.
+    </p>
+    <p ng-if="demoPage === 'core'">
+      It works out of the box with no other dependencies apart from Angular, but plays nicely with Angular Material (see this <a href="angular-material.html">other demo</a>).
+    </p>
+    <p ng-if="demoPage === 'md'">
+      This page shows the integration with Angular Material, but the core has no hard dependency apart from Angular and works out of the box (see <a href="index.html">core demo</a>).
+    </p>
+    <p>
+      Click on the <strong>yellow button</strong> here above for a code preview or choose an effect from the <strong>dropdown</strong> below and hover over the button on the corner of the screen.
+    </p>
+    <p>
+      <select id="selections" ng-model="ctrl.chosen.effect">
+         <option value="{{effect.value}}" ng-disabled="{{!effect.value}}" ng-repeat="effect in ctrl.effects">{{effect.name}}</option>
+      </select>
+
+      <select ng-model="ctrl.chosen.position">
+         <option value="{{position.value}}" ng-disabled="{{!position.value}}" ng-repeat="position in ctrl.positions">{{position.name}}</option>
+      </select>
+
+      <select ng-model="ctrl.chosen.method" ng-change="ctrl.closeMenu()">
+        <option value="{{method.value}}" ng-disabled="{{!method.value}}" ng-repeat="method in ctrl.methods">{{method.name}}</option>
+      </select>
+    </p>
+
+    <div class="code">
+      <p>
+        Clone the project with: <br>
+      </p>
+      <pre>git clone https://github.com/nobitagit/ng-material-floating-button.git</pre>
+      <p>
+        Or just use bower
+      </p>
+      <pre>bower install ng-mfb --save</pre>
+      <p>
+        After referencing the styles in your header drop the MFB markup in your HTML like so:
+      </p>
+  <pre>&lt;nav mfb-menu position="{{pos}}" effect="{{chosenEffect}}"
+    label="your main button text here"
+    active-icon="ion-edit" resting-icon="ion-plus-round"&gt;
+  &lt;a mfb-button icon="icon-class" label="child button text"&gt;
+  &lt;/a&gt;
+  &lt;/nav&gt;</pre>
+      <p>
+        The attributes provide the element configuration for position, labels and icons used. All the other styles and configurations are just css.
+      </p>
+      <p>
+        The best way to customise the styles is to build them directly from the source as the scss file is filled with customizable variables. From there choose your favorite colors and sizes and then compile the css.
+      </p>
+      <p>
+        If you use <a href="http://gruntjs.com/">Grunt</a> and have cloned the repo run <code>npm init</code> and then <code>grunt build</code> or <code>grunt watch</code> to have automatic compilation.
+      </p>
+    </div>
+
+  </article>
+  <footer>
+    <a href="https://github.com/nobitagit/ng-material-floating-button"
+    >
+      <button class="actions">
+        <i class="ion-social-github"></i> View on Github
+      </button>
+    </a>
+    <a href="http://twitter.com/share?text=Check this material floating button directive for Angularjs!&url=http://nobitagit.github.io/ng-material-floating-button/&hashtags=material,design,button,angularjs,directive">
+      <button class="actions">
+        <i class="ion-social-twitter"></i> Share on Twitter
+      </button>
+    </a>
+  </footer>
+</div>
