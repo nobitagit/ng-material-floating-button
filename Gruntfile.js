@@ -40,22 +40,27 @@ module.exports = function(grunt) {
     },
 
     useminPrepare: {
-      html: 'src/index.html',
+      html: ['demo/index.html', 'demo/angular-material.html'],
       options: {
         dest: 'build/live/'
       }
     },
 
     usemin: {
-      html: ['build/live/index.html']
+      html: ['build/live/index.html', 'build/live/angular-material.html']
     },
 
     copy: {
       live: {
         files: [{
-          src: ['src/index.html', 'src/mfb-directive.js', 'src/*.tpl.html', 'src/index.css', 'ga.html'],
+          src: ['demo/*', 'src/mfb-directive.js', 'mfb/src/index.css', 'ga.html'],
           dest: 'build/live/',
           expand: true, flatten: true
+        },{
+          src: ['svg/*.svg'],
+          cwd: 'demo',
+          dest: 'build/live/',
+          expand: true, flatten: false
         },{
           src: ['mfb/src/*.css', 'mfb/src/*.css.map', 'mfb/src/lib/**/*.js'],
           dest: 'build/live/',
@@ -81,13 +86,13 @@ module.exports = function(grunt) {
         base: 'build/live',
       },
       'live': {
-        src: ['*']
+        src: ['**/*']
       },
       'check': {
         options: {
           push: false
         },
-        src: ['*']
+        src: ['**/*']
       }
     }
   });

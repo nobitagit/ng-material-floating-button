@@ -5,7 +5,6 @@ describe('ng-mfb', function() {
       $rootScope;
 
   beforeEach(module('ng-mfb'));
-  beforeEach(module('MfbTemplate'));
 
   beforeEach(inject(function(_$compile_, _$rootScope_, _$timeout_){
     $compile = _$compile_;
@@ -194,7 +193,7 @@ describe('ng-mfb', function() {
 
     var node;
 
-    function generateTpl( state ){
+    function generateTpl(){
       var tpl = '<div mfb-menu menu-state="state"></div>';
 
       node = compile(tpl);

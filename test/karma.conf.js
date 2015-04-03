@@ -18,7 +18,6 @@ module.exports = function(config) {
       'bower_components/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
 
-      'src/**/*.tpl.html',
       'src/mfb-directive.js',
       'test/*.spec.js',
 

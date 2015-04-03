@@ -2,12 +2,12 @@ ng-material-floating-button
 ========================
 
 Material design floating action button implemented as an Angularjs directive.
-
-Made to be semantic, fast and easy to customize.
 ~~Shamelessly~~ inspired by action buttons from Google Inbox, Evernote and Path.
 
+Made to be fast and easy to customise. It works out of the box with no other dependency apart from Angular, but plays nicely with the [Angular Material](https://material.angularjs.org) bundle, for which it has dedicated templates.
+
 ##Demo##
-Head over to the project [homepage](http://nobitagit.github.io/ng-material-floating-button/) to see it in action or just take a look at this awesome gif:
+Head over to the project [homepage](http://nobitagit.github.io/ng-material-floating-button/) to see it in action as a standalone component, check the [Angular Material integration](http://nobitagit.github.io/ng-material-floating-button/angular-material.html) or just take a look at this awesome gif:
 
 <img src="http://zippy.gfycat.com/LimitedTatteredFieldmouse.gif">
 
@@ -47,7 +47,7 @@ Finally, place the correct html structure in your template. As a first example, 
 <nav mfb-menu position="br" effect="zoomin" label="hover here"
      active-icon="ion-edit" resting-icon="ion-plus-round"
      toggling-method="click">
-  <a mfb-button icon="paper-airplane" label="menu item"></a>
+  <button mfb-button icon="paper-airplane" label="menu item"></button>
 </nav>
 ```
 This example shows the two basic components of the directive, a unique `mfb-menu` element which serves as a wrapper to a variable number of child buttons, defined by the `mfb-button` attribute.
@@ -65,6 +65,18 @@ This can be defined as an attribute or an element. So this is valid:
 ```html
 <mfb-menu></mfb-menu>
 ```
+#####TemplateUrl####
+Optional attribute definining the template for the main button. If no template is specified it will fallback to the default `ng-mfb-menu-default.tpl.html`. If you are using [Angular Material](https://material.angularjs.org) in your app you can pass the predefined template for the Angular Material bundle which is `ng-mfb-menu-md.tpl.html`.
+
+Example:
+```html
+<ul mfb-menu template-url="ng-mfb-menu-md.tpl.html">
+  <!-- this will display the Angular Material optimised template -->
+</ul>
+```
+
+By no means you are tied to the default templates, though. See [customising templates](#custom-tpls).
+
 #####Position####
 Defines in which corner of the screen the component should be displayed.
 
@@ -171,6 +183,18 @@ This element represents the child button(s) of the menu and can only "live" insi
 ```html
 <mfb-button></mfb-button>
 ```
+#####TemplateUrl####
+Optional attribute definining the template for the child buttons. If no template is specified it will fallback to the default `ng-mfb-button-default.tpl.html`. If you are using [Angular Material](https://material.angularjs.org) in your app you can pass the predefined template for the Angular Material bundle which is `ng-mfb-button-md.tpl.html`.
+
+Example:
+```html
+<button mfb-button template-url="ng-mfb-button-md.tpl.html">
+  <!-- this will display the Angular Material optimised template -->
+</button>
+```
+
+Here again customising the template is surely possible, see how [here](#custom-tpls).
+
 #####Icon####
 Pass the class of the icon font character that is associated to the menu item:
 Example:
@@ -209,6 +233,9 @@ $scope.buttons = [{
 <!-- this will output 3 buttons with different icon, label and so on-->
 <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons"></a>
 ```
+<a name="custom-tpls"></a>
+###Customising templates###
+Custom templates can be passed as a attributes to the directive. Just pass either the url of your own template or the ID of the script containing your template. Refer to the default templates provided to have a working base to build upon.
 
 ###More customisations###
 The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in the `mfb/` folder (which is actually a subtree that pulls from [this repo](https://github.com/nobitagit/material-floating-button)).

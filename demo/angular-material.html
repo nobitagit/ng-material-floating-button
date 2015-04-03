@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html ng-app="test-app">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    <!-- build:css mfb.css -->
+    <link href="../mfb/src/mfb.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
+
+    <!-- build:js modernizr.touch.js -->
+    <script type="text/javascript" src="../mfb/src/lib/modernizr.touch.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:css index.css -->
+    <link href="../mfb/src/index.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <title>Material floating button. The index.</title>
+  </head>
+  <body ng-controller="myCtrl as ctrl" ng-init="demoPage = 'md'">
+
+    <nav mfb-menu position="{{ctrl.chosen.position}}" effect="{{ctrl.chosen.effect}}"
+         active-icon="close" resting-icon="menu"
+         ng-mouseenter="ctrl.hovered()" ng-mouseleave="ctrl.hovered()"
+         template-url="ng-mfb-menu-md.tpl.html"
+         toggling-method="{{ctrl.chosen.method}}" menu-state="ctrl.menuState">
+      <button  mfb-button icon="{{button.icon}}" href="{{button.href}}"
+         template-url="ng-mfb-button-md.tpl.html" ng-click="ctrl.loc(button.href)"
+         label="{{button.label}}" ng-repeat="button in ctrl.buttons"></button>
+    </nav>
+
+    <section id="panel" class="panel" ng-include=" '_demo-card.html' "></section>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.6/angular.js"></script>
+  <script>!window.angular && document.write(unescape('%3Cscript src="../bower_components/angularjs/angular.js"%3E%3C/script%3E'))</script>
+
+
+  <!-- Angular Material Dependencies, not needed for core element -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+  <!-- Angular Material Javascript, not needed for core element -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+
+  <!-- ng-mfb core -->
+  <!-- build:js mfb-directive.js -->
+  <script src="../src/mfb-directive.js"></script>
+  <!-- endbuild -->
+
+  <script src="_demo-module.js"></script>
+  <script>
+
+  var demo = angular.module('demo', [
+     'ng-mfb'
+    ,'ngMaterial'
+
+  ]);
+
+  demo
+  .config(function($mdThemingProvider, $mdIconProvider){
+
+      $mdIconProvider
+          .icon("menu"       , "./svg/menu.svg"        , 24)
+          .icon("star"       , "./svg/star.svg"        , 24)
+          .icon("share"      , "./svg/share.svg"       , 24)
+          .icon("share"      , "./svg/share.svg"       , 24)
+          .icon("addme"      , "./svg/addme.svg"       , 24)
+          .icon("close"      , "./svg/close.svg"       , 24);
+
+          $mdThemingProvider.theme('default')
+              .primaryPalette('pink')
+              .accentPalette('purple');
+
+  })
+  .controller('myCtrl', Ctrl);
+
+  function Ctrl(defaultValues, $window){
+    var vm = this;
+
+    vm.positions = defaultValues.positions;
+    vm.effects = defaultValues.effects;
+    vm.methods = defaultValues.methods;
+
+    vm.menuState = 'closed';
+    vm.loc = loc;
+
+    vm.chosen = {
+      effect : 'zoomin',
+      position : 'br',
+      method : 'click'
+    };
+
+    vm.buttons = [{
+      label: 'Star on Github',
+      icon: 'star',
+      href: 'https://github.com/nobitagit/ng-material-floating-button/'
+    },{
+      label: 'Follow me on Github',
+      icon: 'addme',
+      href: 'https://github.com/nobitagit'
+    },{
+      label: 'Share on Twitter',
+      icon: 'share',
+      href: 'http://twitter.com/share?text=Amazing material floating action button directive!&url=http://nobitagit.github.io/ng-material-floating-button/&hashtags=angular,angularjs,material,design,button'
+    }];
+
+    function loc(href) {
+      $window.location.href = href;
+    }
+
+  }
+
+  Ctrl.prototype.hovered = function() {
+    // toggle something on hover.
+  };
+
+  Ctrl.prototype.toggle = function() {
+    this.menuState = this.menuState === 'closed' ? 'open' : 'closed';
+  }
+
+  Ctrl.prototype.closeMenu = function() {
+    this.menuState = 'closed';
+  };
+
+  </script>
+  <!-- @include ga.html -->
+  </body>
+</html>

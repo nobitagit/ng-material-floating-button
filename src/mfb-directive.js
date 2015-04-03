@@ -1,9 +1,11 @@
 +(function(window, angular, undefined){
 
+  'use strict';
+
   var mfb = angular.module('ng-mfb', []);
 
   mfb.run(['$templateCache', function($templateCache) {
-    $templateCache.put('ng-mfb-menu.tpl.html',
+    $templateCache.put('ng-mfb-menu-default.tpl.html',
     '<ul class="mfb-component--{{position}} mfb-{{effect}}"' +
     '    data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">' +
     '  <li class="mfb-component__wrap">' +
@@ -18,11 +20,43 @@
     '</ul>'
     );
 
-    $templateCache.put('ng-mfb-button.tpl.html',
+    $templateCache.put('ng-mfb-menu-md.tpl.html',
+    '<ul class="mfb-component--{{position}} mfb-{{effect}}"' +
+    '    data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">' +
+    '  <li class="mfb-component__wrap">' +
+    '    <a ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
+    '       style="background: transparent; box-shadow: none;"' +
+    '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
+    '     <md-button class="md-fab md-primary" aria-label={{label}}>' +
+    '       <md-icon style="position:initial;" md-svg-icon="{{resting}}"' +
+    '         class="mfb-component__main-icon--resting"></md-icon>' +
+    '       <md-icon style="position:initial;" md-svg-icon="{{active}}"' +
+    '         class="mfb-component__main-icon--active"></md-icon>' +
+    '     </md-button>' +
+    '    </a>' +
+    '    <ul class="mfb-component__list" ng-transclude>' +
+    '    </ul>' +
+    '</li>' +
+    '</ul>'
+    );
+
+    $templateCache.put('ng-mfb-button-default.tpl.html',
     '<li>' +
-    '  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child">' +
+    '  <a data-mfb-label="{{label}}" class="mfb-component__button--child">' +
     '    <i class="mfb-component__child-icon {{icon}}">' +
     '    </i>' +
+    '  </a>' +
+    '</li>'
+    );
+
+    $templateCache.put('ng-mfb-button-md.tpl.html',
+    '<li>' +
+    '  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child" ' +
+    '     style="background: transparent; box-shadow: none;">' +
+    '     <md-button class="md-fab md-primary" aria-label={{label}}>' +
+    //'       <md-icon md-svg-src="img/icons/android.svg"></md-icon>' +
+    '       <md-icon md-svg-icon="{{icon}}"></md-icon>' +
+    '     </md-button>' +
     '  </a>' +
     '</li>'
     );
@@ -43,7 +77,9 @@
         menuState: '=?',
         togglingMethod: '@',
       },
-      templateUrl: 'ng-mfb-menu.tpl.html',
+      templateUrl: function(elem, attrs) {
+        return attrs.templateUrl || 'ng-mfb-menu-default.tpl.html';
+      },
       link: function(scope, elem, attrs) {
 
         var openState = 'open',
@@ -96,7 +132,7 @@
           if(_isHoverActive()){
             //flipState();
           }
-        }
+        };
 
         /**
          * If on touch device AND 'hover' method is selected:
@@ -125,7 +161,9 @@
         icon: '@',
         label: '@'
       },
-      templateUrl: 'ng-mfb-button.tpl.html'
+      templateUrl: function(elem, attrs) {
+        return attrs.templateUrl || 'ng-mfb-button-default.tpl.html';
+      }
     };
   }]);
 
