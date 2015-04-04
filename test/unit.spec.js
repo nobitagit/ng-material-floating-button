@@ -1,5 +1,7 @@
 describe('ng-mfb', function() {
 
+  'use strict';
+
   var $compile,
       $timeout,
       $rootScope;
@@ -246,4 +248,59 @@ describe('ng-mfb', function() {
     });
   });
 
+  describe('Default templates via template-url attribute', function() {
+    var node;
+
+    function generateTpl( tplUrl ){
+      var tpl = '<div mfb-menu template-url="' + tplUrl +'"></div>';
+      node = compile(tpl);
+      $rootScope.$digest();
+    }
+
+    it('should fallback to core template if unspecified', function() {
+      var tpl = '<div mfb-menu></div>',
+          i;
+      node = compile(tpl);
+      $rootScope.$digest();
+      i = node.find('i');
+      expect(i.length).toBe(2);
+    });
+
+    it('should allow for Angular Material template to be requested', function() {
+      generateTpl('ng-mfb-menu-md.tpl.html');
+      var i = node.find('i'),
+          btn = node.find('md-button');
+      expect(i.length).toBe(0);
+      expect(btn).not.toBe(undefined);
+    });
+
+  });
+
+  describe('Custom, user-defined templates', function() {
+    var $templateCache, node;
+
+    beforeEach(inject(function(_$templateCache_) {
+      $templateCache = _$templateCache_;
+    }));
+
+    function generateTpl( tplUrl, pos ){
+      var tpl = '<div mfb-menu template-url="' + tplUrl +'" position="'+ pos  +'"></div>';
+      node = compile(tpl);
+      $rootScope.$digest();
+    }
+
+    it('should be possible to be defined and used', function() {
+      $templateCache.put('myTpl',
+         '<section class="mfb-component--{{position}}"></section>');
+      generateTpl('myTpl', 'br');
+      expect(node.find('section')).toBeTruthy()
+    });
+
+    it('should properly make use of the attributes provided', function() {
+      $templateCache.put('myTpl',
+         '<section class="mfb-component--{{position}}"></section>');
+      generateTpl('myTpl', 'br');
+      expect(node.hasClass('mfb-component--br')).toBeTruthy();
+    });
+  });
 });
