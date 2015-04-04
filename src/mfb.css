@@ -207,7 +207,8 @@
   transform: scale(1) rotate(0deg); }
 [data-mfb-toggle="hover"]:hover .mfb-component__main-icon--resting,
 [data-mfb-state="open"] .mfb-component__main-icon--resting {
-  opacity: 0; }
+  opacity: 0;
+  position: absolute !important; }
 [data-mfb-toggle="hover"]:hover .mfb-component__main-icon--active,
 [data-mfb-state="open"] .mfb-component__main-icon--active {
   opacity: 1; }
