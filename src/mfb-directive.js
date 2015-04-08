@@ -73,9 +73,9 @@
         label: '@',
         resting: '@restingIcon',
         active: '@activeIcon',
-
+        mainAction: '&',
         menuState: '=?',
-        togglingMethod: '@',
+        togglingMethod: '@'
       },
       templateUrl: function(elem, attrs) {
         return attrs.templateUrl || 'ng-mfb-menu-default.tpl.html';
@@ -124,6 +124,11 @@
         }
 
         scope.clicked = function() {
+          // If there is a main action, let's fire it
+          if (scope.mainAction) {
+            scope.mainAction();
+          }
+
           if(!_isHoverActive()){
             flipState();
           }
