@@ -77,6 +77,14 @@ Example:
 
 By no means you are tied to the default templates, though. See [customising templates](#custom-tpls).
 
+#####Main Action####
+Defines a main action that will get fired when the main button is clicked. Works best with `toggling-method=hover` to put a main action on the base button.
+
+Example:
+```html
+<ul mfb-menu main-action="fireMainAction()></ul>
+```
+
 #####Position####
 Defines in which corner of the screen the component should be displayed.
 

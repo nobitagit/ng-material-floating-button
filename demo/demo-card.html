@@ -35,6 +35,10 @@
         <option value="{{method.value}}" ng-disabled="{{!method.value}}" ng-repeat="method in ctrl.methods">{{method.name}}</option>
       </select>
 
+      <select ng-model="ctrl.chosen.action" ng-change="ctrl.setMainAction()">
+          <option value="{{action.value}}" ng-disabled="{{!action.value}}" ng-repeat="action in ctrl.actions">{{action.name}}</option>
+      </select>
+
       <iframe src="https://ghbtns.com/github-btn.html?user=nobitagit&repo=ng-material-floating-button&type=star&count=true"
         frameborder="0" scrolling="0" width="170px" height="20px" style="position: relative; top: 5px;"></iframe>
 
