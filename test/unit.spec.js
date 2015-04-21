@@ -144,11 +144,23 @@ describe('ng-mfb', function() {
     });
   });
   
+  describe('when passing value to href attribute', function(){
+
+    it('should assign the corresponding href attribute to the element A', function(){
+
+      var tpl = '<div mfb-menu href="#/"></div>';
+
+      var node = compile(tpl);
+      $rootScope.$digest();
+
+      expect(node[0].getAttribute('href')).toBe('#/');
+    });
+  });
+
   describe('when passing value to ng-href attribute', function(){
 
     it('should assign the corresponding ng-href attribute to the element A', function(){
-
-      var tpl = '<div mfb-menu ng-href="#/"></div>';
+      var tpl = '<div mfb-menu ng-href="#/" template-url="ng-mfb-menu-md.tpl.html"></div>';
 
       var node = compile(tpl);
       $rootScope.$digest();
