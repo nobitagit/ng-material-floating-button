@@ -9,7 +9,7 @@
     '<ul class="mfb-component--{{position}} mfb-{{effect}}"' +
     '    data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">' +
     '  <li class="mfb-component__wrap">' +
-    '    <a ng-href="{{ngHref}}" ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
+    '    <a href="{{href}}" ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
     '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
     '     <i class="mfb-component__main-icon--resting {{resting}}"></i>' +
     '     <i class="mfb-component__main-icon--active {{active}}"></i>' +
