@@ -40,14 +40,14 @@ describe('ng-mfb', function() {
       expect(node.find('ul').hasClass('mfb-component__list')).toBeTruthy();
     });
 
-    it('should be possible to be instantiated as an attribute', function(){
+    it('should be possibile to be instantiated as an attribute', function(){
         var tpl = '<div mfb-menu></div>',
             node = compile(tpl);
 
         expect(node.parent().find('ul')).toBeTruthy();
     });
 
-    it('should be possible to be instantiated as an element', function(){
+    it('should be possibile to be instantiated as an element', function(){
         var tpl = '<mfb-menu></mfb-menu>',
             node = compile(tpl);
 
@@ -91,7 +91,7 @@ describe('ng-mfb', function() {
 
   describe('when passing an option to the effect attribute', function(){
 
-    it('should assign the corresponding animation class', function(){
+    it('should assign the correspondig animation class', function(){
 
       var tpl = '<div mfb-menu effect="zoomin"></div>';
 
@@ -141,19 +141,6 @@ describe('ng-mfb', function() {
       var icon2 = main_button.find('i').eq(1);
       expect( icon2.hasClass('mfb-component__main-icon--active') ).toBeTruthy();
       expect( icon2.hasClass('ion-edit') ).toBeTruthy();
-    });
-  });
-  
-  describe('when passing value to ng-href attribute', function(){
-
-    it('should assign the corresponding ng-href attribute to the element A', function(){
-
-      var tpl = '<div mfb-menu ng-href="#/"></div>';
-
-      var node = compile(tpl);
-      $rootScope.$digest();
-
-      expect(node[0].getAttribute('ng-href')).toBe('#/');
     });
   });
 
