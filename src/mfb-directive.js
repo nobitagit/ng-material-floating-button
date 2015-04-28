@@ -27,8 +27,8 @@
     '    <a ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
     '       style="background: transparent; box-shadow: none;"' +
     '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
-    '     <md-button class="md-fab md-primary" aria-label={{label}}>' +
-    '       <md-icon style="position:initial;" md-svg-icon="{{resting}}"' +
+    '     <md-button class="md-fab md-primary" aria-label={{label}} style="position:relative;">' +
+    '       <md-icon style="left: 0;" md-svg-icon="{{resting}}"' +
     '         class="mfb-component__main-icon--resting"></md-icon>' +
     '       <md-icon style="position:initial;" md-svg-icon="{{active}}"' +
     '         class="mfb-component__main-icon--active"></md-icon>' +
