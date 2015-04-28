@@ -1,6 +1,6 @@
 {
   "name": "ng-material-floating-button",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "angular directive for material floating buttons",
   "main": [
     "src/mfb-directive.js",
