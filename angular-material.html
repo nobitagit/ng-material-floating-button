@@ -24,7 +24,7 @@
          active-icon="close" resting-icon="menu"
          ng-mouseenter="ctrl.hovered()" ng-mouseleave="ctrl.hovered()"
          template-url="ng-mfb-menu-md.tpl.html"
-         toggling-method="{{ctrl.chosen.method}}" menu-state="ctrl.menuState">
+         toggling-method="{{ctrl.chosen.method}}" menu-state="ctrl.menuState" main-action="ctrl.mainAction()">
       <button  mfb-button icon="{{button.icon}}" href="{{button.href}}"
          template-url="ng-mfb-button-md.tpl.html" ng-click="ctrl.loc(button.href)"
          label="{{button.label}}" ng-repeat="button in ctrl.buttons"></button>
@@ -80,14 +80,18 @@
     vm.positions = defaultValues.positions;
     vm.effects = defaultValues.effects;
     vm.methods = defaultValues.methods;
+    vm.actions = defaultValues.actions;
 
     vm.menuState = 'closed';
     vm.loc = loc;
+    vm.setMainAction = setMainAction;
+    vm.mainAction = mainAction;
 
     vm.chosen = {
       effect : 'zoomin',
       position : 'br',
-      method : 'click'
+      method : 'click',
+      action : 'fire'
     };
 
     vm.buttons = [{
@@ -108,6 +112,17 @@
       $window.location.href = href;
     }
 
+    function mainAction() {
+      //console.log('Firing Main Action!');
+    }
+
+    function setMainAction() {
+      if(vm.chosen.action === 'fire') {
+        vm.mainAction = mainAction;
+      } else {
+        vm.mainAction = null;
+      }
+    }
   }
 
   Ctrl.prototype.hovered = function() {
@@ -116,7 +131,7 @@
 
   Ctrl.prototype.toggle = function() {
     this.menuState = this.menuState === 'closed' ? 'open' : 'closed';
-  }
+  };
 
   Ctrl.prototype.closeMenu = function() {
     this.menuState = 'closed';
