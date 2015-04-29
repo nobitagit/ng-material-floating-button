@@ -1,2 +1,14 @@
 test/
 mfb/test/
+index.css
+index.html
+showcase.html
+.sass-cache/
+.jshintrc
+.gitignore
+.grunt
+bower_components
+build
+demo
+.DS_Store
+npm-debug.log

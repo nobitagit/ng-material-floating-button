@@ -7,3 +7,4 @@ dist
 build
 ga.html
 .idea/
+npm-debug.log

@@ -1,3 +1,7 @@
+## v0.4.2
+
+ * publish to npm
+
 ## v0.4.1
 
  * support for main button click other than open/close (27e68fb)
