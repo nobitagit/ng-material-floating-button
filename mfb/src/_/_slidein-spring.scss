@@ -1,67 +1,92 @@
-@mixin effects-slidein-spring{
-
-/**
+@mixin effects-slidein-spring {
+    /**
  * SLIDE IN SPRING
  * Same as slide-in but with a springy animation.
  *
  */
+    $distance: 0;
 
-  .mfb-component--tl.mfb-slidein-spring,
-  .mfb-component--tr.mfb-slidein-spring{
-    .mfb-component__list li{
-      opacity: 0;
-      transition: all $slide-speed;
-      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    @for $i from 1 through $number-of-child-buttons {
-      .mfb-component__list li:nth-child( #{$i} ) {
-        transition-delay: #{$i * 0.05}s;
-      }
-    }
-    &[data-mfb-toggle="hover"]:hover,
-    &[data-mfb-state="open"]{
-      .mfb-component__list{
-        li{
-          opacity: 1;
+    .mfb-component--tl.mfb-slidein-spring,
+    .mfb-component--tr.mfb-slidein-spring {
+        .mfb-component__list li {
+            opacity: 0;
+            transition: all $slide-speed;
+            transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
+
         @for $i from 1 through $number-of-child-buttons {
-          $distance: $button-space * $i;
-          li:nth-child( #{$i} ) {
-            transition-delay: #{$i * 0.05}s;
-            -webkit-transform: translateY( $distance );
-                    transform: translateY( $distance ); }
+            .mfb-component__list li:nth-child( #{$i} ) {
+                transition-delay: #{$i * 0.05}s;
+            }
         }
-      }
-    }
-  }
 
-  .mfb-component--bl.mfb-slidein-spring,
-  .mfb-component--br.mfb-slidein-spring{
-    .mfb-component__list li{
-      opacity: 0;
-      transition: all $slide-speed;
-      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    @for $i from 1 through $number-of-child-buttons {
-      .mfb-component__list li:nth-child( #{$i} ) {
-        transition-delay: #{$i * 0.05}s;
-      }
-    }
-    &[data-mfb-toggle="hover"]:hover,
-    &[data-mfb-state="open"]{
-      .mfb-component__list{
-        li{
-          opacity: 1;
+        &[data-mfb-toggle="hover"]:hover,
+        &[data-mfb-state="open"] {
+            .mfb-component__list {
+                li {
+                    opacity: 1;
+                }
+
+                @for $i from 1 through $number-of-child-buttons {
+                    @if $i == 1 {
+                        $distance: -1 * $button-space;
+                    }
+                    @else if $i == 2 {
+                        $distance: -1 * ($button-space + $child-button-space);
+                    }
+                    @else {
+                        $distance: ((($child-button-space * ($i - 1)) + $button-space) * -1);
+                    }
+
+                    li:nth-child( #{$i} ) {
+                        transition-delay: #{$i * 0.05}s;
+                        -webkit-transform: translateY( $distance );
+                        transform: translateY( $distance );
+                    }
+                }
+            }
         }
+    }
+
+    .mfb-component--bl.mfb-slidein-spring,
+    .mfb-component--br.mfb-slidein-spring {
+        .mfb-component__list li {
+            opacity: 0;
+            transition: all $slide-speed;
+            transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
         @for $i from 1 through $number-of-child-buttons {
-          $distance: -1 * $button-space * $i;
-          li:nth-child( #{$i} ) {
-            transition-delay: #{$i * 0.05}s;
-            -webkit-transform: translateY( $distance );
-                    transform: translateY( $distance ); }
+            .mfb-component__list li:nth-child( #{$i} ) {
+                transition-delay: #{$i * 0.05}s;
+            }
         }
-      }
-    }
-  }
 
+        &[data-mfb-toggle="hover"]:hover,
+        &[data-mfb-state="open"] {
+            .mfb-component__list {
+                li {
+                    opacity: 1;
+                }
+
+                @for $i from 1 through $number-of-child-buttons {
+                    @if $i == 1 {
+                        $distance: -1 * $button-space;
+                    }
+                    @else if $i == 2 {
+                        $distance: -1 * ($button-space + $child-button-space);
+                    }
+                    @else {
+                        $distance: ((($child-button-space * ($i - 1)) + $button-space) * -1);
+                    }
+
+                    li:nth-child( #{$i} ) {
+                        transition-delay: #{$i * 0.05}s;
+                        -webkit-transform: translateY( $distance );
+                        transform: translateY( $distance );
+                    }
+                }
+            }
+        }
+    }
 }
