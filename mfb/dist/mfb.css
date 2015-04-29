@@ -130,7 +130,6 @@
   padding: 0;
   position: relative;
   -webkit-user-drag: none;
-  font-weight: bold;
   color: #f1f1f1; }
 
 /**
@@ -617,11 +616,13 @@
   padding: 4px 10px;
   border-radius: 3px;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: normal;
   pointer-events: none;
+  line-height: normal;
   position: absolute;
   top: 50%;
-  margin-top: -10.5px;
+  margin-top: -11px;
   transition: all 0.5s; }
 
 [data-mfb-toggle="hover"] [data-mfb-label]:hover:after,

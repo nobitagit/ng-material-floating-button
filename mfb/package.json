@@ -1,6 +1,6 @@
 {
   "name": "mfb",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "html component for a material menu à la Path and Google Inbox",
   "main": "index.html",
   "repository": "https://github.com/nobitagit/material-floating-button",
@@ -15,22 +15,25 @@
   "author": "Nobita",
   "contributors": [
     {
-    "name": "Maxence Winandy",
-    "email": "maxence.winandy@gmail.com"
+      "name": "Maxence Winandy",
+      "email": "maxence.winandy@gmail.com"
     },
     {
-    "name": "Christian Flach",
-    "email": "cmfcmf.flach@gmail.com"
+      "name": "Christian Flach",
+      "email": "cmfcmf.flach@gmail.com"
     }
   ],
   "license": "MIT",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-cssmin": "^0.12.2",
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "^0.8.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-gh-pages": "^0.9.1"
+    "grunt-gh-pages": "^0.9.1",
+    "grunt-preprocess": "^4.1.0",
+    "grunt-usemin": "^3.0.0"
   }
 }

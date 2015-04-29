@@ -7,7 +7,8 @@
  */
 
  // build script hook - don't remove
- // @include ../src/closure/top.js
+ ;(function ( window, document, undefined ) {
+ 
 
   'use strict';
 
@@ -93,4 +94,5 @@
   attachEvt( elemsToClick, 'click' );
 
 // build script hook - don't remove
-// @include ../src/closure/bottom.js
+})( window, document );
+

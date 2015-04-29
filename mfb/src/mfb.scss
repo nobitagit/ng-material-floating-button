@@ -69,9 +69,13 @@
 
 // the main/primary color
 $main-color: #E40A5D !default;
-// aka the white text
-$bright-text: rgba(255, 255, 255, 0.8) !default;
-
+// button colors
+$button-text-color: #f1f1f1;
+$button-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28) !default;
+// labels colors
+$label-text-color: rgba(255, 255, 255, 0.8) !default;
+// labels background
+$label-background-color: rgba(0,0,0, .4);
 /* EFFECTS ---------------------------*/
 
 // which effects must be made available in the css
@@ -93,13 +97,17 @@ $label-hover-on: .3s !default;
 /* SIZES -----------------------------*/
 
 // main button diameter
-$main_button_size: 56px !default;
+$main-button-size: 56px !default;
 // main button diameter
 $child_button_size: 56px !default;
 // the distance of the main button from the closest corners of the screen
 $border-distance: 25px !default;
+// font-size for the icons
+$icons-font-size: 18px !default;
 // font-size for labels
-$labels-font-size: 13px !default;
+$labels-font-size: 14px !default;
+// font-weight for labels
+$labels-font-weight: normal !default;
 // top & bottom padding for the labels
 $labels-padding-vertical: 4px !default;
 // left & right padding for the labels
@@ -109,7 +117,6 @@ $labels-padding-horizontal: 10px !default;
 
 // space between buttons
 $button-space: 70px !default;
-
 // space between button and label
 $button-label-space: 70px !default;
 
@@ -188,14 +195,13 @@ $number-of-child-buttons: 4 !default;
   position: relative;
   border: none;
   border-radius: 50%;
-  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  box-shadow: $button-box-shadow;
   cursor: pointer;
   outline: none;
   padding: 0;
   position: relative;
   -webkit-user-drag: none;
-  font-weight: bold;
-  color: #f1f1f1;
+  color: $button-text-color;
 }
 
 /**
@@ -211,9 +217,9 @@ $number-of-child-buttons: 4 !default;
     display: block;
     position: absolute;
     top: 0;
-    right: ($main_button_size - $child_button_size + 2) / 2;
-    padding: 10px + ($main_button_size - $child_button_size) / 2 0;
-    margin: -(10px + ($main_button_size - $child_button_size) / 2) 0;
+    right: ($main-button-size - $child_button_size + 2) / 2;
+    padding: 10px + ($main-button-size - $child_button_size) / 2 0;
+    margin: -(10px + ($main-button-size - $child_button_size) / 2) 0;
   }
 }
 
@@ -222,9 +228,9 @@ $number-of-child-buttons: 4 !default;
  */
 .mfb-component__icon{
   position: absolute;
-  font-size: 18px;
+  font-size: $icons-font-size;
   text-align: center;
-  line-height: 56px;
+  line-height: $main-button-size;
   width: 100%;
 }
 
@@ -252,8 +258,8 @@ $number-of-child-buttons: 4 !default;
 
 .mfb-component__button--main{
   @extend %mfb-component__button;
-  height: $main_button_size;
-  width: $main_button_size;
+  height: $main-button-size;
+  width: $main-button-size;
   z-index: 20;
 }
 .mfb-component__button--child{
@@ -334,12 +340,14 @@ $number-of-child-buttons: 4 !default;
   content: attr(data-mfb-label);
   opacity: 0;
   transition: all $label-hover-off;
-  background: rgba(0,0,0, .4);
+  background: $label-background-color;
   padding: $labels-padding-vertical $labels-padding-horizontal;
   border-radius: 3px;
-  color: $bright-text;
+  color: $label-text-color;
   font-size: $labels-font-size;
+  font-weight: $labels-font-weight;
   pointer-events: none;
+  line-height: normal;
   position: absolute;
   top: 50%;
   margin-top: - ($labels-padding-vertical + $labels-font-size / 2);
@@ -363,7 +371,7 @@ $number-of-child-buttons: 4 !default;
 .mfb-component--br .mfb-component__list, .mfb-component--tr .mfb-component__list {
   [data-mfb-label]:after {
     content: attr(data-mfb-label);
-    right: $button-label-space - ($main_button_size - $child_button_size) / 2;
+    right: $button-label-space - ($main-button-size - $child_button_size) / 2;
   }
 }
 .mfb-component--tl, .mfb-component--bl{
@@ -375,7 +383,7 @@ $number-of-child-buttons: 4 !default;
 .mfb-component--tl .mfb-component__list, .mfb-component--bl .mfb-component__list{
   [data-mfb-label]:after {
     content: attr(data-mfb-label);
-    left: $button-label-space - ($main_button_size - $child_button_size) / 2;
+    left: $button-label-space - ($main-button-size - $child_button_size) / 2;
   }
 }
 /*------------------------------------*\
