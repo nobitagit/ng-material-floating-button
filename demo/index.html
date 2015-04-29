@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
-    <script src="lib/modernizr.touch.js"></script>
+
+    <!-- build:js modernizr.touch.js -->
+    <script src="../dist/lib/modernizr.touch.js"></script>
+    <!-- endbuild -->
+
     <link href="index.css" rel="stylesheet">
-    <link href="mfb.css" rel="stylesheet">
+    <!-- build:css mfb.css -->
+    <link href="../dist/mfb.css" rel="stylesheet">
+    <!-- endbuild -->
+
     <title>Material floating button. The index.</title>
   </head>
   <body>
@@ -125,8 +132,9 @@
         </a>
       </footer>
     </section>
-
-  <script src="mfb.js"></script>
+  <!-- build:js mfb.js -->
+  <script src="../dist/mfb.js"></script>
+  <!-- endbuild -->
   <script>
 
     var panel = document.getElementById('panel'),
@@ -166,5 +174,6 @@
     }
 
   </script>
+  <!-- @include ga.html -->
   </body>
 </html>
