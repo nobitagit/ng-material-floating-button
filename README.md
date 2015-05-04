@@ -6,7 +6,7 @@ Material design floating action button implemented as an Angularjs directive.
 
 Made to be fast and easy to customise. It works out of the box with no other dependency apart from Angular, but plays nicely with the [Angular Material](https://material.angularjs.org) bundle, for which it has dedicated templates.
 
-##Demo##
+## Demo
 Head over to the project [homepage](http://nobitagit.github.io/ng-material-floating-button/) to see it in action as a standalone component, check the [Angular Material integration](http://nobitagit.github.io/ng-material-floating-button/angular-material.html) or just take a look at this awesome gif:
 
 <img src="http://zippy.gfycat.com/LimitedTatteredFieldmouse.gif">
@@ -15,7 +15,7 @@ Head over to the project [homepage](http://nobitagit.github.io/ng-material-float
 - [Vanilla html](https://github.com/nobitagit/material-floating-button) (original, upstream version of the component)
 - [React component](https://github.com/nobitagit/react-material-floating-button)
 
-##How to use##
+## How to use
 
 Download/clone the repo or use your favorite package manager:
 ```
@@ -31,9 +31,9 @@ Then (optionally) run `npm install` to have access to the configured Grunt tasks
 
 Look in the `demo` folder for usage examples and head to the original component [docs](https://github.com/nobitagit/material-floating-button#how-to-use) to see how to customise the styles of the menu.
 
-If you are **upgrading** check the changelog before doing so in order to prevent breaking changes to bite.
+If you are **upgrading** check the changelog before doing so in order to prevent breaking changes to bite you.
 
-###Basic setup###
+### Basic setup
 Download the whole repo or clone it, then reference the directive css file (here is `mfb/src/mfb.css`)in your `<head>`:
 
 ```html
@@ -62,10 +62,10 @@ This above code will output a basic button menu on the bottom right corner of th
 
 **NOTE**: if you want to change the CSS make you sure you understand how it's supposed to be done. Please read [here](#custom-css) and [here](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb).
 
-###Element attributes###
+### Element attributes
 A number of attributes can be passed to the elements from the template in order to customise both behavior and appearance.
 
-####`<mfb-menu>` element####
+####`<mfb-menu>` element
 This can be defined as an attribute or an element. So this is valid:
 ```html
 <ul mfb-menu></ul>
@@ -74,7 +74,7 @@ This can be defined as an attribute or an element. So this is valid:
 ```html
 <mfb-menu></mfb-menu>
 ```
-#####TemplateUrl####
+##### TemplateUrl
 Optional attribute definining the template for the main button. If no template is specified it will fallback to the default `ng-mfb-menu-default.tpl.html`. If you are using [Angular Material](https://material.angularjs.org) in your app you can pass the predefined template for the Angular Material bundle which is `ng-mfb-menu-md.tpl.html`.
 
 Example:
@@ -86,7 +86,7 @@ Example:
 
 By no means you are tied to the default templates, though. See [customising templates](#custom-tpls).
 
-#####Main Action####
+##### Main Action
 Defines a main action that will get fired when the main button is clicked. Works best with `toggling-method=hover` to put a main action on the base button.
 
 Example:
@@ -94,7 +94,7 @@ Example:
 <ul mfb-menu main-action="fireMainAction()"></ul>
 ```
 
-#####Position####
+##### Position
 Defines in which corner of the screen the component should be displayed.
 
 value | explanation
@@ -110,7 +110,7 @@ Example:
   <!-- this will be displayed on the bottom-right corner of the screen -->
 </ul>
 ```
-#####Toggling method####
+##### Toggling method
 Defines how the user will open the menu. Two values are possible:
 
 value | explanation
@@ -132,7 +132,7 @@ If you want the menu to work on hover but need support for touch devices you fir
 
 If you're not using Modernizr already, just include the tiny (<3KB) provided `modernizr.touch.js` script (look in the `mfb/src/lib/` folder) in your `<head>` or get the latest version of this very script right from [here](http://modernizr.com/download/#-touch-teststyles-prefixes). Note that this is a custom build and will only detect for touch support, it's not the full library.
 
-#####Menu state####
+##### Menu state
 You can programmatically open/close the menu leveraging this attribute at any time after compilation, without any clicking required by the user, or listen to the current state of the menu.
 
 value | explanation
@@ -152,12 +152,12 @@ $scope.myVar = 'closed';
 ```
 NB: currently this value is only updated if using `click` toggling.
 
-#####Effect####
+##### Effect
 Defines the effect that is performed when the menu opens up to show its child buttons.
 
 value |
 --- |
-`zoomin` |  
+`zoomin` |
 `slidein` |
 `slidein-spring` |
 `fountain` |
@@ -169,7 +169,7 @@ Example:
 <ul mfb-menu effect="zoomin">
 </ul>
 ```
-#####Label####
+##### Label
 The text that is displayed when hovering the main button.
 Example:
 ```html
@@ -177,21 +177,21 @@ Example:
 </ul>
 ```
 
-#####Active-icon####
+##### Active-icon
 The icon that will be displayed by default on the main button.
 Example:
 ```html
 <ul mfb-menu active-icon="ion-edit">
 </ul>
 ```
-#####Resting-icon####
+##### Resting-icon
 The icon that will be displayed on the main button when hovering/interacting with the menu.
 Example:
 ```html
 <ul mfb-menu resting-icon="ion-plus-round">
 </ul>
 ```
-####`<mfb-button>` element####
+#### `<mfb-button>` element
 This element represents the child button(s) of the menu and can only "live" inside a wrapper `<mfb-menu>` element. Like its parent, it can be defined both as an attribute and as an element. So this is valid:
 ```html
 <a mfb-button></a>
@@ -203,7 +203,7 @@ This element represents the child button(s) of the menu and can only "live" insi
 
 **NOTE**: If you are adding more than the default number of buttons supported by the provided CSS (currently 4) you will need to compile your own CSS beforehand to support your requirements. It's easy, here's an [example](https://github.com/nobitagit/ng-material-floating-button/issues/28#issuecomment-96980288).
 
-#####TemplateUrl####
+##### TemplateUrl
 Optional attribute definining the template for the child buttons. If no template is specified it will fallback to the default `ng-mfb-button-default.tpl.html`. If you are using [Angular Material](https://material.angularjs.org) in your app you can pass the predefined template for the Angular Material bundle which is `ng-mfb-button-md.tpl.html`.
 
 Example:
@@ -215,20 +215,20 @@ Example:
 
 Here again customising the template is surely possible, see how [here](#custom-tpls).
 
-#####Icon####
+##### Icon
 Pass the class of the icon font character that is associated to the menu item:
 Example:
 ```html
 <a mfb-button icon="ion-paperclip"></a>
 ```
-#####Label####
+##### Label
 The text that is displayed when hovering the button.
 Example:
 ```html
 <a mfb-button label="About us"></a>
 ```
 
-#####Custom attributes#####
+##### Custom attributes
 Due to the nature of the component you'll probably want to associate some actions or use other angular directives such as ng-repeat on the buttons. As these attributes will be copied over to the generated html structure you can simply attach them to the `<mfb-element>`. A couple of examples, here using ui-router:
 ```html
 <!-- if using ui-router, associate an on-click event to the anchor-->
@@ -254,26 +254,26 @@ $scope.buttons = [{
 <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons"></a>
 ```
 <a name="custom-tpls"></a>
-###Customising templates###
+### Customising templates
 Custom templates can be passed as a attributes to the directive. Just pass either the url of your own template or the ID of the script containing your template. Refer to the default templates provided to have a working base to build upon.
 
 <a name="custom-css"></a>
-###More customisations###
+### More customisations
 The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in the `mfb/` folder (which is actually a subtree that pulls from [this repo](https://github.com/nobitagit/material-floating-button)).
 
 For a thorough overview of what and how to customise the look of the component through css make sure you read [these docs](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb), especially if you plan to keep your copy in sync with this repo by pulling in changes in the future.
 
-##Unit tests##
+## Unit tests
 To run the tests you need Jasmine and Karma runner. They can be run from the console with either `grunt karma` or `karma start test/karma.conf.js` commands.
 
-##Contributing and issues##
+## Contributing and issues
 Contributions are very welcome, as well as opening issues if you find any bugs.
 If an issue or pull request is **not** specifically related to the Angularjs version (i.e. it's a layout/css bug/feature) please open it on the original component [repo](https://github.com/nobitagit/material-floating-button) rather than here.
 
-##Todos##
+## Todos
 - [x] add "click to open" functionality and option
 - [x] add to bower
-- [ ] add to npm
+- [x] add to npm
 
-##Credits##
+## Credits
 Demo icons courtesy of [Ionicons](ionicons.com)

@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     sass: {
       base: {
         files: {
-          'mfb/src/mfb.css': 'mfb/src/mfb.scss'
+          'mfb/dist/mfb.css': 'mfb/src/mfb.scss'
         }
       }
     },
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     copy: {
       live: {
         files: [{
-          src: ['demo/*', 'src/mfb-directive.js', 'mfb/src/index.css', 'ga.html'],
+          src: ['demo/*', 'src/mfb-directive.js', 'mfb/demo/index.css', 'ga.html'],
           dest: 'build/live/',
           expand: true, flatten: true
         },{
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
           dest: 'build/live/',
           expand: true, flatten: false
         },{
-          src: ['mfb/src/*.css', 'mfb/src/*.css.map', 'mfb/src/lib/**/*.js'],
+          src: ['mfb/dist/*.css', 'mfb/dist/*.css.map', 'mfb/dist/lib/**/*.js'],
           dest: 'build/live/',
           expand: true, flatten: true
         }]

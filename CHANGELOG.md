@@ -1,6 +1,14 @@
+## v0.5.0
+
+ * adapt layout to Angular Material 0.9.0 stable (0575aa3, [#33](https://github.com/nobitagit/ng-material-floating-button/issues/33)).
+ * pull in a newly updated version of the basic library.
+
+#### Breaking changes:
+ * paths to the basic compiled css and Modernizr script has changed from `mfb/src` to `mfb/dist`.
+
 ## v0.4.2
 
- * publish to npm
+ * publish to npm.
 
 ## v0.4.1
 
@@ -10,4 +18,4 @@
 
 ## v0.4.0
 
- * support for Angular Material
+ * support for Angular Material.
