@@ -1,3 +1,8 @@
+## v0.5.1
+
+ * fix a bug in FF for angular material template.
+ * removed .css from 'src' folder
+
 ## v0.5.0
 
  * adapt layout to Angular Material 0.9.0 stable (0575aa3, [#33](https://github.com/nobitagit/ng-material-floating-button/issues/33)).
