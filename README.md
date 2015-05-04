@@ -17,14 +17,21 @@ Head over to the project [homepage](http://nobitagit.github.io/ng-material-float
 
 ##How to use##
 
-Download/clone the repo or use Bower:
+Download/clone the repo or use your favorite package manager:
+```
+npm i ng-material-floating-button --save
+```
+or:
+
 ```
 bower install ng-mfb --save
 ```
 
 Then (optionally) run `npm install` to have access to the configured Grunt tasks.
 
-Look in the `src` folder for usage examples and head to the original component [docs](https://github.com/nobitagit/material-floating-button#how-to-use) to see how to customise the styles of the menu.
+Look in the `demo` folder for usage examples and head to the original component [docs](https://github.com/nobitagit/material-floating-button#how-to-use) to see how to customise the styles of the menu.
+
+If you are **upgrading** check the changelog before doing so in order to prevent breaking changes to bite.
 
 ###Basic setup###
 Download the whole repo or clone it, then reference the directive css file (here is `mfb/src/mfb.css`)in your `<head>`:
@@ -52,6 +59,8 @@ Finally, place the correct html structure in your template. As a first example, 
 ```
 This example shows the two basic components of the directive, a unique `mfb-menu` element which serves as a wrapper to a variable number of child buttons, defined by the `mfb-button` attribute.
 This above code will output a basic button menu on the bottom right corner of the screen with a single menu item. Hardly amazing, so let's see how to customise it.
+
+**NOTE**: if you want to change the CSS make you sure you understand how it's supposed to be done. Please read [here](#custom-css) and [here](https://github.com/nobitagit/ng-material-floating-button/tree/master/mfb).
 
 ###Element attributes###
 A number of attributes can be passed to the elements from the template in order to customise both behavior and appearance.
@@ -82,7 +91,7 @@ Defines a main action that will get fired when the main button is clicked. Works
 
 Example:
 ```html
-<ul mfb-menu main-action="fireMainAction()></ul>
+<ul mfb-menu main-action="fireMainAction()"></ul>
 ```
 
 #####Position####
@@ -191,6 +200,9 @@ This element represents the child button(s) of the menu and can only "live" insi
 ```html
 <mfb-button></mfb-button>
 ```
+
+**NOTE**: If you are adding more than the default number of buttons supported by the provided CSS (currently 4) you will need to compile your own CSS beforehand to support your requirements. It's easy, here's an [example](https://github.com/nobitagit/ng-material-floating-button/issues/28#issuecomment-96980288).
+
 #####TemplateUrl####
 Optional attribute definining the template for the child buttons. If no template is specified it will fallback to the default `ng-mfb-button-default.tpl.html`. If you are using [Angular Material](https://material.angularjs.org) in your app you can pass the predefined template for the Angular Material bundle which is `ng-mfb-button-md.tpl.html`.
 
@@ -245,6 +257,7 @@ $scope.buttons = [{
 ###Customising templates###
 Custom templates can be passed as a attributes to the directive. Just pass either the url of your own template or the ID of the script containing your template. Refer to the default templates provided to have a working base to build upon.
 
+<a name="custom-css"></a>
 ###More customisations###
 The component have plenty more customisations available and they are all handled by the CSS. The CSS and its SCSS source files are found in the `mfb/` folder (which is actually a subtree that pulls from [this repo](https://github.com/nobitagit/material-floating-button)).
 
