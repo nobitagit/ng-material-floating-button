@@ -626,7 +626,7 @@
   transition: all 0.5s; }
 
 [data-mfb-toggle="hover"] [data-mfb-label]:hover:after,
-[data-mfb-state="open"] [data-mfb-label]:after {
+[data-mfb-state="open"] [data-mfb-label]:hover:after {
   content: attr(data-mfb-label);
   opacity: 1;
   transition: all 0.3s; }
