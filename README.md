@@ -253,6 +253,17 @@ $scope.buttons = [{
 <!-- this will output 3 buttons with different icon, label and so on-->
 <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons"></a>
 ```
+
+#### `mfb-button-close` attribute
+
+When using the toggling method click ```<ul mfb-menu toggling-method="click">``` only the main button toggles the menu. If you want your secondary buttons to close the menu as well you can use the ```mfb-button-close``` attribute on your ```mfb-button```.
+
+That way if your ```mfb-button``` opens a modal or something else that loses focus, your menu will close.
+
+```html
+<button mfb-button mfb-button-close>Closes the menu</button>
+```
+
 <a name="custom-tpls"></a>
 ### Customising templates
 Custom templates can be passed as a attributes to the directive. Just pass either the url of your own template or the ID of the script containing your template. Refer to the default templates provided to have a working base to build upon.
