@@ -1,3 +1,7 @@
+## v0.6.0
+
+ * Added directive `mfb-button-close` to share close menu functionality (see [pull request #38](https://github.com/nobitagit/ng-material-floating-button/pull/38) ).
+
 ## v0.5.1
 
  * fix a bug in FF for angular material template.
