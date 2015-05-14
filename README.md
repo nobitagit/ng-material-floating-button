@@ -228,6 +228,16 @@ Example:
 <a mfb-button label="About us"></a>
 ```
 
+##### Custom Classes
+Define custom classes for individual styles.
+
+Example:
+```html
+<nav mfb-menu menu-class="custom-class">
+  <button mfb-button button-class="custom-class"></button>
+</nav>
+```
+
 ##### Custom attributes
 Due to the nature of the component you'll probably want to associate some actions or use other angular directives such as ng-repeat on the buttons. As these attributes will be copied over to the generated html structure you can simply attach them to the `<mfb-element>`. A couple of examples, here using ui-router:
 ```html
