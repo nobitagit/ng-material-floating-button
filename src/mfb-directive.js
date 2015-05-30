@@ -1,4 +1,4 @@
-+(function(window, angular, undefined) {
+;(function(window, angular, undefined) {
 
   'use strict';
 
@@ -62,7 +62,7 @@
     );
   }]);
 
-  mfb.directive('mfbButtonClose', function($log) {
+  mfb.directive('mfbButtonClose', function() {
     return {
       restrict: 'A',
       require: '^mfbMenu',
@@ -93,12 +93,12 @@
       templateUrl: function(elem, attrs) {
         return attrs.templateUrl || 'ng-mfb-menu-default.tpl.html';
       },
-      controller: function($scope, $attrs) {
+      controller: ['$scope', '$attrs', function($scope, $attrs) {
         var openState = 'open',
           closedState = 'closed';
 
-        // Attached toggle, open and close to the controller to give other directive access them
-        // directives such as mfbButtonClose
+        // Attached toggle, open and close to the controller to give other
+        // directive access
         this.toggle = toggle;
         this.close = close;
         this.open = open;
@@ -110,7 +110,6 @@
          * Set the state to user-defined value. Fallback to closed if no
          * value is passed from the outside.
          */
-        //$scope.menuState = $attrs.menuState || closedState;
         if (!$scope.menuState) {
           $scope.menuState = closedState;
         }
@@ -185,7 +184,7 @@
             $scope.togglingMethod = 'click';
           });
         }
-      }
+      }]
     };
   }]);
 

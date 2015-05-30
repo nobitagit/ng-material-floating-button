@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app="test-app">
+<html ng-app="test-app" ng-strict-di>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -114,6 +114,8 @@
   Ctrl.prototype.closeMenu = function() {
     this.menuState = 'closed';
   };
+
+  Ctrl.$inject = ['defaultValues', '$window'];
 
   </script>
   <!-- @include ga.html -->
