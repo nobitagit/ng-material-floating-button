@@ -10,7 +10,7 @@
       '    data-mfb-toggle="{{togglingMethod}}" data-mfb-state="{{menuState}}">' +
       '  <li class="mfb-component__wrap">' +
       '    <a ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
-      '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
+      '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main {{menuClass}}">' +
       '     <i class="mfb-component__main-icon--resting {{resting}}"></i>' +
       '     <i class="mfb-component__main-icon--active {{active}}"></i>' +
       '    </a>' +
@@ -27,7 +27,7 @@
       '    <a ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
       '       style="background: transparent; box-shadow: none;"' +
       '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
-      '     <md-button class="md-fab md-primary" aria-label={{label}} style="position:relative; margin: 0; padding:0;">' +
+      '     <md-button class="md-fab {{menuClass}}" aria-label={{label}} style="position:relative; margin: 0; padding:0;">' +
       '       <md-icon style="left: 0; position: relative;" md-svg-icon="{{resting}}"' +
       '         class="mfb-component__main-icon--resting"></md-icon>' +
       '       <md-icon style="position:relative;" md-svg-icon="{{active}}"' +
@@ -42,7 +42,7 @@
 
     $templateCache.put('ng-mfb-button-default.tpl.html',
       '<li>' +
-      '  <a data-mfb-label="{{label}}" class="mfb-component__button--child">' +
+      '  <a data-mfb-label="{{label}}" class="mfb-component__button--child {{buttonClass}}">' +
       '    <i class="mfb-component__child-icon {{icon}}">' +
       '    </i>' +
       '  </a>' +
@@ -53,7 +53,7 @@
       '<li>' +
       '  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child" ' +
       '     style="background: transparent; box-shadow: none;">' +
-      '     <md-button style="margin: 0;" class="md-fab md-primary" aria-label={{label}}>' +
+      '     <md-button style="margin: 0;" class="md-fab {{buttonClass}}" aria-label={{label}}>' +
       //'       <md-icon md-svg-src="img/icons/android.svg"></md-icon>' +
       '       <md-icon md-svg-icon="{{icon}}"></md-icon>' +
       '     </md-button>' +
@@ -84,6 +84,7 @@
         position: '@',
         effect: '@',
         label: '@',
+        menuClass: '@',
         resting: '@restingIcon',
         active: '@activeIcon',
         mainAction: '&',
@@ -196,7 +197,8 @@
       replace: true,
       scope: {
         icon: '@',
-        label: '@'
+        label: '@',
+        buttonClass: '@'
       },
       templateUrl: function(elem, attrs) {
         return attrs.templateUrl || 'ng-mfb-button-default.tpl.html';
