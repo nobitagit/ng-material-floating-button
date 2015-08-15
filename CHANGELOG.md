@@ -1,3 +1,7 @@
+## v0.6.2
+
+ * Changed default buttons class to "md-accent" for Materila template (see [issue #51](https://github.com/nobitagit/ng-material-floating-button/issues/51) ).
+
 ## v0.6.1
 
  * Allow usage with ng-strict-di apps (see [issue #41](https://github.com/nobitagit/ng-material-floating-button/issues/41) ).

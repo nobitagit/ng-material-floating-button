@@ -287,4 +287,5 @@ If an issue or pull request is **not** specifically related to the Angularjs ver
 - [x] add to npm
 
 ## Credits
-Demo icons courtesy of [Ionicons](ionicons.com)
+Thanks to these [contributors](https://github.com/nobitagit/ng-material-floating-button/graphs/contributors).
+Demo icons are courtesy of [Ionicons](ionicons.com)
