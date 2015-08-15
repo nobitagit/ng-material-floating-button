@@ -27,7 +27,7 @@
       '    <a ng-click="clicked()" ng-mouseenter="hovered()" ng-mouseleave="hovered()"' +
       '       style="background: transparent; box-shadow: none;"' +
       '       ng-attr-data-mfb-label="{{label}}" class="mfb-component__button--main">' +
-      '     <md-button class="md-fab md-primary" aria-label={{label}} style="position:relative; margin: 0; padding:0;">' +
+      '     <md-button class="md-fab md-accent" aria-label={{label}} style="position:relative; margin: 0; padding:0;">' +
       '       <md-icon style="left: 0; position: relative;" md-svg-icon="{{resting}}"' +
       '         class="mfb-component__main-icon--resting"></md-icon>' +
       '       <md-icon style="position:relative;" md-svg-icon="{{active}}"' +
@@ -53,7 +53,7 @@
       '<li>' +
       '  <a href="" data-mfb-label="{{label}}" class="mfb-component__button--child" ' +
       '     style="background: transparent; box-shadow: none;">' +
-      '     <md-button style="margin: 0;" class="md-fab md-primary" aria-label={{label}}>' +
+      '     <md-button style="margin: 0;" class="md-fab md-accent" aria-label={{label}}>' +
       //'       <md-icon md-svg-src="img/icons/android.svg"></md-icon>' +
       '       <md-icon md-svg-icon="{{icon}}"></md-icon>' +
       '     </md-button>' +
