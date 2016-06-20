@@ -200,10 +200,7 @@ This element represents the child button(s) of the menu and can only "live" insi
 ```html
 <mfb-button></mfb-button>
 ```
-...if you want show custom image in button use 'image' attribute:
-```html
-  <button mfb-button image="../example.jpg"></button>
-```
+
 **NOTE**: If you are adding more than the default number of buttons supported by the provided CSS (currently 4) you will need to compile your own CSS beforehand to support your requirements. It's easy, here's an [example](https://github.com/nobitagit/ng-material-floating-button/issues/28#issuecomment-96980288).
 
 ##### TemplateUrl
