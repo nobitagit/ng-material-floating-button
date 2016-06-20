@@ -200,7 +200,7 @@ This element represents the child button(s) of the menu and can only "live" insi
 ```html
 <mfb-button></mfb-button>
 ```
-...if you want show custom image in button use 'image' attribute:
+...if you want show custom image in button use `image` attribute:
 ```html
   <button mfb-button image="../example.jpg"></button>
 ```
