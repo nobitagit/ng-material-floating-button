@@ -281,7 +281,6 @@ $number-of-child-buttons: 4 !default;
 .mfb-component__child-icon{
   @extend .mfb-component__icon;
   line-height: $child_button_size;
-  font-size: 18 / 56 * $child_button_size;
 }
 .mfb-component__main-icon--active{
   opacity: 0;
