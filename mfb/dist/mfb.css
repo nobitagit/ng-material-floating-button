@@ -78,9 +78,11 @@
  * options chosen by the user or state of the button.
  */
 .mfb-component--tl, .mfb-component--tr, .mfb-component--bl, .mfb-component--br {
+  backface-visibility: hidden;
   box-sizing: border-box;
   margin: 25px;
   position: fixed;
+  transform: translateZ(0);
   white-space: nowrap;
   z-index: 30;
   padding-left: 0;

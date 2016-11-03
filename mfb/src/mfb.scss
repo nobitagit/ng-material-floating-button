@@ -137,9 +137,11 @@ $number-of-child-buttons: 4 !default;
  */
 
 %mfb-component{
+  backface-visibility: hidden;
   box-sizing: border-box; // A better box-sizing
   margin: $border-distance;
   position: fixed;
+  transform: translateZ(0);
   white-space: nowrap;
   z-index: 30;
   // this padding is really needed  only if the element is an <ul>
